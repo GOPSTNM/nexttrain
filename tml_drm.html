@@ -22,16 +22,17 @@
         --DRM_Scale: 85vw;
       }
       .DRM_Base {
+        position: relative;
         height: calc(var(--DRM_Scale)/3.6);
         width: var(--DRM_Scale);
         border: calc(var(--DRM_Scale)/160) solid DimGray;
       }
       .Line {
-        margin: auto;
+        margin: 0;
         position: absolute;
-        left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
         height: calc(var(--DRM_Scale)/130);
         width: calc(var(--DRM_Scale)/1.06);
       }
