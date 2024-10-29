@@ -26,6 +26,11 @@
         width: var(--DRM_Scale);
         border: calc(var(--DRM_Scale)/160) solid DimGray;
       }
+      .Line {
+        margin: auto;
+        height: calc(var(--DRM_Scale)/130);
+        width: calc(var(--DRM_Scale)/1.0625);
+      }
       
       .Upper_Stn {
         align-content: space-evenly;
@@ -65,7 +70,7 @@
                          "Some Automatic Platform Gates will not open", 
                          "End of train service. Please exit", "Move into the center of the train"];
       function Update() {
-        Elem = "<div style='height: calc(var(--DRM_Scale)/130); width: calc(var(--DRM_Scale)/1.125); background-color: #9B2E08;'></div>";
+        Elem = "<div style='background-color: #9B2E08;'></div>";
         document.getElementById("DRM").innerHTML = Elem;
       }
     </script>
