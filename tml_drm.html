@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
+      .noto-serif-hk-web {
+        font-family: "Noto Serif HK", serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+      }
+      body {
+        font-family: "Noto Serif HK", serif;
+      }
+      .DRM_Base {
+        height: 300px;
+        width: 1000px;
+        border: 5px solid grey;
+      }
+      .Upper_Stn {
+        align-content: space-evenly;
+        grid-template-columns: auto auto auto auto auto auto;
+        display: grid;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="DRM_Base">
+      <div class="Upper_Stn">
+        <div>屯門</div>
+        <div>兆康</div>
+        <div>天水圍</div>
+        <div>朗屏</div>
+        <div>元朗</div>
+        <div>錦上路</div>
+      </div>
+    
+    </div>
+
+    <script>
+      const Stn_C = ["屯門", "兆康", "天水圍", "朗屏", "元朗", "錦上路", "荃灣西", "美孚", "南昌", 
+                         "柯士甸", "尖東", "紅磡", "何文田", "土瓜灣", "宋皇臺", "啟德", "鑽石山", 
+                         "顯徑", "大圍", "車公廟", "沙田圍", "第一城", "石門", "大水坑", "恆安", 
+                         "馬鞍山", "烏溪沙"];
+      const Stn_E = ["Tuen Mun", "Siu Hong", "Tin Shui Wai", "Long Ping", "Yuen Long", 
+                         "Kam Sheung Road", "Tsuen Wan West", "Mei Foo", "Nam Cheong", 
+                         "Austin", "East Tsim Sha Tsui", "Hung Hom", "Ho Man Tin", 
+                         "To Kwa Wan", "Sung Wong Toi", "Kai Tak", "Diamond Hill", "Hin Keng", 
+                         "Tai Wai", "Che Kung Temple", "Sha Tin Wai", "City One", "Shek Mun", 
+                         "Tai Shui Hang", "Heng On", "Ma On Shan", "Wu Kai Sha"];
+      const Manual_Text_C = ["請緊握扶手", "嚴禁飲食", "入閘後及車廂內，嚴禁飲食", 
+                         "如感到不適，請落車並請職員協助", "請勿站近車門通道", "部份車門不會打開", 
+                         "部分幕門不會打開", "部份閘門不會打開", "列車暫停服務，請所有乘客落車", 
+                         "請盡量行入車廂中間"];
+      const Manual_Text_E = ["Please hold the handrail", "No eating or drinking", 
+                         "No eating or drinking in trains or paid area of stations", 
+                         "If you feel unwell, exit and ask for help from staff", 
+                         "Move away from door area", "Some doors will not open", 
+                         "Some Platform Screen Doors will not open", 
+                         "Some Automatic Platform Gates will not open", 
+                         "End of train service. Please exit", "Move into the center of the train"];                
+    </script>
+  </body>
+</html>
