@@ -3,15 +3,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
-      .noto-serif-hk-web {
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@500&display=swap');
+      .ctext {
         font-family: "Noto Serif HK", serif;
         font-optical-sizing: auto;
         font-weight: 200;
         font-style: normal;
       }
-      body {
+      .etext {
+        font-family: "Roboto", serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      body :not(.etext) {
         font-family: "Noto Serif HK", serif;
       }
+      
       .DRM_Base {
         height: 300px;
         width: 1000px;
@@ -26,6 +33,7 @@
     </style>
   </head>
   <body>
+    <h1>屯馬綫動態路綫圖</h1>
     <div class="DRM_Base">
       <div class="Upper_Stn">
         <div>屯門</div>
