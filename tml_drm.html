@@ -18,9 +18,12 @@
       body :not(.etext) {
         font-family: "Noto Serif HK", serif;
       }
+      :root {
+        --DRM_Scale: 85%;
+      }
       .DRM_Base {
-        height: var(width);
-        width: 85%;
+        height: calc(var(--DRM_Scale)/3.5);
+        width: var(--DRM_Scale);
         border: 5px solid DimGray;
       }
       
