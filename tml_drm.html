@@ -30,11 +30,11 @@
       .Line {
         margin: 0;
         position: absolute;
-        left: 50%;
+        left: calc(calc(var(--DRM_Scale)-(var(--DRM_Scale)/1.06))/2);
         top: 50%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        height: calc(calc(var(--DRM_Scale)-(var(--DRM_Scale)/1.06))/2);
+        height: calc(var(--DRM_Scale)/3);
         width: calc(var(--DRM_Scale)/1.06);
       }
       
