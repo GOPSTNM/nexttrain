@@ -29,12 +29,11 @@
       }
       .Line {
         position: absolute;
-        left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
         height: calc(var(--DRM_Scale)/70);
         width: calc(var(--DRM_Scale)/1.06);
-        grid-template-columns: repeat(27, auto);
+        grid-template-columns: repeat(auto-fit, auto);
         display: grid;
         justify-content: space-between;
       }
