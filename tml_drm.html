@@ -35,7 +35,6 @@
         height: calc(var(--DRM_Scale)/100);
         width: calc(var(--DRM_Scale)/1.05);
         align-content: space-evenly;
-        grid-template-columns: repeat(auto-fill, auto);
         display: grid;
         justify-content: space-between;
       }
@@ -79,7 +78,7 @@
       function Update() {
         Stn_Passed += 1; 
         GreyArea = (Stn_Passed*10000)/(No_of_Stn*98)+0.5;
-        Elem = `<div class='Line' style='background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
+        Elem = `<div class='Line' style='grid-template-columns: repeat(${No_of_Stn}, auto); background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<Stn_Passed) {
             Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
