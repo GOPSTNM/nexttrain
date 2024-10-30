@@ -29,8 +29,9 @@
       }
       .Line {
         position: absolute;
+        left: 50%;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
         height: calc(var(--DRM_Scale)/70);
         width: calc(var(--DRM_Scale)/1.06);
         grid-template-columns: repeat(auto-fit, auto);
@@ -42,9 +43,8 @@
         width: calc(var(--DRM_Scale)/60);
         border-radius: 100%;
         border: calc(var(--DRM_Scale)/500) solid;
-        left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
       }
     </style>
   </head>
