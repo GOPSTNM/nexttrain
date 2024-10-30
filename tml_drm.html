@@ -52,7 +52,7 @@
     </div>
     <input type="button" value="更新" onclick="Update()">
     <script>
-      let No_of_Stn = 8;
+      let No_of_Stn = 27;
       let Stn_Passed = 3; 
       const Stn_C = ["屯門", "兆康", "天水圍", "朗屏", "元朗", "錦上路", "荃灣西", "美孚", "南昌", 
                          "柯士甸", "尖東", "紅磡", "何文田", "土瓜灣", "宋皇臺", "啟德", "鑽石山", 
@@ -78,7 +78,6 @@
       function Update() {
         Stn_Passed += 1;
         GreyArea = Stn_Passed*98/(No_of_Stn-1)+1;
-        alert(GreyArea);
         Elem = `<div class='Line' style='grid-template-columns: repeat(${No_of_Stn}, auto); background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<Stn_Passed) {
