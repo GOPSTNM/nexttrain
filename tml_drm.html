@@ -79,7 +79,7 @@
         Stn_Passed += 1;
         GreyArea = Stn_Passed*98/(No_of_Stn+1)+1;
         Elem = `<div class='Line' style='grid-template-columns: repeat(${No_of_Stn}, auto); background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
-        for (let i = 0; i =< No_of_Stn; i++) {
+        for (let i = 0; i < No_of_Stn-1; i++) {
           if (i<Stn_Passed) {
             Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
           } else {
