@@ -77,7 +77,7 @@
                          "End of train service. Please exit", "Move into the center of the train"];
       function Update() {
         Stn_Passed += 1;
-        GreyArea = (Stn_Passed/No_of_Stn)*98;
+        GreyArea = Stn_Passed/No_of_Stn*98+1;
         Elem = `<div class='Line' style='grid-template-columns: repeat(${No_of_Stn}, auto); background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<Stn_Passed) {
