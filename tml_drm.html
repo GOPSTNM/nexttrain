@@ -35,6 +35,13 @@
         height: calc(var(--DRM_Scale)/70);
         width: calc(var(--DRM_Scale)/1.06);
       }
+      .Circ {
+        height: calc(var(--DRM_Scale)/65);
+        width: calc(var(--DRM_Scale)/65);
+        background-color: Black;
+        border-radius: 50%;
+        border: 2px solid White;
+      }
       
       .Upper_Stn {
         align-content: space-evenly;
@@ -74,7 +81,9 @@
                          "Some Automatic Platform Gates will not open", 
                          "End of train service. Please exit", "Move into the center of the train"];
       function Update() {
-        Elem = "<div class='Line' style='background-color: #9B2E08;'></div>";
+        Elem = "<div class='Line' style='background-color: #9B2E08;'>";
+        Elem += "<div class='Circ'></div>";
+        Elem += "</div>";
         document.getElementById("DRM").innerHTML = Elem;
       }
     </script>
