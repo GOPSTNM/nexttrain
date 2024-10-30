@@ -79,7 +79,7 @@
       function Update() {
         Stn_Passed += 1; 
         GreyArea = Stn_Passed*100/No_of_Stn;
-        Elem = "<div class='Line' style='background: linear-gradient(to right, White 1%, Silver 1%, Silver" + GreyArea + "%, #9B2E08 " + GreyArea + "%, #9B2E08 99%, White 99%);'>";
+        Elem = `<div class='Line' style='background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<Stn_Passed) {
             Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
