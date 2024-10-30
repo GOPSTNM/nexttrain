@@ -40,10 +40,10 @@
         justify-content: space-between;
       }
       .Circ {
-        height: calc(var(--DRM_Scale)/60);
-        width: calc(var(--DRM_Scale)/60);
+        height: calc(var(--DRM_Scale)/50);
+        width: calc(var(--DRM_Scale)/50);
         border-radius: 100%;
-        border: calc(var(--DRM_Scale)/500) solid;
+        border: calc(var(--DRM_Scale)/250) solid;
       }
     </style>
   </head>
@@ -80,9 +80,9 @@
         Elem = "<div class='Line' style='background-color: #9B2E08;'>";
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<Stn_Passed) {
-            Elem += "<div class='Circ' style='border-color: Black; background-color: White;'></div>";
-          } else {
             Elem += "<div class='Circ' style='border-color: Grey; background-color: White;'></div>";
+          } else {
+            Elem += "<div class='Circ' style='border-color: Black; background-color: Yellow;'></div>";
           }
         }
         Elem += "</div>";
