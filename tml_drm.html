@@ -77,7 +77,8 @@
                          "Some Automatic Platform Gates will not open", 
                          "End of train service. Please exit", "Move into the center of the train"];
       function Update() {
-        Elem = "<div class='Line' style='background: linear-gradient(to right, White 1%, #9B2E08 1%, #9B2E08 99%, White 99%);'>";
+        let Stn_Passed += 1; 
+        Elem = "<div class='Line' style='background: linear-gradient(to right, White 1%, Silver 1%, Silver ${Stn_Passed*100/No_of_Stn} %, #9B2E08 ${Stn_Passed*100/No_of_Stn} %, #9B2E08 99%, White 99%);'>";
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<Stn_Passed) {
             Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
