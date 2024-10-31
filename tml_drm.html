@@ -46,9 +46,9 @@
       }
       .StnNameC {
         text-align: center;
-        font-weight: 600;
+        font-weight: 580;
         font-size: calc(var(--DRM_Scale)/86);
-        margin: calc(var(--DRM_Scale)/35*-1) 0px 0px;
+        margin: calc(var(--DRM_Scale)/30*-1) 0px 0px;
         width: calc(var(--DRM_Scale)/28.6);
       }
     </style>
@@ -84,7 +84,7 @@
                          "End of train service. Please exit", "Move into the center of the train"];
       function Update() {
         GreyArea = Stn_Passed*98/(No_of_Stn+1)+1;
-        Elem = `<div class='Line' style='grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
+        Elem = `<div class='Line' style='width: calc(var(--DRM_Scale)/1.037); grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           Elem += `<p class='ctext StnNameC'>${Stn_C[i]}</p>`;
         }
