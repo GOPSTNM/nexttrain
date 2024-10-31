@@ -44,6 +44,9 @@
         border-radius: 100%;
         border: calc(var(--DRM_Scale)/660) solid;
       }
+      .StnNameCTop {
+        top: -50%;
+      }
     </style>
   </head>
   <body>
@@ -81,10 +84,10 @@
         for (let i = 0; i < No_of_Stn; i++) {
           if (i<=Stn_Passed) {
             Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
-            Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
           } else {
             Elem += "<div class='Circ' style='border-color: Black; background-color: Yellow;'></div>";
           }
+          Elem += `<p class='ctext StnNameCTop'>${Stn_C[i]}</p>`;
         }
         Elem += "</div>";
         document.getElementById("DRM").innerHTML = Elem;
