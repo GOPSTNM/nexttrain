@@ -37,6 +37,28 @@
         display: grid;
         justify-content: space-between;
       }
+      .CLine {
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -70%);
+        height: calc(var(--DRM_Scale)/28.6666666667);
+        width: calc(var(--DRM_Scale)/1.02497162316); 
+        align-content: space-evenly;
+        display: grid;
+        justify-content: space-between;
+      }
+      .ELine {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -30%);
+        height: calc(var(--DRM_Scale)/57.3333333333);
+        width: calc(var(--DRM_Scale)/0.998); 
+        align-content: space-evenly;
+        display: grid;
+        justify-content: space-between;
+      }
       .Circ {
         height: calc(var(--DRM_Scale)/86);
         width: calc(var(--DRM_Scale)/86);
@@ -47,7 +69,7 @@
         text-align: center;
         font-weight: 580;
         font-size: calc(var(--DRM_Scale)/86);
-        width: calc(var(--DRM_Scale)/28.6666666667);
+        width: calc(var(--DRM_Scale)/20);
       }
       .StnNameC:nth-child(even) {
         margin: calc(var(--DRM_Scale)/-32) 0px 0px;
@@ -100,11 +122,11 @@
                          "End of train service. Please exit", "Move into the center of the train"];
       function Update() {
         GreyArea = Stn_Passed*98/(No_of_Stn+1)+1;
-        Elem = `<div class='Line' style='width: calc(var(--DRM_Scale)/1.02497162316); grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
+        Elem = `<div class='CLine' style='grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           Elem += `<div class='ctext StnNameC'>${Stn_C[i]}</div>`;
         }
-        Elem += `<div class='Line' style='width: calc(var(--DRM_Scale)/1.02497162316); grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
+        Elem += `<div class='ELine' style='width: calc(var(--DRM_Scale)/1.02497162316); grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
         for (let i = 0; i < No_of_Stn; i++) {
           Elem += `<div class='etext StnNameE'>${Stn_E[i]}</div>`;
         }
