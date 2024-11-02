@@ -44,7 +44,7 @@
       function update() {
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
-        let elem = `<div class='line' style='width: ${route[detail[0]][0]}; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color, grey}%, #${line_color} 99%, White 99%);'></div>`;
+        let elem = `<div class='line' style='width: ${route[detail[0]][0]}; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color + grey}%, #${line_color} 99%, White 99%);'></div>`;
         alert (elem);
         document.getElementById("drm").innerHTML = "elem";
       }
