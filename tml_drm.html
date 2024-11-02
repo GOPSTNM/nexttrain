@@ -51,7 +51,7 @@
         let grey = detail[2]*98/(detail[1]+1)+1;
         elem = `<div class='line' style='width: ${route[detail[0]][0]}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
         elem += "</div>";
-        alert ((data[temp_eal_branch][0][1]));
+        alert (data["temp_eal_branch"][0][1].length);
         alert (elem);
         document.getElementById("drm").innerHTML = elem;
       }
