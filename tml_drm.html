@@ -28,6 +28,12 @@
         transform: translate(-50%, -50%);
         height: calc(90vw/100);
       }
+      .Circ {
+        height: calc(var(--DRM_Scale)/86);
+        width: calc(var(--DRM_Scale)/86);
+        border-radius: 100%;
+        border: calc(var(--DRM_Scale)/660) solid;
+      }
     </style>
   </head>
   <body>
@@ -44,14 +50,22 @@
                     temp_eal_e_stn: ["Tai Po Market", "University", "Fo Tan", "Racecourse", "Sha Tin"], 
                     temp_eal_branch: [[1, [2], [3]]]
                    }
-      // route, no. of stn (in width), passed stn, start stn, dir
+      // route, no. of stn (in width), passed stn, start stn, dir, first stn color 0=White
       const detail = ["tml", 27, 2, 0, 0]
       function update() {
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
         elem = `<div class='line' style='width: ${route[detail[0]][0]}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
+        for (let i = 0; i < No_of_Stn; i++) {
+          if (i<=detail[2]) {
+            elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
+          } else if (i==detail[2]+1 && detail[4]==0) {
+            elem += "<div class='Circ' style='border-color: Black; background-color: White;'></div>";
+          } else {
+            elem += "<div class='Circ' style='border-color: Black; background-color: Yellow;'></div>";
+          }
+        }
         elem += "</div>";
-        alert (data["temp_eal_branch"][0][1].length);
         alert (elem);
         document.getElementById("drm").innerHTML = elem;
       }
