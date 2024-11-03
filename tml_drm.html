@@ -28,8 +28,9 @@
         transform: translate(-50%, -50%);
         height: calc(90vw/100);
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-content: space-evenly;
+        ##overflow: visible;
       }
       .circ {
         height: calc(90vw/86);
@@ -44,14 +45,10 @@
     <div class="drm_base" id="drm"></div>
     <input type="button" value="更新" onclick="update()">
     <script>
-      // length of route in vw, colour, c name, e name, display 0=all down 1=up & down, w/ branch
-      const route = {tml: [85.7142857143, "9B2E08", "屯馬綫", "Tuen Ma Line", 1, 0], 
-                    temp_eal: [85.7142857143, "61B9E8", "東鐵綫", "East Rail Line Temp. Test", 0, [2: [1, [2], [3]]]};
+      // length of route in vw, colour, c name, e name, display 0=all down 1=up & down
+      const route = {tml: [85.7142857143, "9B2E08", "屯馬綫", "Tuen Ma Line", 1]};
       const data = {tml_c_stn: ["屯門", "兆康", "天水圍", "朗屏", "元朗", "錦上路", "荃灣西", "美孚", "南昌", "柯士甸", "尖東", "紅磡", "何文田", "土瓜灣", "宋皇臺", "啟德", "鑽石山", "顯徑", "大圍", "車公廟", "沙田圍", "第一城", "石門", "大水坑", "恆安", "馬鞍山", "烏溪沙"], 
-                    tml_e_stn: ["Tuen Mun", "Siu Hong", "Tin Shui Wai", "Long Ping", "Yuen Long", "Kam Sheung Road", "Tsuen Wan West", "Mei Foo", "Nam Cheong", "Austin", "East Tsim Sha Tsui", "Hung Hom", "Ho Man Tin", "To Kwa Wan", "Sung Wong Toi", "Kai Tak", "Diamond Hill", "Hin Keng", "Tai Wai", "Che Kung Temple", "Sha Tin Wai", "City One", "Shek Mun", "Tai Shui Hang", "Heng On", "Ma On Shan", "Wu Kai Sha"], 
-                    temp_eal_c_stn: ["大埔墟", "大學", "火炭", "馬場", "沙田"], 
-                    temp_eal_e_stn: ["Tai Po Market", "University", "Fo Tan", "Racecourse", "Sha Tin"], 
-                   }
+                    tml_e_stn: ["Tuen Mun", "Siu Hong", "Tin Shui Wai", "Long Ping", "Yuen Long", "Kam Sheung Road", "Tsuen Wan West", "Mei Foo", "Nam Cheong", "Austin", "East Tsim Sha Tsui", "Hung Hom", "Ho Man Tin", "To Kwa Wan", "Sung Wong Toi", "Kai Tak", "Diamond Hill", "Hin Keng", "Tai Wai", "Che Kung Temple", "Sha Tin Wai", "City One", "Shek Mun", "Tai Shui Hang", "Heng On", "Ma On Shan", "Wu Kai Sha"]};
       // route, no. of stn (in width), passed stn, start stn, dir, first stn color 0=White
       const detail = ["tml", 27, 2, 0, 0]
       function update() {
