@@ -33,7 +33,6 @@
         align-content: center;
       }
       .stn_area {
-        border: calc(90vw/160) solid DimGray;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -66,8 +65,9 @@
       function update() {
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
-        elem = "<div class='stn_area'></div>";
-        elem += `<div class='line' style='width: ${route[detail[0]][0]}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
+        let width = route[detail[0]][0];
+        elem = `<div class='stn_area' style='width: ${width}vw'></div>’;
+        elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
         for (let i = 0; i < detail[1]; i++) {
           if (i<=detail[2]) {
             elem += "<div class='circ' style='border-color: Silver; background-color: White;'></div>";
