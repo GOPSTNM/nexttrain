@@ -30,14 +30,11 @@
       }
       .circ {
         display: flex;
-        justify-content: space-between;
+        justify-content: normal;
         height: calc(90vw/86);
         width: calc(90vw/86);
         border-radius: 100%;
         border: calc(90vw/660) solid;
-      }
-      .circ span {
-        margin: auto 0px; 
       }
     </style>
   </head>
@@ -67,7 +64,7 @@
           } else if (i==detail[2]+1 && detail[4]==0) {
             elem += "<div class='circ' style='border-color: Black; background-color: White;'></div>";
           } else {
-            elem += "<span><div class='circ' style='border-color: Black; background-color: Yellow;'></div></span>";
+            elem += "<div class='circ' style='border-color: Black; background-color: Yellow;'></div>";
           }
         }
         elem += "</div>";
