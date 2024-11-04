@@ -45,7 +45,7 @@
       }
       .stn_name {
         border: 1px solid black;
-        width: calc(90vw/86);
+        width: calc(90vw/28.6666666667);
         white-space: nowrap;
         text-align: justify;
       }
@@ -78,7 +78,7 @@
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
         let width = route[detail[0]][0];
-        elem = `<div class='stn_area stn_area_c' style='width: ${width}vw'>`;
+        elem = `<div class='stn_area stn_area_c' style='width: ${width+90vw/43}vw'>`;
         for (let i = 0; i < detail[1]; i++) {
           elem += `<div class='drm_ctext stn_name'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
