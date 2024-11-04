@@ -33,7 +33,6 @@
         align-content: center;
       }
       .stn_area {
-        white-space: nowrap;
         position: absolute;
         display: flex;
         flex-wrap: wrap;
@@ -47,14 +46,15 @@
         font-size: calc(90vw/86);
       }
       .stn_area_e {
-        height: 4.04;
+        height: 4.03953237209vw;
         left: 50%;
         top: 52%;
         transform: translate(-50%, -52%);
         font-size: calc(90vw/172);
       }
       .stn_name {
-        width: calc(6vw);
+        width: calc(90vw/28.6666666667);
+        white-space: nowrap;
         text-align: center;
       }
       .stn_name:nth-child(even) {
@@ -86,7 +86,7 @@
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
         let width = route[detail[0]][0];
-        elem = `<div class='stn_area stn_area_c' style='width: ${width+6/1.5-180/660}vw'>`;
+        elem = `<div class='stn_area stn_area_c' style='width: ${width+90/43-180/660}vw'>`;
         for (let i = 0; i < detail[1]; i++) {
           elem += `<div class='drm_ctext stn_name'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
