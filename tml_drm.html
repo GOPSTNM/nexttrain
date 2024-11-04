@@ -32,19 +32,27 @@
         justify-content: space-between;
         align-content: center;
       }
-      .stn_area_c {
+      .stn_area {
         position: absolute;
-        left: 50%;
-        top: 48%;
-        transform: translate(-50%, -48%);
         height: 5.086044vw;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+      }
+      .stn_area_c {
+        left: 50%;
+        top: 48%;
+        transform: translate(-50%, -48%);
         font-size: calc(90vw/86);
       }
+      .stn_area_e {
+        left: 50%;
+        top: 52%;
+        transform: translate(-50%, -52%);
+        font-size: calc(90vw/172);
+      }
       .stn_name {
-        width: calc(90vw/86);
+        width: calc(90vw/28.6666666667);
         white-space: nowrap;
         text-align: center;
       }
@@ -77,7 +85,7 @@
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
         let width = route[detail[0]][0];
-        elem = `<div class='stn_area stn_area_c' style='width: ${width}vw'>`;
+        elem = `<div class='stn_area stn_area_c' style='width: ${width+90/43}vw'>`;
         for (let i = 0; i < detail[1]; i++) {
           elem += `<div class='drm_ctext stn_name'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
