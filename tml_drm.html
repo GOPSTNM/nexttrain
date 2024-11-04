@@ -43,7 +43,6 @@
         justify-content: space-between;
         background-color: yellow;
         font-size: calc(90vw/86);
-        align-content: flex-end;
       }
       .stn_name {
         translate: -50% 0;
@@ -54,6 +53,9 @@
       }
       .stn_name:nth-child(even) {
         align-content: flex-start;
+      }
+      .stn_name:nth-child(odd) {
+        align-content: flex-end;
       }
       .circ {
         height: calc(90vw/86);
