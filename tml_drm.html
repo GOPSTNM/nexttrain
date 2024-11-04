@@ -1,4 +1,4 @@
-<html>
+<<html>
   <head>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
@@ -28,12 +28,15 @@
         transform: translate(-50%, -50%);
         height: calc(90vw/100);
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-content: center;
       }
       .stn_area {
         position: absolute;
         height: 5.086044vw;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
       .stn_area_c {
@@ -84,7 +87,7 @@
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
         let width = route[detail[0]][0];
-        elem = `<div class='stn_area stn_area_c' style='width: ${width+90/43-90/660}vw'>`;
+        elem = `<div class='stn_area stn_area_c' style='width: ${width+2.09302325581}vw'>`;
         for (let i = 0; i < detail[1]; i++) {
           elem += `<div class='drm_ctext stn_name'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
