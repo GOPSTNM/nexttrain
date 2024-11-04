@@ -90,6 +90,11 @@
           elem += `<div class='drm_ctext stn_name'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
         elem += "</div>";
+        elem += `<div class='stn_area stn_area_e' style='width: ${width+90/43-180/660}vw'>`;
+        for (let i = 0; i < detail[1]; i++) {
+          elem += `<div class='drm_etext stn_name'>${data[detail[0]+"_e_stn"][i]}</div>`;
+        }
+        elem += "</div>";
         elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
         for (let i = 0; i < detail[1]; i++) {
           if (i<=detail[2]) {
