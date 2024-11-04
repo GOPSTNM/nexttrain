@@ -78,7 +78,7 @@
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]+1)+1;
         let width = route[detail[0]][0];
-        elem = `<div class='stn_area stn_area_c' style='width: ${width+90vw/43}vw'>`;
+        elem = `<div class='stn_area stn_area_c' style='width: ${width+90/43}vw'>`;
         for (let i = 0; i < detail[1]; i++) {
           elem += `<div class='drm_ctext stn_name'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
