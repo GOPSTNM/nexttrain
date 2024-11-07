@@ -14,6 +14,8 @@
       .drm_etext {
         font-family: "Roboto", serif;
         font-weight: 580;
+
+        text-align: center;
       }
       .drm_base {
         position: relative;
@@ -88,7 +90,7 @@
         let width = route[detail[0]][0];
         elem = `<div style='left=${(90-width)/2}vw' class='temp'>`;
         for (let i = 0; i < detail[1]; i++) {
-          elem += `<div class='drm_etext' style='text-align: center;width: 100vw;font-size: calc(90vw/172);position: absolute;width:6vw; top:60%; left: ${width*i/detail[1]}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
+          elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/172); position: absolute;width:6vw; top:60%; left: ${width/detail[1]*i}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }
         elem += "</div>";
         elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
