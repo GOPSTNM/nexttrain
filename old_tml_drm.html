@@ -3,143 +3,105 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@500&display=swap');
-      .ctext {
+      body {
         font-family: "Noto Serif HK", serif;
-        font-optical-sizing: auto;
         font-weight: 200;
-        font-style: normal;}
-      .etext {
-        font-family: "Roboto", serif;
-        font-weight: 500;
-        font-style: normal;
       }
-      body :not(.etext) {
+      .drm_ctext {
         font-family: "Noto Serif HK", serif;
+        font-weight: 580;
       }
-      :root {
-        --DRM_Scale: 95vw;
+      .drm_etext {
+        font-family: "Roboto", serif;
+        font-weight: 580;
       }
-      .DRM_Base {
-        margin: 2.5vw 5px 2.5vw;
+      .drm_base {
         position: relative;
-        height: calc(var(--DRM_Scale)/3.6);
-        width: var(--DRM_Scale);
-        border: calc(var(--DRM_Scale)/160) solid DimGray;
+        height: calc(90vw/3.6);
+        width: 90vw;
+        border: calc(90vw/160) solid DimGray;
       }
-      .Line {
+      .line {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        height: calc(var(--DRM_Scale)/100);
-        width: calc(var(--DRM_Scale)/1.05);
-        align-content: space-evenly;
-        display: grid;
+        height: calc(90vw/100);
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        align-content: center;
       }
-      .CLine {
+      .stn_area {
         position: absolute;
-        left: 50%;
-        top: 55%;
-        transform: translate(-50%, -55%);
-        height: calc(var(--DRM_Scale)/24.5);     
-        align-content: space-evenly;
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
-      .ELine {
-        position: absolute;
+      .stn_area_c {
+        height: 5.086044vw;
         left: 50%;
-        top: 35%;
-        transform: translate(-50%, -35%);
-        height: calc(var(--DRM_Scale)/24.5);
-        align-content: space-evenly;
-        display: grid;
-        justify-content: space-between;
+        top: 48%;
+        transform: translate(-50%, -48%);
+        font-size: calc(90vw/86);
       }
-      .Circ {
-        height: calc(var(--DRM_Scale)/86);
-        width: calc(var(--DRM_Scale)/86);
-        border-radius: 100%;
-        border: calc(var(--DRM_Scale)/660) solid;
+      .stn_area_e {
+        height: 4.03953237209vw;
+        left: 50%;
+        top: 52%;
+        transform: translate(-50%, -52%);
+        font-size: calc(90vw/172);
       }
-      .StnNameC {
-        text-align: center;
-        font-weight: 580;
-        font-size: calc(var(--DRM_Scale)/86);
-        width: calc(var(--DRM_Scale)/28.6666666667);
-      }
-      .StnNameC:nth-child(even) {
-        margin: 0px 0px calc(var(--DRM_Scale)/28.6666666667);
-      }
-      .StnNameC:nth-child(odd) {
-        margin: calc(var(--DRM_Scale)/28.6666666667) 0px 0px;
-      }
-      .StnNameE {
-        text-align: center;
-        font-weight: 580;
-        font-size: calc(var(--DRM_Scale)/172);
-        width: calc(var(--DRM_Scale)/28.6666666667);
-        overflow: visible;
+      .stn_name {
+        width: calc(90vw/28.6666666667);
         white-space: nowrap;
+        text-align: center;
       }
-      .StnNameE:nth-child(even) {
-        margin: 0px 0px calc(var(--DRM_Scale)/28.6666666667);
+      .stn_name:nth-child(even) {
+        align-content: start;
       }
-      .StnNameE:nth-child(odd) {
-        margin: calc(var(--DRM_Scale)/28.6666666667) 0px 0px;
+      .stn_name:nth-child(odd) {
+        align-content: end;
+      }
+      .circ {
+        height: calc(90vw/86);
+        width: calc(90vw/86);
+        border-radius: 100%;
+        border: calc(90vw/660) solid;
       }
     </style>
   </head>
   <body>
     <h1 style="width: 100%; height: 50px; color: White; background-color: #9B2E08;">屯馬綫動態路綫圖</h1>
-    <div class="DRM_Base" id="DRM">
-    </div>
-    <input type="button" value="更新" onclick="Update()">
+    <div class="drm_base" id="drm"></div>
+    <input type="button" value="更新" onclick="update()">
     <script>
-      let No_of_Stn = 27;
-      let Stn_Passed = 0; 
-      const Stn_C = ["屯門", "兆康", "天水圍", "朗屏", "元朗", "錦上路", "荃灣西", "美孚", "南昌", 
-                         "柯士甸", "尖東", "紅磡", "何文田", "土瓜灣", "宋皇臺", "啟德", "鑽石山", 
-                         "顯徑", "大圍", "車公廟", "沙田圍", "第一城", "石門", "大水坑", "恆安", 
-                         "馬鞍山", "烏溪沙"];
-      const Stn_E = ["Tuen Mun", "Siu Hong", "Tin Shui Wai", "Long Ping", "Yuen Long", 
-                         "Kam Sheung Road", "Tsuen Wan West", "Mei Foo", "Nam Cheong", 
-                         "Austin", "East Tsim Sha Tsui", "Hung Hom", "Ho Man Tin", 
-                         "To Kwa Wan", "Sung Wong Toi", "Kai Tak", "Diamond Hill", "Hin Keng", 
-                         "Tai Wai", "Che Kung Temple", "Sha Tin Wai", "City One", "Shek Mun", 
-                         "Tai Shui Hang", "Heng On", "Ma On Shan", "Wu Kai Sha"];
-      const Manual_Text_C = ["請緊握扶手", "嚴禁飲食", "入閘後及車廂內，嚴禁飲食", 
-                         "如感到不適，請落車並請職員協助", "請勿站近車門通道", "部份車門不會打開", 
-                         "部分幕門不會打開", "部份閘門不會打開", "列車暫停服務，請所有乘客落車", 
-                         "請盡量行入車廂中間"];
-      const Manual_Text_E = ["Please hold the handrail", "No eating or drinking", 
-                         "No eating or drinking in trains or paid area of stations", 
-                         "If you feel unwell, exit and ask for help from staff", 
-                         "Move away from door area", "Some doors will not open", 
-                         "Some Platform Screen Doors will not open", 
-                         "Some Automatic Platform Gates will not open", 
-                         "End of train service. Please exit", "Move into the center of the train"];
-      function Update() {
-        GreyArea = Stn_Passed*98/(No_of_Stn+1)+1;
-        Elem = `<div class='CLine' style='width: calc(var(--DRM_Scale)/1.02497162316); grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
-        for (let i = 0; i < No_of_Stn; i++) {
-          Elem += `<div class='ctext StnNameC'>${Stn_C[i]}</div>`;
+      // length of route in vw, colour, c name, e name
+      const route = {tml: [85.7142857143, "9B2E08", "屯馬綫", "Tuen Ma Line"]};
+      const data = {tml_c_stn: ["屯門", "兆康", "天水圍", "朗屏", "元朗", "錦上路", "荃灣西", "美孚", "南昌", "柯士甸", "尖東", "紅磡火車站", "何文田", "土瓜灣", "宋皇臺", "啟德", "鑽石山", "顯徑", "大圍", "車公廟", "沙田圍", "第一城", "石門", "大水坑", "恆安", "馬鞍山", "烏溪沙"], 
+                    tml_e_stn: ["Tuen Mun", "Siu Hong", "Tin Shui Wai", "Long Ping", "Yuen Long", "Kam Sheung Road", "Tsuen Wan West", "Mei Foo", "Nam Cheong", "Austin", "East Tsim Sha Tsui", "Hung Hom", "Ho Man Tin", "To Kwa Wan", "Sung Wong Toi", "Kai Tak", "Diamond Hill", "Hin Keng", "Tai Wai", "Che Kung Temple", "Sha Tin Wai", "City One", "Shek Mun", "Tai Shui Hang", "Heng On", "Ma On Shan", "Wu Kai Sha"]};
+      // route, no. of stn (in width), passed stn, start stn, dir, first stn color 0=White
+      const detail = ["tml", 27, 2, 0, 0, 0]
+      function update() {
+        let line_color = route[detail[0]][1];
+        let grey = detail[2]*98/(detail[1]+1)+1;
+        let width = route[detail[0]][0];
+        let elem = "";
+        for (let i = 0; i < detail[1]; i++) {
+          elem += `<div class='drm_etext' style='text-align: center;width: 100vw;font-size: calc(90vw/172);position: absolute;width:6vw; top:60%; left: ${((width-2.366)*i/detail[1])+(90-width+2.229)}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }
-        Elem += `<div class='ELine' style='width: calc(var(--DRM_Scale)/1.02497162316); grid-template-columns: repeat(${No_of_Stn}, auto);'>`;
-        for (let i = 0; i < No_of_Stn; i++) {
-          Elem += `<div class='etext StnNameE'>${Stn_E[i]}</div>`;
-        }
-        Elem += `<div class='Line' style='grid-template-columns: repeat(${No_of_Stn}, auto); background: linear-gradient(to right, White 1%, Silver 1%, Silver ${GreyArea}%, #9B2E08 ${GreyArea}%, #9B2E08 99%, White 99%);'>`;
-        for (let i = 0; i < No_of_Stn; i++) {
-          if (i<=Stn_Passed) {
-            Elem += "<div class='Circ' style='border-color: Silver; background-color: White;'></div>";
+        elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
+        for (let i = 0; i < detail[1]; i++) {
+          if (i<=detail[2]) {
+            elem += "<div class='circ' style='border-color: Silver; background-color: White;'></div>";
+          } else if (i==detail[2]+1 && detail[5]==0) {
+            elem += "<div class='circ' style='border-color: Black; background-color: White;'></div>";
           } else {
-            Elem += "<div class='Circ' style='border-color: Black; background-color: Yellow;'></div>";
+            elem += "<div class='circ' style='border-color: Black; background-color: Yellow;'></div>";
           }
         }
-        Elem += "</div>";
-        document.getElementById("DRM").innerHTML = Elem;
+        elem += "</div>";
+        document.getElementById("drm").innerHTML = elem;
       }
     </script>
   </body>
