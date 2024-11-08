@@ -14,7 +14,6 @@
       .drm_etext {
         font-family: "Roboto", serif;
         font-weight: 580;
-        background: yellow;
         text-align: center;
       }
       .drm_base {
@@ -90,7 +89,7 @@
         let width = route[detail[0]][0];
         elem = `<div style='left=${(90-width)/2}vw' class='temp'>`;
         for (let i = 0; i < detail[1]; i++) {
-          let mid = (((90-width)/2)+(width-90/330)*i/(detail[1]-1));
+          let mid = (((90-width)/2+90/660)+(width-90/330)*i/(detail[1]-1));
           elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/172); position: absolute;width:6vw; top:60%; left: ${mid-3}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }
         elem += "</div>";
