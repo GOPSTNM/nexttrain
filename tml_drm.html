@@ -90,7 +90,7 @@
         elem = "";
         for (let i = 0; i < detail[1]; i++) {
           let mid = (((90-width)/2+90/660)+(width-90/330-45/43)*i/(detail[1]-1));
-          elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/172); position: absolute;width:6vw; top:52%; left: ${mid-3}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
+          elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/172); position: absolute;width:6vw; top:52%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }
         
         elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
