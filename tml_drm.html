@@ -91,7 +91,7 @@
         elem = "";
         for (let i = 0; i < detail[1]; i++) {
           let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-3);
-          elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/172); position: absolute;width:6vw; top:52%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
+          elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/86); position: absolute;width:6vw; top:52%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }
         
         elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
