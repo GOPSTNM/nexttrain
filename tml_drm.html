@@ -90,7 +90,7 @@
         let width = route[detail[0]][0];
         elem = "";
         for (let i = 0; i < detail[1]; i++) {
-          let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-2.5+(90-width)/2+90/660);
+          let mid = ((i*(width-90/330-90/86)/(detail[1]-1))+(90-width)/2+90/660);
           elem += `<div class='drm_etext' style='text-align: center; width: 100vw;font-size: calc(90vw/172); position: absolute;width:6vw; top:52%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }
         
