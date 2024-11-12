@@ -84,7 +84,7 @@
                     tml_e_stn: ["Tuen Mun", "Siu Hong", "Tin Shui Wai", "Long Ping", "Yuen Long", "Kam Sheung Road", "Tsuen Wan West", "Mei Foo", "Nam Cheong", "Austin", "East Tsim Sha Tsui", "Hung Hom", "Ho Man Tin", "To Kwa Wan", "Sung Wong Toi", "Kai Tak", "Diamond Hill", "Hin Keng", "Tai Wai", "Che Kung Temple", "Sha Tin Wai", "City One", "Shek Mun", "Tai Shui Hang", "Heng On", "Ma On Shan", "Wu Kai Sha"]};
       // route, no. of stn (in width), passed stn, start stn, dir, first stn color 0=White
       function update() {
-        let detail = ["tml", document.getElementById("input_stn_no"), 1, 0, 0, 0];
+        let detail = ["tml", document.getElementById("input_stn_no");, 1, 0, 0, 0];
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]-1)+1;
         let width = route[detail[0]][0];
