@@ -73,7 +73,7 @@
       .new{
         position: absolute;
         display: inline-block;
-        align-content: end;
+        vertical-align: bottom;
       }
     </style>
   </head>
@@ -110,7 +110,7 @@
           }
         }
         elem += "</div>";
-        elem += "<div class='new' style='top:80%; font-weight: 580;width: 100%;text-align: center; height: 3.5vw; color: White; background-color: #011D57;'>本班列車以第一城為終點站</div>"
+        elem += "<h1 class='new' style='top:80%; font-weight: 580;width: 100%;text-align: center; height: 3.5vw; color: White; background-color: #011D57;'>本班列車以第一城為終點站</h1>"
         document.getElementById("drm").innerHTML = elem;
       }
     </script>
