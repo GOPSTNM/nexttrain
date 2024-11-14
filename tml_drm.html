@@ -70,6 +70,9 @@
         border-radius: 100%;
         border: calc(90vw/660) solid;
       }
+      .new{
+        align-content: end;
+      }
     </style>
   </head>
   <body>
@@ -105,7 +108,7 @@
           }
         }
         elem += "</div>";
-        elem += "<div style='top:80%; font-weight: 580;width: 100%;text-align: center; height: 3.5vw; color: White; background-color: #011D57;'>本班列車以第一城為終點站</div>"
+        elem += "<div class='new' style='top:80%; font-weight: 580;width: 100%;text-align: center; height: 3.5vw; color: White; background-color: #011D57;'>本班列車以第一城為終點站</div>"
         document.getElementById("drm").innerHTML = elem;
       }
     </script>
