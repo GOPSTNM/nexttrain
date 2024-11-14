@@ -72,8 +72,13 @@
       }
       .new{
         position: absolute;
-        display: inline-block;
-        vertical-align: sub;
+        bottom:0%;
+        font-weight: 580;
+        width: 100%;
+        text-align: center; 
+        height: 4vw; 
+        color: White; 
+        background-color: #011D57;
       }
     </style>
   </head>
@@ -110,7 +115,7 @@
           }
         }
         elem += "</div>";
-        elem += "<h1 class='new' style='top:80%; font-weight: 580;width: 100%;text-align: center; height: 4vw; color: White; background-color: #011D57;'>本班列車以第一城為終點站</h1>"
+        elem += "<h1 class='new' style=''>本班列車以第一城為終點站</h1>"
         document.getElementById("drm").innerHTML = elem;
       }
     </script>
