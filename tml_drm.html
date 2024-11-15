@@ -35,7 +35,6 @@
         white-space: nowrap;
         text-align: center;
         align-content: center;
-        font-size: calc(90vw/86);
       }
       .circ {
         height: calc(90vw/86);
@@ -75,12 +74,7 @@
         let line_color = route[detail[0]][1];
         let grey = detail[2]*98/(detail[1]-1)+1;
         let width = route[detail[0]][0];
-        let elem;
-        for (let i = 0; i < detail[1]; i++) {
-          let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-(90-width)/2)-90/660;
-          elem += `<div class='stn_name' style='top:47%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
-        }   
-        elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
+        elem = `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
         for (let i = 0; i < detail[1]; i++) {
           if (i<=detail[2]) {
             elem += "<div class='circ' style='border-color: Silver; background-color: White;'></div>";
@@ -91,6 +85,11 @@
           }
         }
         elem += "</div>";
+        for (let i = 0; i < detail[1]; i++) {
+          let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-(90-width)/2)-90/660;
+          elem += `<div class='stn_name' style='font-size: calc(90vw/86); top:47%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
+          elem += `<div class='stn_name etext' style='font-size: calc(90vw/160); top:52%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
+        }   
         elem += "<h1 class='bar' style=''>本班列車以第一城為終點站</h1>"
         document.getElementById("drm").innerHTML = elem;
       }
