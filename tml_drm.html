@@ -87,8 +87,8 @@
         elem += "</div>";
         for (let i = 0; i < detail[1]; i++) {
           let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-(90-width)/2)-90/660;
-          elem += `<div class='stn_name' style='font-size: calc(90vw/86); top:47%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
-          elem += `<div class='stn_name etext' style='font-size: calc(90vw/160); top:52%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
+          elem += `<div class='stn_name' style='font-size: calc(90vw/86); top:48%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
+          elem += `<div class='stn_name etext' style='font-size: calc(90vw/160); top:53%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }   
         elem += "<h1 class='bar' style=''>本班列車以第一城為終點站</h1>"
         document.getElementById("drm").innerHTML = elem;
