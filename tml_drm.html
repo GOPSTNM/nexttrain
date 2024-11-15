@@ -78,7 +78,7 @@
         let width = route[detail[0]][0];
         elem = "";
         for (let i = 0; i < detail[1]; i++) {
-          let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-45/330-45/86+90-route[detail[0]][0]);
+          let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-0);
           elem += `<div class='stn_name' style='left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
         }   
         elem += `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
