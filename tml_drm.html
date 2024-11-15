@@ -88,12 +88,12 @@
         for (let i = 0; i < detail[1]; i++) {
           let mid = ((i*(width-90/330-90/86)/(detail[1]-1))-(90-width)/2)-90/660;
           if (i<=detail[2]) {
-            let tcolor = "Silver";
+            elem += `<div class='stn_name' style='color: Silver; font-size: calc(90vw/86); top:${48-13*(i%2)}%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
+            elem += `<div class='stn_name etext' style='color: Silver; font-size: calc(90vw/160); top:${53-13*(i%2)}%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
           } else {
-            let tcolor = "Black";
+            elem += `<div class='stn_name' style='color: Black; font-size: calc(90vw/86); top:${48-13*(i%2)}%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
+            elem += `<div class='stn_name etext' style='color: Black; font-size: calc(90vw/160); top:${53-13*(i%2)}%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
           }
-          elem += `<div class='stn_name' style='color: ${tcolor}; font-size: calc(90vw/86); top:${48-13*(i%2)}%; left: ${mid}vw;'>${data[detail[0]+"_c_stn"][i]}</div>`;
-          elem += `<div class='stn_name etext' style='color: ${tcolor}; font-size: calc(90vw/160); top:${53-13*(i%2)}%; left: ${mid}vw;'>${data[detail[0]+"_e_stn"][i]}</div>`;
         }   
         elem += "<h1 class='bar' style=''>本班列車以第一城為終點站</h1>"
         document.getElementById("drm").innerHTML = elem;
