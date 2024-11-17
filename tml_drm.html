@@ -82,7 +82,7 @@
         let grey = detail[2]*98/(detail[1]-1)+1;
         let width = route[detail[0]][0];
         elem = `<div class='line' style='width: ${width}vw; background: linear-gradient(to right, White 1%, Silver 1%, Silver ${grey}%, #${line_color} ${grey}%, #${line_color} 99%, White 99%);'>`;
-        for (let i = detail[3]+detail[4]*detail[1]; i < detail[1]; i+=1+detail[4]*-1) {
+        for (let i = detail[3]+detail[4]*detail[1]; i < detail[1],i>=0; i+=1+detail[4]*-1) {
           if (i<=detail[2]) {
             elem += "<div class='circ' style='border-color: Silver; background-color: White;'></div>";
           } else if (i==detail[2]+1 && detail[5]==0) {
@@ -92,7 +92,7 @@
           }
         }
         elem += "</div>";
-        for (let i = detail[3]+detail[4]*detail[1]; i < detail[1]; i+=1+detail[4]*-1) {
+        for (let i = detail[3]+detail[4]*detail[1]; i < detail[1],i>=0; i+=1+detail[4]*-1) {
           if (detail[4] == 1) {
             lr = "right";
           } else {
