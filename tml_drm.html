@@ -18,7 +18,7 @@
         border: 8px solid DimGray;
         margin: auto;
       }
-      .lower_bar {
+      .blue_bar {
         position: absolute;
         height: 70px;
         width: 100%;
@@ -28,30 +28,29 @@
         color: White;
         text-align: center;
       }
-      .lower_bar_ctext {
-        display: inline;
-        margin: auto;
-        font-family: "Noto Serif HK", serif;
-        font-size: 30px;
-        color: White;
-        text-align: center;
-      }
-      .lower_bar_etext {
-        display: inline;
-        margin: auto;
-        font-family: "Roboto", serif;
-        font-size: 30px;
-        color: White;
+      .door_bar {
+        position: absolute;
+        height: 90px;
+        width: 100%;
+        background-color: Yellow;
+        bottom: 0%;
+        font-size: 50px;
+        color: Black;
         text-align: center;
       }
       </style>
     </head>
     <body>
-        <div class="drm_base" id="drm">
-            <div class="lower_bar">
-              <span class="ctext">訊息</span>
-              <span class="etext">Message</span>
-            </div>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <div class="drm_base" id="drm">
+        <div class="door_bar">
+          <span class="ctext">請勿靠近車門</span>
+          <span class="etext">Please stand back from the train doors</span>
         </div>
+        <div class="blue_bar">
+          <span class="ctext">訊息</span>
+          <span class="etext">Message</span>
+        </div>
+      </div>
     </body>
 </html>
