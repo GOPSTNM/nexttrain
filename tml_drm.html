@@ -20,8 +20,19 @@
         width: 1000px;
         border: 8px solid #696969;
         margin: auto;
+        display: flex;
         justify-content: center;
         align-items: center;
+      }
+      .prim_mes_c {
+        display: inline-block;
+        font-size: 45px;
+        color: #000000;
+      }
+      .prim_mes_e {
+        display: inline-block;
+        font-size: 30px;
+        color: #000000;
       }
       .in_stn {
         display: flex;
@@ -92,8 +103,8 @@
     <body>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <div class="drm_base" id="drm">
-        <div class="ctext">本班列車暫停服務，請立即離開</div>
-        <div class="etext">Out of service. Exit immediately</div>
+        <div class="prim_mes_c ctext">本班列車暫停服務，請立即離開</div>
+        <div class="prim_mes_e etext">Out of service. Exit immediately</div>
         <div class="in_stn hide">
           <div class="in_stn_ctext ctext">尖東</div>
           <div class="in_stn_circ"></div>
