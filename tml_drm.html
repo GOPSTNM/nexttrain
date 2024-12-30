@@ -21,6 +21,17 @@
         border: 8px solid #696969;
         margin: auto;
       }
+      .door_bar {
+        position: absolute;
+        bottom: 0%;
+        height: 80px;
+        width: 100%;
+        background-color: #ffe100;
+        font-size: 38px;
+        color: #000000;
+        text-align: center;
+        line-height: 80px;
+      }
       .blue_bar {
         position: absolute;
         bottom: 0%;
@@ -32,11 +43,25 @@
         text-align: center;
         line-height: 60px;
       }
+      .door_mtg {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .mirror {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
       </style>
     </head>
     <body>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <div class="drm_base" id="drm">
+        <div class="door_bar">
+          <img class="door_mtg" src="logo/mind_the_gap.svg" width="70px" height="70px">
+          <span class="ctext">請小心月台空隙</span>
+          <span class="etext">Please mind the gap</span>
+          <img class="door_mtg mirror" src="logo/mind_the_gap.svg" width="70px" height="70px">
+        </div>
         <div class="blue_bar">
           <span class="ctext">訊息</span>
           <span class="etext">Message</span>
