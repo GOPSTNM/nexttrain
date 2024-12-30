@@ -21,8 +21,21 @@
         border: 8px solid #696969;
         margin: auto;
       }
+      .in_stn {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
       .in_stn > * {
         display: inline-block;
+      }
+      .in_stn > .ctext {
+        font-size: 65px;
+      }
+      .in_stn > .etext {
+        font-size: 42px;
       }
       .in_stn_circ {
         height: 50px;
@@ -39,9 +52,6 @@
         50% {
           background-color: #ffffff;
         }
-      }
-      .in_stn_text {
-        font-size: 60px;
       }
       .door_bar {
         position: absolute;
@@ -85,9 +95,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <div class="drm_base" id="drm">
         <div class="in_stn">
-          <span class="in_stn_text ctext">尖東</span>
+          <span class="ctext">尖東</span>
           <div class="in_stn_circ"></div>
-          <span class="in_stn_text etext">East Tsim Sha Tsui</span>
+          <span class="etext">East Tsim Sha Tsui</span>
         </div>
         <div class="door_bar">
           <span class="ctext">請小心月台空隙</span>
