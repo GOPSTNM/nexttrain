@@ -43,12 +43,19 @@
         text-align: center;
         line-height: 60px;
       }
-      .door_mtg {
-        display: inline-block;
-        margin-left: 20px;
-        margin-right: 20px;
+      .door_mtg_left {
+        position: absolute;
+        bottom: 40px;
+        left: 70px;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
-      .mirror {
+      .door_mtg_right {
+        position: absolute;
+        bottom: 40px;
+        right: 70px;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
       }
@@ -58,11 +65,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <div class="drm_base" id="drm">
         <div class="door_bar">
-          <img class="door_mtg" src="logo/mind_the_gap.svg" width="70px" height="70px">
           <span class="ctext">請小心月台空隙</span>
           <span class="etext">Please mind the gap</span>
-          <img class="door_mtg mirror" src="logo/mind_the_gap.svg" width="70px" height="70px">
         </div>
+        <img class="door_mtg_left" src="logo/mind_the_gap.svg" width="70px" height="70px">
+        <img class="door_mtg_right" src="logo/mind_the_gap.svg" width="70px" height="70px">
         <div class="blue_bar hide">
           <span class="ctext">訊息</span>
           <span class="etext">Message</span>
