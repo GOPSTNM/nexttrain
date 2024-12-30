@@ -21,6 +21,21 @@
         border: 8px solid #696969;
         margin: auto;
       }
+      .in_stn_circ {
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        border: 6px solid;
+        margin-left: 20px;
+        margin-right: 20px;
+        animation: blinker 2s step-start infinite;
+        background-color: #ffe100;
+      }
+      @keyframes blinker {
+        50% {
+          background-color: #ffffff;
+        }
+      }
       .door_bar {
         position: absolute;
         bottom: 0%;
@@ -62,6 +77,11 @@
     <body>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <div class="drm_base" id="drm">
+        <div class="in_stn">
+          <span class="ctext">尖東</span>
+          <div class="in_stn_circ"></div>
+          <span class="etext">East Tsim Sha Tsui</span>
+        </div>
         <div class="door_bar">
           <span class="ctext">請小心月台空隙</span>
           <span class="etext">Please mind the gap</span>
