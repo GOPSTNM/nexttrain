@@ -21,95 +21,23 @@
         border: 8px solid #696969;
         margin: auto;
       }
-      
-      .in_stn {
-        display: flex;
-        height: 280px;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-      }
-      .in_stn_ctext {
-        display: inline-block;
-        line-height: 65px;
-        font-size: 65px;
-        color: #000000;
-        display: flex;
-        align-items: center;
-      }
-      .in_stn_etext {
-        display: inline-block;
-        line-height: 65px;
-        font-size: 42px;
-        color: #000000;
-        display: flex;
-        align-items: center;
-      }
-      .in_stn_circ {
-        display: inline-block;
-        height: 50px;
-        width: 50px;
-        border-radius: 100%;
-        border: 6px solid;
-        margin: auto 20px;
-        animation: blinker 2s step-start infinite;
-        background-color: #ffe100;
-        display: flex;
-        align-items: center;
-      }
-      @keyframes blinker {
-        50% {
-          background-color: #ffffff;
-        }
-      }
       .blue_bar {
         position: absolute;
+        bottom: 0%;
         height: 60px;
-        line-height: 60px;
         width: 100%;
         background-color: #011D57;
-        bottom: 0%;
         font-size: 35px;
         color: #ffffff;
         text-align: center;
         vertical-align: middle;
-      }
-      .door_bar {
-        position: absolute;
-        height: 80px;
-        line-height: 80px;
-        width: 100%;
-        background-color: #ffe100;
-        bottom: 0%;
-        font-size: 38px;
-        color: #000000;
-        text-align: center;
-        vertical-align: middle;
-      }
-      .mirror {
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-      }
-      .door_mtg {
-        margin-top: 10px;
       }
       </style>
     </head>
     <body>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <div class="drm_base" id="drm">
-        <div class="in_stn">
-          <div class="in_stn_ctext ctext">尖東</div>
-          <div class="in_stn_circ"></div>
-          <div class="in_stn_etext etext">East Tsim Sha Tsui</div>
-        </div>
-        <div class="door_bar">
-          <img class="door_mtg" src="logo/mind_the_gap.svg" width="60px" height="60px">
-          <span class="ctext">請小心月台空隙</span>
-          <span class="etext">Please mind the gap</span>
-          <img class="door_mtg mirror" src="logo/mind_the_gap.svg" width="60px" height="60px">
-        </div>
-        <div class="blue_bar hide">
+        <div class="blue_bar">
           <span class="ctext">訊息</span>
           <span class="etext">Message</span>
         </div>
