@@ -60,10 +60,10 @@
                 results += data["busStop"][i]["bus"][k]["busId"];
                 results += " ";
                 results += "Arrive ";
-                results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/60);
+                results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
                 results += " ";
                 results += "Depart ";
-                results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/60);
+                results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
                 results += " ";
                 results += "Scheduled ";
                 results += data["busStop"][i]["bus"][k]["isScheduled"];
