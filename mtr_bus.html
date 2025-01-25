@@ -76,7 +76,8 @@
           })
       }
       function change(elem) {
-        document.querySelector(`.${elem + '_data'}`).style.display = "none";
+        let to_change = "." + elem + "_data";
+        document.querySelector(to_change).style.display = "none";
       }
     </script>
   </body>
