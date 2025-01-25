@@ -29,11 +29,23 @@
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
     <script>
+      let viewdirection = 0;
+      function changedirection() {
+        if (viewdirection == 0) {
+          let viewdirection = 1;
+        } else {
+          let viewdirection = 0;
+        }
+      }
       function update() {
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
         };
+        fetch("mtr_bus_data/506.txt")
+          .then(response => {
+            let linedata = response.split('\n');
+          }
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
           .then(response => {
             if (!response.ok) {
@@ -47,6 +59,8 @@
           })
       }
       function todisplay(data) {
+        let viewdirectionvalue = linedata[1 + viewdirection * 2];
+        alert(viewdirectionvalue);
         let results = "";
         results += "System Time ";
         results += data["routeStatusTime"];
