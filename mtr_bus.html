@@ -44,7 +44,7 @@
         };
         fetch("mtr_bus_data/506.txt")
           .then(response => {
-            let linedata = response.split('\n');
+            let linedata = response.split("\n");
           });
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
           .then(response => {
@@ -59,8 +59,8 @@
           })
       }
       function todisplay(data) {
-        let viewdirectionvalue = linedata[1 + viewdirection * 2];
-        alert(viewdirectionvalue);
+        //let viewdirectionvalue = linedata[1 + viewdirection * 2];
+        //alert(viewdirectionvalue);
         let results = "";
         results += "System Time ";
         results += data["routeStatusTime"];
