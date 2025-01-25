@@ -67,7 +67,6 @@
       }
       function todisplay(data, linedata) {
         let viewdirectionvalue = linedata[1 + viewdirection * 2];
-        alert(viewdirectionvalue);
         let results = "";
         results += "System Time ";
         results += data["routeStatusTime"];
@@ -77,6 +76,9 @@
         results += "<br>";
         for (let i = 0; i < data["busStop"].length; i++) {
           let stop_id = data["busStop"][i]["busStopId"];
+          
+          if (stop_id.includes(viewdirectionvalue)) {
+            
           results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
           results += stop_id;
           results += " Bus Stop Status ";
@@ -99,6 +101,9 @@
           }
           results += "</div>";
           results += "<br>";
+            
+        }
+
         }
         document.getElementById("results").innerHTML = results;
       }
