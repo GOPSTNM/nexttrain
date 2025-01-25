@@ -30,7 +30,6 @@
     <div id="results"></div>
     <script>
       function update() {
-        let results = "";
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
@@ -47,38 +46,39 @@
           })
       }
       function todisplay(data) {
+        let results = "";
         results += "System Time ";
-            results += data["routeStatusTime"];
-            results += " Status ";
-            results += data["status"];
+        results += data["routeStatusTime"];
+        results += " Status ";
+        results += data["status"];
+        results += "<br>";
+        results += "<br>";
+        for (let i = 0; i < data["busStop"].length; i++) {
+          let stop_id = data["busStop"][i]["busStopId"];
+          results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
+          results += stop_id;
+          results += " Bus Stop Status ";
+          results += data["busStop"][i]["isSuspended"];
+          results += "</div>";
+          results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
+          for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
+            results += "Bus No. ";
+            results += data["busStop"][i]["bus"][k]["busId"];
+            results += " ";
+            results += "Arrive ";
+            results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
+            results += " ";
+            results += "Depart ";
+            results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
+            results += " ";
+            results += "Scheduled ";
+            results += data["busStop"][i]["bus"][k]["isScheduled"];
             results += "<br>";
-            results += "<br>";
-            for (let i = 0; i < data["busStop"].length; i++) {
-              let stop_id = data["busStop"][i]["busStopId"];
-              results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
-              results += stop_id;
-              results += " Bus Stop Status ";
-              results += data["busStop"][i]["isSuspended"];
-              results += "</div>";
-              results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
-              for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
-                results += "Bus No. ";
-                results += data["busStop"][i]["bus"][k]["busId"];
-                results += " ";
-                results += "Arrive ";
-                results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
-                results += " ";
-                results += "Depart ";
-                results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
-                results += " ";
-                results += "Scheduled ";
-                results += data["busStop"][i]["bus"][k]["isScheduled"];
-                results += "<br>";
-              }
-              results += "</div>";
-              results += "<br>";
-            }
-            document.getElementById("results").innerHTML = results;
+          }
+          results += "</div>";
+          results += "<br>";
+        }
+        document.getElementById("results").innerHTML = results;
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
