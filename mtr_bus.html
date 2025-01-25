@@ -48,6 +48,7 @@
           })
           .then(data => {
             let linedata = data.split("\n");
+            alert(linedata);
           })
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
           .then(response => {
