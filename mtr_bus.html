@@ -48,7 +48,7 @@
             results += "<br>";
             for (let i = 0; i < data["busStop"].length; i++) {
               let stop_id = data["busStop"][i]["busStopId"];
-              results += `<div id='${stop_id}' onclick='change(${stop_id})'>`;
+              results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
               results += stop_id;
               results += " Bus Stop Status ";
               results += data["busStop"][i]["isSuspended"];
