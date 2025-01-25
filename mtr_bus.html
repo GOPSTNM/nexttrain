@@ -26,6 +26,7 @@
       <option value="K76">K76天恆至天水圍站</option>
     </select>
     <input type="button" value="Update" onclick="update()">
+    <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
     <script>
       function update() {
@@ -42,7 +43,11 @@
             return response.json()
           })
           .then(data => {
-            results += "System Time ";
+            todisplay(data);
+          })
+      }
+      function todisplay(data) {
+        results += "System Time ";
             results += data["routeStatusTime"];
             results += " Status ";
             results += data["status"];
@@ -74,7 +79,6 @@
               results += "<br>";
             }
             document.getElementById("results").innerHTML = results;
-          })
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
