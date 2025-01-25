@@ -44,8 +44,10 @@
         };
         fetch("mtr_bus_data/506.txt")
           .then(response => {
-            let linedata = response.split("\n");
-            alert(linedata);
+            return response.text();
+          })
+          .then(data => {
+            let linedata = data.split("\n");
           });
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
           .then(response => {
