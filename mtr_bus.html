@@ -42,7 +42,8 @@
             return response.json()
           })
           .then(data => {
-            todisplay(data);
+            let rawdata = data;
+            todisplay(rawdata);
           })
       }
       function todisplay(data) {
