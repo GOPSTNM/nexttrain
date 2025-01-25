@@ -76,12 +76,14 @@
           })
       }
       function change(elem) {
+        alert("hi");
         let to_change = elem + "_data";
-        let dataElement = document.getElementById(to_change);
-        if (dataElement.style.display === "none" || dataElement.style.display === "") {
-          dataElement.style.display = "block";
+        let new_elem = document.getElementById(to_change);
+        alert(new_elem.value);
+        if (new_elem.style.display === "none" || new_elem.style.display === "") {
+          new_elem.style.display = "block";
         } else {
-          dataElement.style.display = "none";
+          new_elem.style.display = "none";
         }
       }
     </script>
