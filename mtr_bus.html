@@ -52,17 +52,13 @@
           })
           .then(data => {
             let rawdata = data;
-            todisplay(rawdata);
+            pretodisplay(rawdata);
           })
       }
+      function pretodisplay(rawdata) {
+        todisplay(rawdata);
+      }
       function todisplay(data) {
-        fetch("mtr_bus_data/506.txt")
-          .then(response => {
-            return response.text();
-          })
-          .then(data => {
-            let linedata = data.split("\n");
-          })
         let viewdirectionvalue = linedata[1 + viewdirection * 2];
         alert(viewdirectionvalue);
         let results = "";
