@@ -54,7 +54,7 @@
               results += data["busStop"][i]["isSuspended"];
               results += "</div>";
               results += "<br>";
-              results += `<div id='${stop_id + "_data"}'>`;
+              results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
               for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
                 results += "Bus No. ";
                 results += data["busStop"][i]["bus"][k]["busId"];
@@ -76,10 +76,13 @@
           })
       }
       function change(elem) {
-        alert("hi");
         let to_change = elem + "_data";
-        alert(to_change);
-        document.getElementById(to_change).style.display = "none";
+        let dataElement = document.getElementById(to_change);
+        if (dataElement.style.display === "none" || dataElement.style.display === "") {
+          dataElement.style.display = "block";
+        } else {
+          dataElement.style.display = "none";
+        }
       }
     </script>
   </body>
