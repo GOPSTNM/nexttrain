@@ -62,10 +62,10 @@
           })
           .then(data => {
             let linedata = data.split("\n");
-            todisplay(rawdata);
+            todisplay(rawdata, linedata);
           })
       }
-      function todisplay(data) {
+      function todisplay(data, linedata) {
         let viewdirectionvalue = linedata[1 + viewdirection * 2];
         alert(viewdirectionvalue);
         let results = "";
