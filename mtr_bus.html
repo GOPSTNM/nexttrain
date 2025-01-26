@@ -32,6 +32,8 @@
       let viewdirection = 0;
       let linedata = "";
       let results = "";
+      let rawdata = "";
+      let linedata = "";
       function changedirection() {
         if (viewdirection == 0) {
           viewdirection = 1;
@@ -54,7 +56,7 @@
             return response.json()
           })
           .then(data => {
-            let rawdata = data;
+            rawdata = data;
             pretodisplay(rawdata);
           })
       }
@@ -64,7 +66,7 @@
             return response.text();
           })
           .then(data => {
-            let linedata = data.split("\n");
+            linedata = data.split("\n");
             results = "No Data";
             todisplay(rawdata, linedata);
           })
