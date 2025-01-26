@@ -85,7 +85,7 @@
         for (let i = 0; i < data["busStop"].length; i++) {
           let stop_id = data["busStop"][i]["busStopId"];
           alert(data["busStop"][i]["bus"][0]["lineRef"]);
-          if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"] == "CIR") {
+          if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"].includes("CIR")) {
             results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
             results += linedata[i + 4];
             results += " Bus Stop Status ";
