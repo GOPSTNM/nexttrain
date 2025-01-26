@@ -31,12 +31,14 @@
     <script>
       let viewdirection = 0;
       let linedata = "";
+      let results = "";
       function changedirection() {
         if (viewdirection == 0) {
           viewdirection = 1;
         } else {
           viewdirection = 0;
         }
+        results = "No Data";
         todisplay(rawdata, linedata);
       }
       function update() {
@@ -63,12 +65,13 @@
           })
           .then(data => {
             let linedata = data.split("\n");
+            results = "No Data";
             todisplay(rawdata, linedata);
           })
       }
       function todisplay(data, linedata) {
         let viewdirectionvalue = linedata[1 + viewdirection * 2];
-        let results = "";
+        results = "";
         results += "System Time ";
         results += data["routeStatusTime"];
         results += " Status ";
