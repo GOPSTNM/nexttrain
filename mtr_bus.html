@@ -88,8 +88,9 @@
           if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"].includes("CIR")) {
             results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
             results += linedata[i + 4];
-            results += " Bus Stop Status ";
-            results += data["busStop"][i]["isSuspended"];
+            if (data["busStop"][i]["isSuspended"] == 1) {
+              results += " 暫停服務";
+            }
             results += "</div>";
             results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
             for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
