@@ -101,9 +101,9 @@
               results += " ";
               results += "Depart ";
               results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
-              results += " ";
-              results += "Scheduled ";
-              results += data["busStop"][i]["bus"][k]["isScheduled"];
+              if (data["busStop"][i]["bus"][k]["isScheduled"] == 1) {
+                results += " 預定班次";
+              }
               results += "<br>";
             }
             results += "</div>";
