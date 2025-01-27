@@ -91,7 +91,7 @@
           if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"].includes("CIR") || typeof viewdirectionvalue === "undefined") {
             results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
             if (typeof viewdirectionvalue === "undefined") {
-              results += data["busStop"][i]["busStopId"]
+              results += data["busStop"][i]["busStopId"];
             } else {
               results += linedata[i + 4];
             } 
