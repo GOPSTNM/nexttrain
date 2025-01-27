@@ -79,7 +79,11 @@
         results += data["status"];
         results += "<br>";
         results += "<br>";
-        results += linedata[0 + viewdirection * 2];
+        if (typeof linedata[0 + viewdirection * 2] === "undefined") {
+          results += document.getElementById("route").value;
+        } else {
+          results += linedata[0 + viewdirection * 2];
+        }
         results += "<br>";
         results += "<br>";
         for (let i = 0; i < data["busStop"].length; i++) {
