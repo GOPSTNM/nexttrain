@@ -1,0 +1,24 @@
+High Volume
+322 1 L 1
+379 1 M Currently No Info
+
+Moderate Volume
+149 2 L 1
+319 2 R 4
+320 2 R 1
+323 2 R 1
+331 2 L Last
+336 2 M Right 1, Right 3, Left 5
+349 2 L 6
+350 2 R 1
+532 2 M Left 1 (Tall)
+
+Acceptable Volume
+346 3 L 4
+
+Acceptable with Minor Speaker Noise
+862 4 M Left 1 (Tall)
+
+Not Good
+343 5
+354 5
