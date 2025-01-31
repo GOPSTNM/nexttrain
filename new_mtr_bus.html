@@ -35,7 +35,7 @@
         viewdirection = (viewdirection + 1) % 2;
       }
       function changeroute() {
-        fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, options, 2000)
+        fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
           .then(response => {
             return response.text();
           })
