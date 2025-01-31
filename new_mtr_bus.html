@@ -37,13 +37,17 @@
       function changeroute() {
         fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
           .then(response => {
+            if (!response.ok) throw new Error();
             return response.text();
           })
           .then(data => {
+            if (!data || data.trim() === "") {
+              throw new Error();
+            }
             routedata = data.split("\n");
           })
           .catch(() => {
-            alert("Cannot load stop names.");
+            alert("Cannot load stop names. Info will show as stop codes.");
           });
       }
       function update() {
