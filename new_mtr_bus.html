@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTR Bus Arrival Time</title>
+  </head>
+  <body>
+    <h1>MTR Bus Arrival Time</h1>
+    <select id="route" onchange="changeroute()"> 
+      <option value="506">506屯門碼頭至兆麟</option>
+      <option value="K51">K51富泰至大欖</option>
+      <option value="K51A">K51A富泰至掃管笏</option>
+      <option value="K52">K52悅湖山莊至龍鼓灘</option>
+      <option value="K52A">K52A屯門站至曾咀</option>
+      <option value="K53">K53屯門站至掃管笏(循環綫)</option>
+      <option value="K54">K54和田邨至屯門市中心(循環綫)</option>
+      <option value="K54A">K54A和田邨至兆康站</option>
+      <option value="K58">K58富泰至掃管笏</option>
+      <option value="K65">K65元朗站至流浮山</option>
+      <option value="K65A">K65A天水圍站至流浮山</option>
+      <option value="K66">K66朗屏至大棠黃泥墩村</option>
+      <option value="K68">K68元朗工業邨至元朗公園(循環綫)</option>
+      <option value="K73">K73天恆至元朗西</option>
+      <option value="K74">K74天水圍市中心至凹頭(循環綫)</option>
+      <option value="K75A">K75A天水圍站至洪水橋(循環綫)</option>
+      <option value="K75P">K75P天瑞至洪水橋(循環綫)</option>
+      <option value="K76">K76天恆至天水圍站</option>
+    </select>
+    <input type="button" value="Update" onclick="update()">
+    <input type="button" value="Change Direction" onclick="changedirection()">
+    <div id="results"></div>
+    <script>
+      let routedata;
+      let viewdirection = 0;
+      function changedirection() {
+        let viewdirection = (viewdirection + 1) % 2;
+        alert(viewdirection);
+      }
+      function update() {
+        let params = {
+          language: "en",
+          routeName: document.getElementById("route").value
+        };
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
+          .then(response => {
+            if (!response.ok) {
+              let results = "Error";
+            }
+            return response.json()
+          })
+          .then(data => {
+            rawdata = data;
+            pretodisplay(rawdata);
+          })
+      }
+      function pretodisplay(rawdata) {
+        fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`)
+          .then(response => {
+            return response.text();
+          })
+          .then(data => {
+            linedata = data.split("\n");
+            results = "No Data";
+            todisplay(rawdata, linedata);
+          })
+      }
+      function todisplay(data, linedata) {
+        let viewdirectionvalue = linedata[1 + viewdirection * 2];
+        results = "";
+        results += "System Time ";
+        results += data["routeStatusTime"];
+        results += " Status ";
+        results += data["status"];
+        results += "<br>";
+        results += "<br>";
+        if (typeof linedata === "undefined") {
+          results += document.getElementById("route").value;
+        } else {
+          results += linedata[0 + viewdirection * 2];
+        }
+        results += "<br>";
+        results += "<br>";
+        for (let i = 0; i < data["busStop"].length; i++) {
+          let stop_id = data["busStop"][i]["busStopId"];
+          if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"].includes("CIR") || typeof linedata === "undefined") {
+            results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
+            if (typeof viewdirectionvalue === "undefined") {
+              results += data["busStop"][i]["busStopId"];
+            } else {
+              results += linedata[i + 4];
+            } 
+            if (data["busStop"][i]["isSuspended"] == 1) {
+              results += " 暫停服務";
+            }
+            results += "</div>";
+            results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
+            for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
+              results += data["busStop"][i]["bus"][k]["busId"];
+              results += " ";
+              results += "Arrive ";
+              results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
+              results += " ";
+              results += "Depart ";
+              results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
+              if (data["busStop"][i]["bus"][k]["isScheduled"] == 1) {
+                results += " 預定班次";
+              }
+              results += "<br>";
+            }
+            results += "</div>";
+            results += "<br>";
+          }
+        }
+        document.getElementById("results").innerHTML = results;
+      }
+      function change(elem) {
+        let to_change = document.getElementById(elem + "_data");
+        if (to_change.style.display === "none" || to_change.style.display === "") {
+          to_change.style.display = "block";
+        } else {
+          to_change.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
