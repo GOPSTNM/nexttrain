@@ -29,11 +29,12 @@
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
     <script>
-      let routedata;
-      let recdata;
+      let routedata = "No Data";
+      let recdata = "No Data";
       let viewdirection = 0;
       function changedirection() {
         viewdirection = (viewdirection + 1) % 2;
+        todisplay()
       }
       function changeroute() {
         fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
@@ -46,6 +47,7 @@
               throw new Error();
             }
             routedata = data.split("\n");
+            todisplay()
           })
           .catch(() => {
             routedata = "No Data";
@@ -71,7 +73,10 @@
             alert("Cannot load data. Try again later.");
           });
       }
-      function todisplay(data, linedata) {
+      function todisplay() {
+        let results = new Date().toLocaleTimeString();
+        alert(results);
+        
         let viewdirectionvalue = linedata[1 + viewdirection * 2];
         results = "";
         results += "System Time ";
