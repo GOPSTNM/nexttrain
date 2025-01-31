@@ -20,5 +20,5 @@ Acceptable with Minor Speaker Noise
 862 4 M Left 1 (Tall)
 
 Not Good
-343 5
-354 5
+343 5 No Sound on Upper Deck
+354 5 No Sound on Upper Deck
