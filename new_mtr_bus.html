@@ -33,7 +33,18 @@
       let viewdirection = 0;
       function changedirection() {
         viewdirection = (viewdirection + 1) % 2;
-        alert(viewdirection);
+      }
+      function changeroute() {
+        fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, options, 2000)
+          .then(response => {
+            return response.text();
+          })
+          .then(data => {
+            routedata = data.split("\n");
+          })
+          .catch(() => {
+            alert("Cannot load stop names.");
+          });
       }
       function update() {
         let params = {
