@@ -533,5 +533,47 @@
       "230": "朗屏邨珠屏樓 Chu Ping House, Long Ping Estate",
       "240": "朗屏 Long Ping"
     }
+  },
+  "K68": {
+    "C": {
+      "U010": "元朗工業邨 Yuen Long Industrial Estate",
+      "U020": "凸版資訊卡 Toppan Forms Card Tech Ltd",
+      "U030": "雀巢 Nestle (HK) Ltd",
+      "U040": "元朗污水處理廠 Yuen Long Sewage Treatment Works",
+      "U050": "位元堂藥業大廈 Wai Yuen Tong Medicine Building",
+      "U060": "東電化電子零件 TDK Manufacturing (HK) Co Ltd",
+      "U070": "凸版印刷 Toppan Printing Co (HK) Ltd",
+      "U080": "匯泉國際實業 Telford International Industries Ltd",
+      "U090": "橫洲福慶村 Wang Chau Fuk Hing Tsuen",
+      "U100": "朗屏 (巴士總站) Long Ping (Bus Terminus)",
+      "U110": "楊屋村 Yeung Uk Tsuen",
+      "U120": "屏昌徑 (港鐵朗屏站) Ping Cheong Path (MTR Long Ping Station)",
+      "U130": "元朗盲人安老院 Yuen Long Home for the Aged Blind",
+      "U140": "聿修堂 (輕鐵豐年路站) Lut Sau Hall (LR Fung Nin Road Stop)",
+      "U150": "元朗劇院 Yuen Long Theatre",
+      "U160": "銀田花園 Silver Field Garden",
+      "U170": "南元朗官立小學 South Yuen Long Government Primary School",
+      "D010": "元朗公園 Yuen Long Park",
+      "D020": "御豪山莊 Park Royale",
+      "D030": "藝典居 Villa Art Deco",
+      "D040": "御庭居 Springdale Villas",
+      "D050": "元朗游泳池 Yuen Long Swimming Pool",
+      "D060": "元朗大會堂 Yuen Long Town Hall",
+      "D070": "元朗廣場 (輕鐵豐年路站) Yuen Long Plaza (LR Fung Nin Road Stop)",
+      "D080": "元朗安寧路 Yuen Long On Ning Road",
+      "D090": "大橋村 (港鐵朗屏站) Tai Kiu Tsuen (MTR Long Ping Station)",
+      "D100": "惠州學校 Wai Chow School",
+      "D110": "朗屏邨珠屏樓 Chu Ping House, Long Ping Estate",
+      "D120": "朗屏 (巴士總站) Long Ping (Bus Terminus)",
+      "D130": "元朗紡織品 Yuen Long Textile Co Ltd",
+      "D140": "橫洲福慶村 Wang Chau Fuk Hing Tsuen",
+      "D150": "大昌行食品加工及物流中心 DCH Food Processing & Logistics Centre",
+      "D160": "有生鉛水(熱浸鋅) Yau Sang Galvanizers (Hot-Dip) Co Ltd",
+      "D170": "余仁生中心 Eu Yan Sang Centre",
+      "D180": "元朗污水處理廠 Yuen Long Sewage Treatment Works",
+      "D190": "雀巢 Nestle (HK) Ltd",
+      "D200": "牛尾香港 Ushio HK Ltd",
+      "U011": "元朗工業邨 Yuen Long Industrial Estate"
+    }
   }
 }
