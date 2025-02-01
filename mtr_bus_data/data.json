@@ -296,5 +296,39 @@
       "D190": "業旺邨 Yip Wong Estate",
       "U011": "屯門站 (輕鐵屯門站) Tuen Mun Station (LR Tuen Mun Stop)"
     }
+  },
+  "K54": {
+    "C": {
+      "U010": "和田邨 Wo Tin Estate",
+      "U020": "菁田邨 Ching Tin Estate",
+      "U030": "紫田村 Tsz Tin Tsuen",
+      "U040": "欣田邨 Yan Tin Estate",
+      "U050": "港鐵兆康站 (北) (輕鐵兆康站) MTR Siu Hong Station (North) (LR Siu Hong Stop)",
+      "U060": "紅橋 Hung Kiu",
+      "U070": "屯門市中心 Tuen Mun Town Centre",
+      "D010": "屯門市廣場 Tuen Mun Town Plaza",
+      "D020": "新墟街市 San Hui Market",
+      "D030": "港鐵兆康站 (北) (輕鐵兆康站) MTR Siu Hong Station (North) (LR Siu Hong Stop)",
+      "D040": "兆康苑 Siu Hong Court",
+      "D050": "欣寶路公共運輸交匯處 Yan Po Road Public Transport Interchange",
+      "D060": "菁田邨 Ching Tin Estate",
+      "D070": "和田邨 Wo Tin Estate"
+    }
+  },
+  "K54A": {
+    "U": {
+      "U010": "和田邨 Wo Tin Estate",
+      "U020": "菁田邨 Ching Tin Estate",
+      "U030": "紫田村 Tsz Tin Tsuen",
+      "U040": "欣田邨 Yan Tin Estate",
+      "U050": "港鐵兆康站 (北) (輕鐵兆康站) MTR Siu Hong Station (North) (LR Siu Hong Stop)"
+    },
+    "D": {
+      "D010": "港鐵兆康站 (北) (輕鐵兆康站) MTR Siu Hong Station (North) (LR Siu Hong Stop)",
+      "D020": "兆康苑 Siu Hong Court",
+      "D030": "欣寶路公共運輸交匯處 Yan Po Road Public Transport Interchange",
+      "D040": "菁田邨 Ching Tin Estate",
+      "D050": "和田邨 Wo Tin Estate"
+    }
   }
 }
