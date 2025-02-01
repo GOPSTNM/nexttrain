@@ -51,9 +51,6 @@
               alert("saved data");
               todisplay()
             })
-            .catch(error => {
-              routedata = "No Data";
-            });
         } else {
           alert("use old data");
           routedata = localStorage.getItem(document.getElementById("route").value).split("\n");
