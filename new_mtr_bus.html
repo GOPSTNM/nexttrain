@@ -68,7 +68,9 @@
           })
           .catch(error => {
             recdata = "No Data";
-            alert("Cannot load data. Try again later.");
+            if (error.name === "TimeoutError") {
+              alert('5000 ms timeout');
+            }
           });
       }
       function todisplay() {
