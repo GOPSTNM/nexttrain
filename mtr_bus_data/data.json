@@ -30,8 +30,7 @@
       "130": "海翠花園 Pierhead Garden",
       "140": "屯門碼頭 Tuen Mun Ferry Pier"
     }
-  }
-  {
+  },
   "K51": {
     "U": {
       "010": "富泰 Fu Tai",
@@ -90,6 +89,63 @@
       "270": "嶺南大學 Lingnan University",
       "280": "倚嶺南庭 South Hillcrest",
       "290": "富泰 Fu Tai"
+    }
+  },
+  "K51A": {
+    "U": {
+      "010": "富泰 Fu Tai",
+      "020": "聚康山莊 Beneville",
+      "030": "嶺南大學 Lingnan University",
+      "040": "彩暉花園 Brilliant Garden",
+      "050": "港鐵兆康站 (南) (輕鐵兆康站) MTR Siu Hong Station (South) (LR Siu Hong Stop)",
+      "060": "井財街 Tseng Choi Street",
+      "070": "雅都商場 ACME Shopping Arcade",
+      "080": "德政圍 (港鐵屯門站) Tak Ching Court (MTR Tuen Mun Station)",
+      "090": "屯門市中心 (輕鐵市中心站) Tuen Mun Town Centre (LR Town Centre Stop)",
+      "100": "屯門官立中學 Tuen Mun Government Secondary School",
+      "110": "恒順園 Handsome Court",
+      "120": "恒豐園 Harvest Garden",
+      "130": "三聖邨 Sam Shing Estate",
+      "140": "青山灣 Castle Peak Beach",
+      "150": "海景花園 Seaview Garden",
+      "160": "咖啡灣 Cafeteria Beach",
+      "170": "黃金泳灘 Golden Beach",
+      "180": "香港黃金海岸 Hong Kong Gold Coast",
+      "190": "愛琴海岸 Aegean Coast",
+      "200": "掃管笏變電站 So Kwun Wat Sub-station",
+      "210": "掃管笏村 So Kwun Wat Tsuen",
+      "220": "掃管笏 (鄭任安夫人千禧小學) So Kwun Wat (Mrs. Cheng Yam On Millennium School)",
+      "230": "掃管笏路 So Kwun Wat Road",
+      "240": "管翠路 18 號 18 Kwun Chui Road",
+      "250": "掃管笏村 So Kwun Wat Tsuen"
+    },
+    "D": {
+      "010": "掃管笏村 So Kwun Wat Tsuen",
+      "020": "掃管笏 (鄭任安夫人千禧小學) So Kwun Wat (Mrs. Cheng Yam On Millennium School)",
+      "030": "掃管笏路 So Kwun Wat Road",
+      "040": "管翠路 18 號 18 Kwun Chui Road",
+      "050": "管翠路 Kwun Chui Road",
+      "060": "愛琴海岸 Aegean Coast",
+      "070": "香港黃金海岸 Hong Kong Gold Coast",
+      "080": "黃金泳灘 Golden Beach",
+      "090": "咖啡灣 Cafeteria Beach",
+      "100": "碧翠花園 Bayview Terrace",
+      "110": "青山灣碼頭 Castle Peak Bay Pier",
+      "120": "三聖邨 Sam Shing Estate",
+      "140": "胡陳金枝中學 Mrs Aw Boon Haw Secondary School",
+      "150": "青善遊樂場 Tsing Sin Playground",
+      "160": "置樂花園 Chi Lok Fa Yuen",
+      "170": "屯門官立中學 Tuen Mun Government Secondary School",
+      "180": "輕鐵市中心站 LR Town Centre Stop",
+      "190": "港鐵屯門站 (輕鐵屯門站) MTR Tuen Mun Station (LR Tuen Mun Stop)",
+      "200": "聖公會聖西門呂明才中學 SKH St. Simon's Lui Ming Choi Secondary School",
+      "210": "景峰花園 Prime View Garden",
+      "220": "輕鐵鳳地站 LR Fung Tei Stop",
+      "230": "港鐵兆康站 (南) (輕鐵兆康站) MTR Siu Hong Station (South) (LR Siu Hong Stop)",
+      "240": "彩暉花園 Brilliant Garden",
+      "250": "嶺南大學 Lingnan University",
+      "260": "倚嶺南庭 South Hillcrest",
+      "270": "富泰 Fu Tai"
     }
   }
 }
