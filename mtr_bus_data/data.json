@@ -1,28 +1,34 @@
 {
   "506": {
-    "U010": "屯門碼頭 Tuen Mun Ferry Pier",
-    "U020": "美樂花園 Melody Garden",
-    "U030": "輕鐵蝴蝶站 LR Butterfly Stop",
-    "U040": "輕鐵車廠站 Light Rail Depot Stop",
-    "U050": "輕鐵龍門站 LR Lung Mun Stop",
-    "U060": "輕鐵青雲站 LR Tsing Wun Stop",
-    "U070": "輕鐵建安站 LR Kin On Stop",
-    "U080": "港鐵屯門站 MTR Tuen Mun Station",
-    "U090": "屯門市中心 Tuen Mun Town Centre",
-    "U100": "安定邨 On Ting Estate",
-    "U110": "輕鐵三聖站 LR Sam Shing Stop",
-    "U120": "兆麟 Siu Lun",
-    "D010": "兆麟 Siu Lun",
-    "D020": "友愛邨 Yau Oi Estate",
-    "U120": "輕鐵市中心站 LR Town Centre Stop",
-    "U130": "輕鐵屯門站 (港鐵屯門站) LR Tuen Mun Stop (MTR Tuen Mun Station)",
-    "U140": "聖彼得堂 SKH St. Peter's Church",
-    "U150": "富健花園 Glorious Garden",
-    "U160": "新屯門中心 Sun Tuen Mun Centre",
-    "U170": "輕鐵蝴蝶站 LR Butterfly Stop",
-    "U180": "蝴蝶邨蝶心樓 Tip Sum House, Butterfly Estate",
-    "U190": "湖景邨湖碧樓 Wu Pik House, Wu King Estate",
-    "U200": "海翠花園 Pierhead Garden",
-    "U210": "屯門碼頭 Tuen Mun Ferry Pier"
+    "U": {
+      "010": "屯門碼頭 Tuen Mun Ferry Pier",
+      "020": "美樂花園 Melody Garden",
+      "030": "輕鐵蝴蝶站 LR Butterfly Stop",
+      "040": "輕鐵車廠站 Light Rail Depot Stop",
+      "050": "輕鐵龍門站 LR Lung Mun Stop",
+      "060": "輕鐵青雲站 LR Tsing Wun Stop",
+      "070": "輕鐵建安站 LR Kin On Stop",
+      "080": "港鐵屯門站 MTR Tuen Mun Station",
+      "090": "屯門市中心 Tuen Mun Town Centre",
+      "100": "安定邨 On Ting Estate",
+      "110": "輕鐵三聖站 LR Sam Shing Stop",
+      "120": "兆麟 Siu Lun"
+    },
+    "D": {
+      "010": "兆麟 Siu Lun",
+      "020": "友愛邨 Yau Oi Estate",
+      "030": "輕鐵市中心站 LR Town Centre Stop",
+      "040": "輕鐵屯門站 (港鐵屯門站) LR Tuen Mun Stop (MTR Tuen Mun Station)",
+      "050": "輕鐵建安站 LR Kin On Stop",
+      "060": "輕鐵青雲站 LR Tsing Wun Stop",
+      "070": "聖彼得堂 SKH St. Peter's Church",
+      "080": "富健花園 Glorious Garden",
+      "090": "新屯門中心 Sun Tuen Mun Centre",
+      "100": "輕鐵蝴蝶站 LR Butterfly Stop",
+      "110": "蝴蝶邨蝶心樓 Tip Sum House, Butterfly Estate",
+      "120": "湖景邨湖碧樓 Wu Pik House, Wu King Estate",
+      "130": "海翠花園 Pierhead Garden",
+      "140": "屯門碼頭 Tuen Mun Ferry Pier"
+    }
   }
 }
