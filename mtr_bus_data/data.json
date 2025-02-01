@@ -575,5 +575,81 @@
       "D200": "牛尾香港 Ushio HK Ltd",
       "U011": "元朗工業邨 Yuen Long Industrial Estate"
     }
+  },
+  "K74": {
+    "C": {
+      "U001": "天水圍市中心 Tin Shui Wai Town Centre",
+      "U004": "天頌苑頌棋閣 Chung Ki House Tin Chung Court",
+      "U007": "天頌苑 Tin Chung Court",
+      "U010": "天瑞 Tin Shui",
+      "U020": "天水圍公園 Tin Shui Wai Park",
+      "U030": "天慈苑 Tin Tsz Estate",
+      "U040": "鳳池村 Fung Chi Tsuen",
+      "U050": "朗屏 (巴士總站) Long Ping (Bus Terminus)",
+      "U060": "元朗盲人安老院 Yuen Long Home for the Aged Blind",
+      "U070": "元朗廣場 (輕鐵豐年路站) Yuen Long Plaza (LR Fung Nin Road Stop)",
+      "U080": "開心廣場 Yuen Long Landmark",
+      "U090": "港鐵元朗站 (朗日路) (港鐵元朗站) MTR Yuen Long Station (Long Yat Road) (MTR Yuen Long Station)",
+      "U100": "博愛醫院 Pok Oi Hospital",
+      "D010": "東成里 Tung Shing Lei",
+      "D020": "東華三院馬振玉中學 (朗善邨) TWGHs C.Y.Ma Memorial College (Long Shin Estate)",
+      "D030": "大橋村 (港鐵朗屏站) Tai Kiu Tsuen (MTR Long Ping Station)",
+      "D040": "惠州學校 Wai Chow School",
+      "D050": "朗屏珠屏樓 Chu Ping House, Long Ping Estate",
+      "D060": "朗屏 (巴士總站) Long Ping (Bus Terminus)",
+      "D070": "鳳池村 Fung Chi Tsuen",
+      "D080": "輕鐵天慈站 LR Tin Tsz Stop",
+      "D090": "天水圍公園 Tin Shui Wai Park",
+      "U011": "天瑞 Tin Shui",
+      "D100": "天華邨 Tin Wah Estate",
+      "D110": "天悅邨 Tin Yuet Estate"
+      "U002": "天水圍市中心 Tin Shui Wai Town Centre",
+    }
+  },
+  "K75A": {
+    "C": {
+      "U010": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)",
+      "U020": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "U030": "石埗村 Shek Po Tsuen",
+      "D010": "輕鐵洪水橋站 LR Hung Shui Kiu Stop",
+      "D020": "鄉事委員會 Rural Committee",
+      "D030": "田心 Tin Sam",
+      "D040": "新李屋村 San Lee Uk Tsuen",
+      "D050": "新生村 San Sang Tsuen",
+      "D060": "李屋村 Lee Uk Tsuen",
+      "D070": "新屋村 San Uk Tsuen",
+      "D080": "廈村市 Ha Tsuen Shi",
+      "D090": "廈村 Ha Tsuen",
+      "D100": "沙洲里村 Sha Chau Lei Tsuen",
+      "D110": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "U011": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)"
+    }
+  },
+  "K75P": {
+    "C": {
+      "U010": "天瑞 Tin Shui",
+      "U020": "天水圍公園 Tin Shui Wai Park",
+      "U030": "天耀邨耀盛樓 Yiu Shing House, Tin Yiu Estate",
+      "U040": "輕鐵天耀站 LR Tin Yiu Stop",
+      "U050": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "U060": "石埗路 Shek Po Road",
+      "U070": "沙洲里村 Sha Chau Lei Tsuen",
+      "U080": "廈村市 Ha Tsuen Shi",
+      "U090": "新屋村 San Uk Tsuen",
+      "U100": "李屋村 Lee Uk Tsuen",
+      "U110": "新生村 San Sang Tsuen",
+      "U120": "新李屋村 San Lee Uk Tsuen",
+      "U130": "田心 Tin Sam",
+      "U140": "鄉事委員會 Rural Committee",
+      "D010": "輕鐵洪水橋站 LR Hung Shui Kiu Stop",
+      "D020": "洪水橋巴士廠 Hung Shui Kiu Bus Depot",
+      "D030": "洪福邨 Hung Fuk Estate",
+      "D040": "石埗村 Shek Po Tsuen",
+      "D050": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "D060": "天水圍警署 Tin Shui Wai Police Station",
+      "D070": "賞湖居 Sherwood Court",
+      "D080": "天水圍公園 Tin Shui Wai Park",
+      "U011": "天瑞 Tin Shui"
+    }
   }
 }
