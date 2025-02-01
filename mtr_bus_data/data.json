@@ -451,5 +451,35 @@
       "180": "谷亭街 Kuk Ting Street",
       "190": "元朗站(輕鐵元朗站) (港鐵元朗站) Yuen Long Station (LR Yuen Long Stop) (MTR Yuen Long Station)"
     }
+  },
+  "K65A": {
+    "U": {
+      "010": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)",
+      "020": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "030": "石埗路 Shek Po Road",
+      "040": "沙洲里村 Sha Chau Lei Tsuen",
+      "050": "廈村 Ha Tsuen",
+      "060": "錫降圍 Shek Kong Wai",
+      "070": "羅屋村 Lo Uk Tsuen",
+      "080": "東頭村 (南) Tung Tau Tsuen (South)",
+      "090": "東頭村 (北) Tung Tau Tsuen (North)",
+      "100": "鳳降村 Fung Kong Tsuen",
+      "110": "沙江圍 Sha Kong Wai",
+      "120": "新慶村 San Hing Tsuen",
+      "130": "流浮山 Lau Fau Shan"
+    },
+    "D": {
+      "010": "流浮山 Lau Fau Shan",
+      "020": "新慶村 San Hing Tsuen",
+      "030": "沙江圍 Sha Kong Wai",
+      "040": "鳳降村 Fung Kong Tsuen",
+      "050": "東頭村 Tung Tau Tsuen",
+      "060": "羅屋村 Lo Uk Tsuen",
+      "070": "錫降圍 Shek Kong Wai",
+      "080": "廈村 Ha Tsuen",
+      "090": "沙洲里村 Sha Chau Lei Tsuen",
+      "100": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "110": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)"
+    }
   }
 }
