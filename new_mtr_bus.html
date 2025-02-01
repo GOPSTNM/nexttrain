@@ -47,7 +47,7 @@
                 throw new Error();
               }
               routedata = data.split("\n");
-              localStorage.setItem(document.getElementById("route").value, routedata);
+              localStorage.setItem(document.getElementById("route").value, data);
               alert("saved data");
               todisplay()
             })
@@ -56,7 +56,7 @@
             });
         } else {
           alert("use old data");
-          routedata = localStorage.getItem(document.getElementById("route").value);
+          routedata = localStorage.getItem(document.getElementById("route").value).split("\n");
         }
         alert(routedata);
       }
