@@ -403,5 +403,53 @@
       "200": "倚嶺南庭 South Hillcrest",
       "210": "富泰 Fu Tai"
     }
+  },
+  "K65": {
+    "U": {
+      "010": "元朗站 (輕鐵元朗站) (港鐵元朗站) Yuen Long Station (LR Yuen Long Stop) (MTR Yuen Long Station)",
+      "020": "又新街 Yau San Street",
+      "030": "大棠路 Tai Tong Road",
+      "040": "康樂路 Hong Lok Road",
+      "050": "元朗警署 Yuen Long Police Station",
+      "060": "輕鐵水邊圍站 LR Shui Pin Wai Stop",
+      "070": "元朗公園 Yuen Long Park",
+      "080": "朗邊 Long Bin",
+      "090": "屏山屏興里 Ping Hing Lane, Ping Shan",
+      "100": "坑尾村 Hang Mei Tsuen",
+      "110": "輕鐵坑尾村站 LR Hang Mei Tsuen Stop",
+      "120": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "130": "石埗路 Shek Po Road",
+      "140": "沙洲里村 Sha Chau Lei Tsuen",
+      "150": "廈村 Ha Tsuen",
+      "160": "錫降圍 Shek Kong Wai",
+      "170": "羅屋村 Lo Uk Tsuen",
+      "180": "東頭村 (南) Tung Tau Tsuen (South)",
+      "190": "東頭村 (北) Tung Tau Tsuen (North)",
+      "200": "鳳降村 Fung Kong Tsuen",
+      "210": "沙江圍 Sha Kong Wai",
+      "220": "新慶村 San Hing Tsuen",
+      "230": "流浮山 Lau Fau Shan"
+    },
+    "D": {
+      "010": "流浮山 Lau Fau Shan",
+      "020": "新慶村 San Hing Tsuen",
+      "030": "沙江圍 Sha Kong Wai",
+      "040": "鳳降村 Fung Kong Tsuen",
+      "050": "東頭村 Tung Tau Tsuen",
+      "060": "羅屋村 Lo Uk Tsuen",
+      "070": "錫降圍 Shek Kong Wai",
+      "080": "廈村 Ha Tsuen",
+      "090": "沙洲里村 Sha Chau Lei Tsuen",
+      "100": "天盛苑（港鐵天水圍站）Tin Shing Court (MTR Tin Shui Wai Station)",
+      "110": "輕鐵坑尾村站 LR Hang Mei Tsuen Stop",
+      "120": "坑尾村 Hang Mei Tsuen",
+      "130": "屏山屏興里 Ping Hing Lane, Ping Shan",
+      "140": "輕鐵屏山站 LR Ping Shan Stop",
+      "150": "輕鐵水邊圍站 LR Shui Pin Wai Stop",
+      "160": "元朗廣場 Yuen Long Plaza",
+      "170": "開心廣場 Yuen Long Landmark",
+      "180": "谷亭街 Kuk Ting Street",
+      "190": "元朗站(輕鐵元朗站) (港鐵元朗站) Yuen Long Station (LR Yuen Long Stop) (MTR Yuen Long Station)"
+    }
   }
 }
