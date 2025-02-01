@@ -39,7 +39,6 @@
       function changeroute() {
         fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
           .then(response => {
-            if (!response.ok) throw new Error();
             return response.text();
           })
           .then(data => {
@@ -59,7 +58,7 @@
           language: "en",
           routeName: document.getElementById("route").value
         };
-        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(2000)})
           .then(response => {
             return response.json()
           })
