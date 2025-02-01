@@ -61,7 +61,6 @@
         };
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
           .then(response => {
-            if (!response.ok) throw new Error();
             return response.json();
           })
           .then(data => {
