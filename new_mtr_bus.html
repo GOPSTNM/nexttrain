@@ -78,54 +78,7 @@
           return;
         }
         let results = new Date().format("HH:mm:ss");
-        alert(results);
-        
-        let viewdirectionvalue = linedata[1 + viewdirection * 2];
-        results = "";
-        results += "System Time ";
-        results += data["routeStatusTime"];
-        results += " Status ";
-        results += data["status"];
-        results += "<br>";
-        results += "<br>";
-        if (typeof linedata === "undefined") {
-          results += document.getElementById("route").value;
-        } else {
-          results += linedata[0 + viewdirection * 2];
-        }
-        results += "<br>";
-        results += "<br>";
-        for (let i = 0; i < data["busStop"].length; i++) {
-          let stop_id = data["busStop"][i]["busStopId"];
-          if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"].includes("CIR") || typeof linedata === "undefined") {
-            results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
-            if (typeof viewdirectionvalue === "undefined") {
-              results += data["busStop"][i]["busStopId"];
-            } else {
-              results += linedata[i + 4];
-            } 
-            if (data["busStop"][i]["isSuspended"] == 1) {
-              results += " 暫停服務";
-            }
-            results += "</div>";
-            results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
-            for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
-              results += data["busStop"][i]["bus"][k]["busId"];
-              results += " ";
-              results += "Arrive ";
-              results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
-              results += " ";
-              results += "Depart ";
-              results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
-              if (data["busStop"][i]["bus"][k]["isScheduled"] == 1) {
-                results += " 預定班次";
-              }
-              results += "<br>";
-            }
-            results += "</div>";
-            results += "<br>";
-          }
-        }
+        results += data.stringify();
         document.getElementById("results").innerHTML = results;
       }
       function change(elem) {
