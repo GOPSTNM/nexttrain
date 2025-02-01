@@ -74,7 +74,10 @@
           });
       }
       function todisplay() {
-        let results = new Date().toLocaleTimeString();
+        if (recdata == "No Data") {
+          return;
+        }
+        let results = new Date().format("HH:mm:ss");
         alert(results);
         
         let viewdirectionvalue = linedata[1 + viewdirection * 2];
