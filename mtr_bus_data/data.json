@@ -576,6 +576,39 @@
       "U011": "元朗工業邨 Yuen Long Industrial Estate"
     }
   },
+  "K73": {
+    "U": {
+      "010": "天恆 Tin Heng",
+      "020": "天逸邨逸潭樓 Yat Tam House, Tin Yat Estate",
+      "030": "天逸邨逸洋樓 Yat Yeung House, Tin Yat Estate",
+      "040": "天晴邨晴碧樓 Ching Pik House, Tin Ching Estate",
+      "050": "香港青年協會李兆基書院 HKFYG Lee Shau Kee College",
+      "060": "天葵路美湖居 Maywood Court, Tin Kwai Road",
+      "070": "天城路景湖居 Kenswood Court, Tin Shing Road",
+      "080": "天慈邨 Tin Tsz Estate",
+      "090": "鳳池村 Fung Chi Tsuen",
+      "100": "朗屏 (巴士總站) Long Ping (Bus Terminus)",
+      "110": "元朗盲人安老院 Yuen Long Home for the Aged Blind",
+      "120": "元朗西 (輕鐵豐年路站) Yuen Long West (LR Fung Nin Road Stop)"
+    },
+    "D": {
+      "010": "元朗西 (輕鐵豐年路站) Yuen Long West (LR Fung Nin Road Stop)",
+      "020": "元朗安寧路 Yuen Long On Ning Road",
+      "030": "大橋村 (港鐵朗屏站) Tai Kiu Tsuen (MTR Long Ping Station)",
+      "040": "惠州學校 Wai Chow School",
+      "050": "朗屏邨珠屏樓 Chu Ping House, Long Ping Estate",
+      "070": "朗屏 (巴士總站) Long Ping (Bus Terminus)",
+      "080": "鳳池村 Fung Chi Tsuen",
+      "090": "輕鐵天慈站 LR Tin Tsz Stop",
+      "100": "天水圍游泳池 Tin Shui Wai Swimming Pool",
+      "110": "天龍路景湖居 Kenswood Court, Tin Lung Road",
+      "120": "天葵路麗湖居 Lynwood Court, Tin Kwai Road",
+      "130": "天晴邨晴雲樓 Ching Wan House, Tin Ching Estate",
+      "140": "天富苑能富閣 Nang Fu House, Tin Fu Court",
+      "150": "天澤邨 Tin Chak Estate",
+      "160": "天恆 Tin Heng"
+    }
+  },
   "K74": {
     "C": {
       "U001": "天水圍市中心 Tin Shui Wai Town Centre",
@@ -650,6 +683,21 @@
       "D070": "賞湖居 Sherwood Court",
       "D080": "天水圍公園 Tin Shui Wai Park",
       "U011": "天瑞 Tin Shui"
+    }
+  },
+  "K76": {
+    "U": {
+      "010": "天恆 Tin Heng",
+      "020": "天逸邨逸潭樓 Yat Tam House, Tin Yat Estate",
+      "030": "天富苑欣富閣 Yan Fu House, Tin Fu Court",
+      "040": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
+      "050": "天水圍站 (港鐵天水圍站) Tin Shui Wai Station (MTR Tin Shui Wai Station)"
+    },
+    "D": {
+      "010": "天水圍站 (港鐵天水圍站) Tin Shui Wai Station (MTR Tin Shui Wai Station)",
+      "020": "天恩邨 Tin Yan Estate",
+      "030": "天澤邨 Tin Chak Estate",
+      "040": "天恆 Tin Heng"
     }
   }
 }
