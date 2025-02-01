@@ -37,41 +37,35 @@
         todisplay()
       }
       function changeroute() {
-        fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
-          .then(response => {
-            return response.text();
-          })
-          .then(data => {
-            if (!data || data.trim() === "") {
-              throw new Error();
-            }
-            routedata = data.split("\n");
-            todisplay()
-          })
-          .catch(error => {
-            routedata = "No Data";
-            alert("Cannot load stop names. Info will show as stop codes.");
-          });
+        if (localStorage.getItem(document.getElementById("route").value) === null) {
+          fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
+            .then(response => {
+              return response.text();
+            })
+            .then(data => {
+              if (!data || data.trim() === "") {
+                throw new Error();
+              }
+              routedata = data.split("\n");
+              localStorage.setItem(document.getElementById("route").value, routedata);
+              alert("saved data");
+              todisplay()
+            })
+            .catch(error => {
+              routedata = "No Data";
+            });
+        } else {
+          alert("use old data");
+          routedata = localStorage.getItem(document.getElementById("route").value);
+        }
+        alert(routedata);
       }
       function update() {
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
         };
-        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(2000)})
-          .then(response => {
-            return response.json()
-          })
-          .then(data => {
-            recdata = data;
-            todisplay();
-          })
-          .catch(error => {
-            recdata = "No Data";
-            if (error.name === "TimeoutError") {
-              alert('5000 ms timeout');
-            }
-          });
+        
       }
       function todisplay() {
         if (recdata == "No Data") {
