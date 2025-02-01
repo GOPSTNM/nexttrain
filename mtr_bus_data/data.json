@@ -213,5 +213,49 @@
       "290": "邁亞美海灣 Miami Beach Towers",
       "300": "悅湖山莊 Yuet Wu Villa"
     }
+  },
+  "K52A": {
+    "U": {
+      "010": "屯門站 Tuen Mun Station",
+      "015": "輕鐵屯門站 (港鐵屯門站) LR Tuen Mun Stop (MTR Tuen Mun Station)",
+      "020": "輕鐵建安站 LR Kin On Stop",
+      "030": "輕鐵青雲站 LR Tsing Wun Stop",
+      "040": "聖彼得堂 SKH St. Peter's Church",
+      "050": "富健花園 Glorious Garden",
+      "060": "新屯門中心 Sun Tuen Mun Centre",
+      "070": "輕鐵蝴蝶站 LR Butterfly Stop",
+      "080": "屯門公眾騎術學校 Tuen Mun Public Riding School",
+      "090": "蝴蝶灣公園 Butterfly Beach Park",
+      "100": "望后石 Pillar Point",
+      "110": "政府車場 Government Depot",
+      "120": "內河碼頭 River Trade Terminal",
+      "130": "環保園 EcoPark",
+      "140": "紹榮鋼鐵 Shiu Wing Steel Mill",
+      "150": "沙埔崗 312 號 No.312 Sha Po Kong",
+      "160": "沙埔崗 177 號 No.177 Sha Po Kong",
+      "170": "沙埔崗 127 號 No.127 Sha Po Kong",
+      "180": "曾咀 Tsang Tsui"
+    },
+    "D": {
+      "010": "曾咀 Tsang Tsui",
+      "020": "沙埔崗 127 號 No.127 Sha Po Kong",
+      "030": "沙埔崗 177 號 No.177 Sha Po Kong",
+      "040": "沙埔崗 288 號 No.288 Sha Po Kong",
+      "050": "沙埔崗 351 號 No.351 Sha Po Kong",
+      "060": "中電 A 廠 CLP (Plant A)",
+      "070": "紹榮鋼鐵 Shiu Wing Steel Mill",
+      "080": "環保園 EcoPark",
+      "090": "內河碼頭 River Trade Terminal",
+      "100": "政府車場 Government Depot",
+      "110": "望后石 Pillar Point",
+      "120": "蝴蝶灣公園 Butterfly Beach Park",
+      "130": "屯門公眾騎術學校 Tuen Mun Public Riding School",
+      "140": "輕鐵蝴蝶站 LR Butterfly Stop",
+      "150": "輕鐵車廠站 Light Rail Depot Stop",
+      "160": "輕鐵龍門站 LR Lung Mun Stop",
+      "170": "輕鐵青雲站 LR Tsing Wun Stop",
+      "180": "輕鐵建安站 LR Kin On Stop",
+      "190": "屯門站 Tuen Mun Station"
+    }
   }
 }
