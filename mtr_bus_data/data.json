@@ -481,5 +481,57 @@
       "100": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
       "110": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)"
     }
+  },
+  "K66": {
+    "U": {
+      "010": "朗屏 Long Ping",
+      "020": "楊屋村 Yeung Uk Tsuen",
+      "030": "屏昌徑 (港鐵朗屏站) Ping Cheong Path (MTR Long Ping Station)",
+      "040": "元朗盲人安老院 Yuen Long Home for the Aged Blind",
+      "050": "元朗大會堂 (輕鐵豐年路站) Yuen Long Town Hall (LR Fung Nin Road Stop)",
+      "060": "安康路 On Hong Road",
+      "070": "元朗商業中心 Yuen Long Commercial Centre",
+      "080": "富達廣場 Manhattan Plaza",
+      "090": "蝶翠峰 Sereno Verde",
+      "100": "禮修村 Fraser Village",
+      "110": "深涌村 Sham Chung Tsuen",
+      "120": "羅家園 Law Ka Yuen",
+      "130": "崇正公立學校 Shung Ching School",
+      "140": "崇正菜站 Shung Ching Vegetable Market",
+      "150": "老圍 Lo Wai",
+      "160": "振華花園 Chun Wah Villas",
+      "170": "南坑排 Nam Hang Pai",
+      "180": "水蕉新村 Shui Chiu San Tsuen",
+      "190": "華苑 Wah Yuen",
+      "200": "大棠迴旋處 Tai Tong Roundabout",
+      "210": "大棠山路 Tai Tong Shan Road",
+      "220": "大棠黃泥墩村 Tai Tong Wong Nai Tun Tsuen"
+    },
+    "D": {
+      "010": "大棠黃泥墩村 Tai Tong Wong Nai Tun Tsuen",
+      "020": "大棠山路 Tai Tong Shan Road",
+      "030": "大棠迴旋處 Tai Tong Roundabout",
+      "040": "華苑 Wah Yuen",
+      "050": "水蕉新村 Shui Chiu San Tsuen",
+      "060": "南坑排 Nam Hang Pai",
+      "070": "南坑村 Nam Hang Tsuen",
+      "080": "紅棗田村 Hung Tso Tin Tsuen",
+      "090": "普盛圍 Po Shing Wai",
+      "100": "崇正公立學校 Shung Ching School",
+      "110": "羅家園 Law Ka Yuen",
+      "120": "深涌村 Sham Chung Tsuen",
+      "130": "禮修村 Fraser Village",
+      "140": "蝶翠峰 Sereno Verde",
+      "150": "恆香製餅廠 Hang Heung Cake Shop",
+      "160": "富達廣場 Manhattan Plaza",
+      "170": "千色廣場 Citi Mall",
+      "180": "安康路 On Hong Road",
+      "190": "元朗大會堂 (輕鐵豐年路站) Yuen Long Town Hall (LR Fung Nin Road Stop)",
+      "200": "水邊圍康水樓 Hong Shui House, Shui Pin Wai Estate",
+      "210": "朗屏邨悅屏樓 (港鐵朗屏站) Yuet Ping House, Long Ping Estate (MTR Long Ping Station)",
+      "220": "惠州學校 Wai Chow School",
+      "230": "朗屏邨珠屏樓 Chu Ping House, Long Ping Estate",
+      "240": "朗屏 Long Ping"
+    }
   }
 }
