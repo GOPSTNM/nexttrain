@@ -11,6 +11,7 @@ Moderate Volume
 336 2 M Right 1, Right 3, Left 5
 349 2 L 6
 350 2 R 1
+522 2 M Right 4, Left 5 (Tall)
 532 2 M Left 1 (Tall)
 
 Acceptable Volume
