@@ -36,7 +36,7 @@
           .then(response => {
             return response.json();
           })
-          .then(data => {
+          .then(function(data){
             let routedata = data;
             alert(routedata[0][0][0]);
           })
