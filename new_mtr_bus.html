@@ -41,7 +41,7 @@
             routedata = data;
           })
       } else {
-        alert(routedata);
+        alert(use old data);
         routedata = JSON.parse(routedata);
       }
 
@@ -50,7 +50,7 @@
 
       
       function update() {
-        alert(routedata[0][0][0]);
+        alert(routedata["K66"]["U"][0]);
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
