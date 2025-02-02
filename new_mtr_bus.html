@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1>MTR Bus Arrival Time</h1>
-    <select id="route" onchange="changeroute()"> 
+    <select id="route"> 
       <option value="506">506屯門碼頭至兆麟</option>
       <option value="K51">K51富泰至大欖</option>
       <option value="K51A">K51A富泰至掃管笏</option>
@@ -51,16 +51,18 @@
         .then(data => {
           speaker = data.split("\n");
         })
+      function changedirection() {
+        viewdirection = (viewdirection + 1) % 2;
+        todisplay();
+      }
       function update() {
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
         };
+        todisplay();
       }
       function todisplay() {
-        if (recdata == "No Data") {
-          return;
-        }
         let results = new Date().format("HH:mm:ss");
         results += data.stringify();
         document.getElementById("results").innerHTML = results;
