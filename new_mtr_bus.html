@@ -32,7 +32,7 @@
     <script>
       let routedata = JSON.parse(localStorage.getItem("mtr_bus_stop_data"));
       if (routedata === null) {
-        fetch(`mtr_bus_data/data.json`)
+        fetch("mtr_bus_data/data.json")
           .then(response => {
             return response.json();
           })
