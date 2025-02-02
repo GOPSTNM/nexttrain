@@ -31,18 +31,15 @@
     <div id="results"></div>
     <script>
       let routedata;
-      //let routedata = JSON.parse(localStorage.getItem("mtr_bus_stop_data"));
-      if (!localStorage.getItem("mtr_bus_stop_data")) {
-        alert("No old data");
-        fetch("https://gopstnm.github.io/nexttrain/mtr_bus_data/data.json")
-          .then(response => response.json())
-          .then(function(data){
-            alert("data");
+      if (1 == 1) {
+        fetch("mtr_bus_data/data.json")
+          .then(response => {
+            return response.json();
+          })
+          .then(data => {
             routedata = data;
-            alert(routedata);
-        })
-      } else {
-        routedata = localStorage.getItem("mtr_bus_stop_data");
+            alert(routedata[0][0][0]);
+          })
       }
 
 
