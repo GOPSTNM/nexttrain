@@ -27,37 +27,28 @@
     </select>
     <input type="button" value="Update" onclick="update()">
     <input type="button" value="Change Direction" onclick="changedirection()">
+    <input type="button" value="Clear Data" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
-      localStorage.clear();
-      let routedata = "No Data";
-      let recdata = "No Data";
-      let viewdirection = 0;
-      function changedirection() {
-        viewdirection = (viewdirection + 1) % 2;
-        todisplay()
+      if (localStorage.getItem("mtr_bus_stop_data") === null) {
+        fetch(`mtr_bus_data/data.json`)
+          .then(response => {
+            return response.json();
+          })
+          .then(data => {
+            localStorage.setItem("mtr_bus_stop_data", data);
+            alert("saved data");
+          })
+      } else {
+        alert("use old data");
       }
-      function changeroute() {
-        if (localStorage.getItem(document.getElementById("route").value) === null) {
-          fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`, {signal: AbortSignal.timeout(2000)})
-            .then(response => {
-              return response.text();
-            })
-            .then(data => {
-              if (!data || data.trim() === "") {
-                throw new Error();
-              }
-              routedata = data.split("\n");
-              localStorage.setItem(document.getElementById("route").value, data);
-              alert("saved data");
-              todisplay()
-            })
-        } else {
-          alert("use old data");
-          routedata = localStorage.getItem(document.getElementById("route").value).split("\n");
-        }
-        alert(routedata);
-      }
+      routedata = localStorage.getItem("mtr_bus_stop_data");
+      alert(JSON.stringify(routedata));
+
+
+
+
+      
       function update() {
         let params = {
           language: "en",
