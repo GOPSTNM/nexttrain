@@ -63,7 +63,7 @@
           language: "en",
           routeName: document.getElementById("route").value
         };
-        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(2000)})
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(5000)})
           .then(response => {
             if (!response.ok) {
               alert("Error. Try again.");
