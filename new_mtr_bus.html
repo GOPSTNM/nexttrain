@@ -30,7 +30,7 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
-      let routedata = JSON.stringify(localStorage.getItem("mtr_bus_data"));
+      let routedata = localStorage.getItem("mtr_bus_data");
       if (routedata === null) {
         fetch("mtr_bus_data/data.json")
           .then(response => {
@@ -40,6 +40,8 @@
             localStorage.setItem("mtr_bus_data", JSON.stringify(data);
             routedata = data;
           })
+      } else {
+        routedata = JSON.parse(routedata);
       }
 
 
