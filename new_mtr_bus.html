@@ -34,7 +34,7 @@
       let routedata = JSON.parse(localStorage.getItem("mtr_bus_stop_data"));
       if (!routedata) {
         alert("No old data");
-        fetch("mtr_bus_data/data.json")
+        fetch("https://gopstnm.github.io/nexttrain/mtr_bus_data/data.json")
           .then(response => response.json())
           .then(function(data){
             alert("data");
