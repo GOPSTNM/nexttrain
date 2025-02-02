@@ -75,7 +75,7 @@
             updtime = new Date().toTimeString().split(" ")[0];
             todisplay();
           })
-          .catch((e) => {
+          .catch(() => {
             alert("Timeout. Try again.");
           })
       }
