@@ -30,6 +30,7 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
+      let updtime;
       let recdata;
       let speaker;
       let routedata = localStorage.getItem("mtr_bus_data");
@@ -61,11 +62,11 @@
           language: "en",
           routeName: document.getElementById("route").value
         };
+        updtime = new Date().toTimeString().split(' ')[0];
         todisplay();
       }
       function todisplay() {
-        let results = (() => { const now = new Date(); let hours = now.getHours() % 12 || 12; return `${String(hours).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`; })();
-        alert("results");
+        let results = updtime;
         document.getElementById("results").innerHTML = results;
       }
       function change(elem) {
