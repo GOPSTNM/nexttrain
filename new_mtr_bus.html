@@ -40,7 +40,7 @@
             return response.json();
           })
           .then(data => {
-            alert(JSON.stringify(data));
+            alert("aetting");
             routedata = data;
             localStorage.setItem("mtr_bus_stop_data", JSON.stringify(data));
           })
@@ -51,7 +51,7 @@
 
       
       function update() {
-        alert(routedata[0][0][0]);
+        alert(JSON.parse(localStorage.getItem("mtr_bus_stop_data"))[0][0][0]);
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
