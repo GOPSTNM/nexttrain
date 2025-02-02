@@ -30,17 +30,19 @@
     <input type="button" value="Clear Data" onclick="alert(JSON.stringify(routedata));">
     <div id="results"></div>
     <script>
+      alert("hi");
       let routedata = JSON.parse(localStorage.getItem("mtr_bus_stop_data"));
       if (!routedata) {
         fetch("mtr_bus_data/data.json")
           .then(response => {
+            alert("hi");
             return response.json();
           })
           .then(data => {
             alert("hi");
             routedata = data;
             localStorage.setItem("mtr_bus_stop_data", JSON.stringify(data));
-          });
+          })
       }
 
 
