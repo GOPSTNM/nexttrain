@@ -41,9 +41,9 @@
           })
       } else {
         alert("use old data");
+        routedata = localStorage.getItem("mtr_bus_stop_data");
+        alert(JSON.stringify(routedata));
       }
-      routedata = localStorage.getItem("mtr_bus_stop_data");
-      alert(JSON.stringify(routedata));
 
 
 
