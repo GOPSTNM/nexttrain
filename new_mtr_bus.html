@@ -79,10 +79,15 @@
       function todisplay() {
         let results = `Last Updated: ${updtime}<br><br>`;
         let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
+        let viewcodedig = 3;
+        if (!viewdirectionvalue) {
+          viewdirectionvalue = "C";
+          viewcodedig = 4;
+        }
         for (let i = 0; i < recdata["busStop"].length; i++) {
           let stop_id = recdata["busStop"][i]["busStopId"];
-          if (stop_id.includes(viewdirectionvalue) || Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
-            results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
+          if (stop_id.includes(viewdirectionvalue) || viewdirectionvalue == "C") {
+            results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - viewcodedig)];
             results += "<br>";
           }
         }
