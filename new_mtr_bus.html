@@ -37,14 +37,15 @@
             return response.json();
           })
           .then(data => {
-            localStorage.setItem("mtr_bus_stop_data", data);
+            localStorage.setItem("mtr_bus_stop_data", JSON.stringify(data));
             alert("saved data");
+            routedata = data;
           })
       } else {
         alert("use old data");
-        routedata = localStorage.getItem("mtr_bus_stop_data");
-        alert(JSON.stringify(routedata));
+        routedata = JSON.parse(localStorage.getItem("mtr_bus_stop_data"));
       }
+      alert(JSON.stringify(routedata));
 
 
 
