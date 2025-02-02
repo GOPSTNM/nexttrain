@@ -45,7 +45,7 @@
             routedata = data;
           })
       } else {
-        routedata = new Map(Object.entries(JSON.parse(routedata)));
+        routedata = JSON.parse(routedata);
       }
       fetch("mtr_bus_data/speaker_info.txt")
         .then(response => {
@@ -80,7 +80,7 @@
         let results = `Last Updated: ${updtime}<br><br>`;
         let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
         let viewcodedig = 3;
-        if (!viewdirectionvalue) {
+        if (!viewdirectionvalue || viewdirectionvalue == "C") {
           viewdirectionvalue = "C";
           viewcodedig = 4;
         }
