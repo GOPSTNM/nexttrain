@@ -46,7 +46,7 @@
 
       
       function update() {
-        alert(JSON.parse(localStorage.getItem("mtr_bus_stop_data"))[0][0][0]);
+        alert(routedata[0][0][0]);
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
