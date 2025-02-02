@@ -64,7 +64,7 @@
         todisplay();
       }
       function todisplay() {
-        let results = "hi";
+        let results = (() => { const now = new Date(); let hours = now.getHours() % 12 || 12; return `${String(hours).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`; })();
         alert("results");
         document.getElementById("results").innerHTML = results;
       }
