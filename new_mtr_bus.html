@@ -79,28 +79,28 @@
       function todisplay() {
         let results = "Last Updated: " + updtime;
         let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
-        alert(data["busStop"].length);
-        for (let i = 0; i < data["busStop"].length; i++) {
+        alert(recdata["busStop"].length);
+        for (let i = 0; i < recdata["busStop"].length; i++) {
           alert(i);
-          let stop_id = data["busStop"][i]["busStopId"];
+          let stop_id = recdata["busStop"][i]["busStopId"];
           alert(stop_id);
           if (stop_id.includes(viewdirectionvalue) || Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
             alert("fit");
             alert(routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)]);
             results += `<div id='${stop_id}' onclick='change("${stop_id}")'>${routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)]}`;
-            if (data["busStop"][i]["isSuspended"] == 1) {
+            if (recdata["busStop"][i]["isSuspended"] == 1) {
               results += " 暫停服務";
             }
             results += `</div><div id='${stop_id + "_data"}' style='display: none;'>`;
             for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
-              results += data["busStop"][i]["bus"][k]["busId"];
+              results += recdata["busStop"][i]["bus"][k]["busId"];
               results += " ";
               results += "Arrive ";
-              results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
+              results += Math.round(recdata["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
               results += " ";
               results += "Depart ";
-              results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
-              if (data["busStop"][i]["bus"][k]["isScheduled"] == 1) {
+              results += Math.round(recdata["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
+              if (recdata["busStop"][i]["bus"][k]["isScheduled"] == 1) {
                 results += " 預定班次";
               }
               results += "<br>";
