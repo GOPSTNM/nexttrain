@@ -41,11 +41,9 @@
             routedata = data;
           })
       } else {
-        alert(routedata);
         routedata = JSON.parse(routedata);
       }
-      alert(routedata[0][0][0]);
-
+      document.getElementById("results").innerHTML = JSON.stringify(routedata);
 
 
       
