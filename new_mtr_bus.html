@@ -30,37 +30,15 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
-      //let routedata;
-      fetch("https://gopstnm.github.io/nexttrain/mtr_bus_data/data.json")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data); // Log data to check its structure
-    alert("hi");
-    let routedata = data;
-    if (routedata["506"] && routedata["506"]["U"] && routedata["506"]["U"]["010"]) {
-      alert(routedata["506"]["U"]["010"]);
-    } else {
-      alert("Data not found");
-    }
-  })
-  .catch(error => {
-    alert('There has been a problem with your fetch operation:', error);
-    alert("Error fetching data");
-  });
-      if (1 == 1) {
+      let routedata = JSON.stringify(localStorage.getItem("mtr_bus_data"));
+      if (routedata === null) {
         fetch("mtr_bus_data/data.json")
           .then(response => {
             return response.json();
           })
-          .then(function(data){
-            alert("hi");
-            let routedata = data;
-            alert(routedata["506"]["U"]["010"]);
+          .then(data => {
+            localStorage.setItem("mtr_bus_data", JSON.stringify(data);
+            routedata = data;
           })
       }
 
