@@ -86,7 +86,7 @@
           alert(stop_id);
           if (stop_id.includes(viewdirectionvalue) || Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
             alert("fit");
-            alert(routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)]);
+            alert(routedata[document.getElementById("route").value][viewdirectionvalue][(stop_id.substring(text.length - 3)/100).substring(text.length - 3)]);
             results += `<div id='${stop_id}' onclick='change("${stop_id}")'>${routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)]}`;
             if (recdata["busStop"][i]["isSuspended"] == 1) {
               results += " 暫停服務";
