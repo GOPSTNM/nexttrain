@@ -31,6 +31,27 @@
     <div id="results"></div>
     <script>
       //let routedata;
+      fetch("mtr_bus_data/data.json")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data); // Log data to check its structure
+    alert("hi");
+    let routedata = data;
+    if (routedata["506"] && routedata["506"]["U"] && routedata["506"]["U"]["010"]) {
+      alert(routedata["506"]["U"]["010"]);
+    } else {
+      alert("Data not found");
+    }
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+    alert("Error fetching data");
+  });
       if (1 == 1) {
         fetch("mtr_bus_data/data.json")
           .then(response => {
