@@ -62,8 +62,21 @@
           language: "en",
           routeName: document.getElementById("route").value
         };
-        updtime = new Date().toTimeString().split(' ')[0];
-        todisplay();
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(2000)})
+          .then(response => {
+            if (!response.ok) {
+              alert("Error. Try again.");
+            }
+            return response.json()
+          })
+          .then(data => {
+            recdata = data;
+            updtime = new Date().toTimeString().split(" ")[0];
+            todisplay();
+          })
+          .catch((e) => {
+            alert("Timeout. Try again.");
+          })
       }
       function todisplay() {
         let results = updtime;
