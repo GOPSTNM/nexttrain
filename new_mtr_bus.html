@@ -85,7 +85,7 @@
         for (let i = 0; i < data["busStop"].length; i++) {
           let stop_id = data["busStop"][i]["busStopId"];
           if (stop_id.includes(viewdirectionvalue) || Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
-            results += `<div id='${stop_id}' onclick='change("${stop_id}")'>${routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)}`;
+            results += `<div id='${stop_id}' onclick='change("${stop_id}")'>${routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)]}`;
             if (data["busStop"][i]["isSuspended"] == 1) {
               results += " 暫停服務";
             }
