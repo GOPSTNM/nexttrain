@@ -37,7 +37,7 @@
         fetch("mtr_bus_data/data.json")
           .then(response => {
             alert("already fetch");
-            return response.json();
+            return response;
           })
           .then(data => {
             alert("value setting");
