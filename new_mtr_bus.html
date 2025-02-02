@@ -30,6 +30,7 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
+      let viewdirection = 0;
       let updtime;
       let recdata;
       let speaker;
@@ -80,6 +81,32 @@
       }
       function todisplay() {
         let results = "Last Updated: " + updtime;
+        let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
+        for (let i = 0; i < data["busStop"].length; i++) {
+          let stop_id = data["busStop"][i]["busStopId"];
+          if (stop_id.includes(viewdirectionvalue) || Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
+            results += `<div id='${stop_id}' onclick='change("${stop_id}")'>${routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(text.length - 3)}`;
+            if (data["busStop"][i]["isSuspended"] == 1) {
+              results += " 暫停服務";
+            }
+            results += `</div><div id='${stop_id + "_data"}' style='display: none;'>`;
+            for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
+              results += data["busStop"][i]["bus"][k]["busId"];
+              results += " ";
+              results += "Arrive ";
+              results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
+              results += " ";
+              results += "Depart ";
+              results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
+              if (data["busStop"][i]["bus"][k]["isScheduled"] == 1) {
+                results += " 預定班次";
+              }
+              results += "<br>";
+            }
+            results += "</div>";
+            results += "<br>";
+          }
+        }
         document.getElementById("results").innerHTML = results;
       }
       function change(elem) {
