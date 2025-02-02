@@ -30,6 +30,7 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
+      let recdata;
       let speaker;
       let routedata = localStorage.getItem("mtr_bus_data");
       if (routedata === null) {
