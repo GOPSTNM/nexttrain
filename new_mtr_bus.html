@@ -45,7 +45,7 @@
             routedata = data;
           })
       } else {
-        routedata = JSON.parse(routedata);
+        routedata = new Map(Object.entries(JSON.parse(routedata)));
       }
       fetch("mtr_bus_data/speaker_info.txt")
         .then(response => {
