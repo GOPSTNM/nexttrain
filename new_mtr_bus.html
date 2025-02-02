@@ -31,7 +31,7 @@
     <div id="results"></div>
     <script>
       let routedata = JSON.parse(localStorage.getItem("mtr_bus_stop_data"));
-      if (routedata === null) {
+      if (!routedata) {
         fetch("mtr_bus_data/data.json")
           .then(response => {
             return response.json();
