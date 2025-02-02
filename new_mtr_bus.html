@@ -35,15 +35,10 @@
       if (!routedata) {
         alert("No old data");
         fetch("mtr_bus_data/data.json")
-          .then(response => {
-            alert("already fetch");
-            return response.json();
-          })
-          .then(data => {
-            alert("aetting");
+          .then(response => response.json())
+          .then(function(data){
             routedata = data;
-            localStorage.setItem("mtr_bus_stop_data", JSON.stringify(data));
-          })
+        })
       }
 
 
