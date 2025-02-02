@@ -30,6 +30,7 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
+      let speaker;
       let routedata = localStorage.getItem("mtr_bus_data");
       if (routedata === null) {
         fetch("mtr_bus_data/data.json")
@@ -43,12 +44,14 @@
       } else {
         routedata = JSON.parse(routedata);
       }
-      document.getElementById("results").innerHTML = JSON.stringify(routedata);
-
-
-      
+      fetch("mtr_bus_data/speaker_info.txt")
+        .then(response => {
+          return response.txt();
+        })
+        .then(data => {
+          speaker = data.split("\n");
+        })
       function update() {
-        
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
