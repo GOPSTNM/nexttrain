@@ -41,7 +41,7 @@
             return response;
           })
           .then(data => {
-            alert(data[0][0][0]);
+            alert(JSON.stringify(data));
             routedata = data;
             localStorage.setItem("mtr_bus_stop_data", JSON.stringify(data));
           })
