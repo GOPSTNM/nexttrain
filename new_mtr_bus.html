@@ -30,6 +30,7 @@
     <input type="button" value="Clear Data" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
+      let routedata;
       if (localStorage.getItem("mtr_bus_stop_data") === null) {
         fetch(`mtr_bus_data/data.json`)
           .then(response => {
