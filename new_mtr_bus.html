@@ -30,14 +30,14 @@
     <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
-      let routedata;
+      //let routedata;
       if (1 == 1) {
         fetch("mtr_bus_data/data.json")
           .then(response => {
             return response.json();
           })
           .then(data => {
-            routedata = data;
+            let routedata = data;
             alert(routedata[0][0][0]);
           })
       }
