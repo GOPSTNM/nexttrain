@@ -85,6 +85,7 @@
               if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[document.getElementById("route").value]["C"])[i]}`) {
                 for (let i = 0; i < item["bus"].length; i++) {
                   results += "<br>";
+                  alert(item["bus"]["busId"]);
                   results += `Bus ${item["bus"]["busId"]} Arrive ${Math.round(item["bus"]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"]["departureTimeInSecond"]/6)/10}`;
                 }
               }
