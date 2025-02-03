@@ -54,6 +54,7 @@
         .then(data => {
           speaker = data.split("\n");
         })
+      alert(speaker[0]);
       function changedirection() {
         viewdirection = (viewdirection + 1) % 2;
         todisplay();
