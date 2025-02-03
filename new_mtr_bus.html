@@ -88,7 +88,8 @@
               results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
               results += "<br>";
               for (let k = 0; k < recdata["busStop"][i]["bus"].length; k++) {
-                results += recdata["busStop"][i]["bus"][k]["arrivalTimeInSecond"];
+                let currdata = recdata["busStop"][i]["bus"][k];
+                results += `Bus ${currdata["busId"] Arrive ${Math.round(currdata["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(currdata["departureTimeInSecond"]/6)/10}`;
                 results += "<br>";
               }
               results += "<br>";
