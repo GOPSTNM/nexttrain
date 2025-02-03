@@ -84,8 +84,8 @@
           for (let i = 0; i < recdata["busStop"].length; i++) {
             let stop_id = recdata["busStop"][i]["busStopId"];
             if (stop_id.includes(Object.keys(routedata[document.getElementById("route").value])[viewdirection])) {
-            results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
-            results += "<br>";
+              results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
+              results += "<br>";
             }
           }
         }
