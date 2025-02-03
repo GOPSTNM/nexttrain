@@ -82,7 +82,6 @@
           for (let i = 0; i < Object.keys(routedata[document.getElementById("route").value]["C"]).length; i++) {
             results += Object.values(routedata[document.getElementById("route").value]["C"])[i];
             for (const item of recdata["busStop"]) {
-              alert(item["busStopId"]);
               if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[document.getElementById("route").value]["C"])[i]}`) {
                 results += "<br>";
               }
