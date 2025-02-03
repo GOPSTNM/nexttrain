@@ -80,7 +80,7 @@
         let results = `Last Updated: ${updtime}<br><br>`;
         if (Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
           for (let i = 0; i < Object.keys(routedata[document.getElementById("route").value]["C"]).length; i++) {
-            results += Object.value(routedata[document.getElementById("route").value]["C"])[i];
+            results += Object.values(routedata[document.getElementById("route").value]["C"])[i];
           }
         } else {
           let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
