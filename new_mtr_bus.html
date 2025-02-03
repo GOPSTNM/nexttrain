@@ -79,6 +79,7 @@
       function todisplay() {
         let results = `Last Updated: ${updtime}<br><br>`;
         if (Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
+          alert(routedata[document.getElementById("route").value]["C"].length);
           for (let i = 0; i < routedata[document.getElementById("route").value]["C"].length; i++) {
             results += routedata[document.getElementById("route").value]["C"][i];
           }
