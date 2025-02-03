@@ -84,7 +84,7 @@
           let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
           for (let i = 0; i < recdata["busStop"].length; i++) {
             let stop_id = recdata["busStop"][i]["busStopId"];
-            if (stop_id.includes(viewdirectionvalue) {
+            if (stop_id.includes(viewdirectionvalue)) {
               results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
               results += "<br>";
             }
