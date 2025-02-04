@@ -115,8 +115,15 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Minor Speaker Noise", 5:"Not Good"};
-            alert(Number(speaker[i][4]));
-            return `<br>Speaker: ${typespeaker[Number(speaker[i][4])]}`;
+            let mes;
+            if (speaker[i][6] == "L") {
+              mes = `Left ${speaker[i][8]}`;
+            } else if (speaker[i][6] == "R") {
+              mes = `Right ${speaker[i][8]}`;
+            } else {
+              mes = speaker[i].substring(8);
+            }
+            return `<br>Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]`;
           }
         }
         return "";
