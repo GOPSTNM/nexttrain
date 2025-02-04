@@ -21,5 +21,5 @@ Minor Speaker Noise
 862 4 M Left 1 (Tall)
 
 Not Good
-343 5 Severe Speaker Noise
-354 5 No Sound on Upper Deck
+343 5 M Severe Speaker Noise
+354 5 M No Sound on Upper Deck
