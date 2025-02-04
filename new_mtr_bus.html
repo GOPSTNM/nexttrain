@@ -115,8 +115,8 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Minor Speaker Noise", 5:"Not Good"};
-            alert(number(speaker[i][4]));
-            return `<br>Speaker: ${typespeaker[number(speaker[i][4])]}`;
+            alert(speaker[i]);
+            return `<br>Speaker: ${speaker[i]}`;
           }
         }
         return "";
