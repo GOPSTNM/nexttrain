@@ -114,7 +114,8 @@
       function getspeaker(id) {
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            return "<br>w/ speaker info";
+            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Minor Speaker Noise", 5:"Not Good"};
+            return `<br>Speaker: ${typespeaker[number(speaker[4])]}`;
           }
         }
         return "";
