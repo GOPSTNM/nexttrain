@@ -52,7 +52,6 @@
           return response.text();
         })
         .then(data => {
-          alert("speaker info got");
           speaker = data.split("\n");
         })
       function changedirection() {
@@ -60,7 +59,6 @@
         todisplay();
       }
       function update() {
-        alert(speaker[0]);
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
@@ -104,6 +102,7 @@
               for (let k = 0; k < recdata["busStop"][i]["bus"].length; k++) {
                 let currdata = recdata["busStop"][i]["bus"][k];
                 results += `Bus ${currdata["busId"]} Arrive ${Math.round(currdata["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(currdata["departureTimeInSecond"]/6)/10}`;
+                results += getspeaker(currdata["busId"]);
                 results += "<br>";
               }
               results += "<br>";
@@ -113,10 +112,9 @@
         document.getElementById("results").innerHTML = results;
       }
       function getspeaker(id) {
-        for (let i = 0; i < speaker.length; i++) {
-          alert(speaker[i]);
+        for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            return speaker[i];
+            return "<br>w/ speaker info";
           }
         }
         return "";
