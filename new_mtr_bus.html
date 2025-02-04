@@ -49,7 +49,7 @@
       }
       fetch("mtr_bus_data/speaker_info.txt")
         .then(response => {
-          return response.txt();
+          return response.text();
         })
         .then(data => {
           alert("speaker info got");
