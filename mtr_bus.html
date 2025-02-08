@@ -27,97 +27,106 @@
     </select>
     <input type="button" value="Update" onclick="update()">
     <input type="button" value="Change Direction" onclick="changedirection()">
+    <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
       let viewdirection = 0;
-      let linedata = "";
-      let results = "";
-      let rawdata = "";
+      let updtime;
+      let recdata;
+      let speaker;
+      let routedata = localStorage.getItem("mtr_bus_data");
+      if (routedata === null) {
+        fetch("mtr_bus_data/data.json")
+          .then(response => {
+            return response.json();
+          })
+          .then(data => {
+            localStorage.setItem("mtr_bus_data", JSON.stringify(data));
+            routedata = data;
+          })
+      } else {
+        routedata = JSON.parse(routedata);
+      }
+      fetch("mtr_bus_data/speaker_info.txt")
+        .then(response => {
+          return response.text();
+        })
+        .then(data => {
+          speaker = data.split("\n");
+        })
       function changedirection() {
-        if (viewdirection == 0) {
-          viewdirection = 1;
-        } else {
-          viewdirection = 0;
-        }
-        results = "No Data";
-        todisplay(rawdata, linedata);
+        viewdirection = (viewdirection + 1) % 2;
+        todisplay();
       }
       function update() {
         let params = {
           language: "en",
           routeName: document.getElementById("route").value
         };
-        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(5000)})
           .then(response => {
             if (!response.ok) {
-              let results = "Error";
+              alert("Error. Try again.");
             }
             return response.json()
           })
           .then(data => {
-            rawdata = data;
-            pretodisplay(rawdata);
+            recdata = data;
+            updtime = new Date().toTimeString().split(" ")[0];
+            todisplay();
           })
       }
-      function pretodisplay(rawdata) {
-        fetch(`mtr_bus_data/${document.getElementById("route").value}.txt`)
-          .then(response => {
-            return response.text();
-          })
-          .then(data => {
-            linedata = data.split("\n");
-            results = "No Data";
-            todisplay(rawdata, linedata);
-          })
-      }
-      function todisplay(data, linedata) {
-        let viewdirectionvalue = linedata[1 + viewdirection * 2];
-        results = "";
-        results += "System Time ";
-        results += data["routeStatusTime"];
-        results += " Status ";
-        results += data["status"];
-        results += "<br>";
-        results += "<br>";
-        if (typeof linedata === "undefined") {
-          results += document.getElementById("route").value;
-        } else {
-          results += linedata[0 + viewdirection * 2];
-        }
-        results += "<br>";
-        results += "<br>";
-        for (let i = 0; i < data["busStop"].length; i++) {
-          let stop_id = data["busStop"][i]["busStopId"];
-          if (stop_id.includes(viewdirectionvalue) || data["busStop"][i]["bus"][0]["lineRef"].includes("CIR") || typeof linedata === "undefined") {
-            results += `<div id='${stop_id}' onclick='change("${stop_id}")'>`;
-            if (typeof viewdirectionvalue === "undefined") {
-              results += data["busStop"][i]["busStopId"];
-            } else {
-              results += linedata[i + 4];
-            } 
-            if (data["busStop"][i]["isSuspended"] == 1) {
-              results += " 暫停服務";
+      function todisplay() {
+        let results = `Last Updated: ${updtime}<br><br>`;
+        if (Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
+          for (let i = 0; i < Object.keys(routedata[document.getElementById("route").value]["C"]).length; i++) {
+            results += Object.values(routedata[document.getElementById("route").value]["C"])[i];
+            for (const item of recdata["busStop"]) {
+              if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[document.getElementById("route").value]["C"])[i]}`) {
+                for (let i = 0; i < item["bus"].length; i++) {
+                  results += "<br>";
+                  results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
+                }
+              }
             }
-            results += "</div>";
-            results += `<div id='${stop_id + "_data"}' style='display: none;'>`;
-            for (let k = 0; k < data["busStop"][i]["bus"].length; k++) {
-              results += data["busStop"][i]["bus"][k]["busId"];
-              results += " ";
-              results += "Arrive ";
-              results += Math.round(data["busStop"][i]["bus"][k]["arrivalTimeInSecond"]/6)/10;
-              results += " ";
-              results += "Depart ";
-              results += Math.round(data["busStop"][i]["bus"][k]["departureTimeInSecond"]/6)/10;
-              if (data["busStop"][i]["bus"][k]["isScheduled"] == 1) {
-                results += " 預定班次";
+            results += "<br>";
+            results += "<br>";
+          }
+        } else {
+          let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
+          for (let i = 0; i < recdata["busStop"].length; i++) {
+            let stop_id = recdata["busStop"][i]["busStopId"];
+            if (stop_id.includes(viewdirectionvalue)) {
+              results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
+              results += "<br>";
+              for (let k = 0; k < recdata["busStop"][i]["bus"].length; k++) {
+                let currdata = recdata["busStop"][i]["bus"][k];
+                results += `Bus ${currdata["busId"]} Arrive ${Math.round(currdata["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(currdata["departureTimeInSecond"]/6)/10}`;
+                results += getspeaker(currdata["busId"]);
+                results += "<br>";
               }
               results += "<br>";
             }
-            results += "</div>";
-            results += "<br>";
           }
         }
         document.getElementById("results").innerHTML = results;
+      }
+      function getspeaker(id) {
+        for (let i in speaker) {
+          if (speaker[i].includes(id)) {
+            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Minor Speaker Noise", 5:"Not Good"};
+            let mes;
+            if (speaker[i][6] == "L") {
+              mes = `Left ${speaker[i][8]}`;
+            } else if (speaker[i][6] == "R") {
+              mes = `Right ${speaker[i][8]}`;
+            } else {
+              mes = speaker[i].substring(8);
+            }
+            return `<br>Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]`;
+          }
+        }
+        return "";
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
