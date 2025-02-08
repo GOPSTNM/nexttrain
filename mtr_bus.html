@@ -97,7 +97,7 @@
           for (let i = 0; i < recdata["busStop"].length; i++) {
             let stop_id = recdata["busStop"][i]["busStopId"];
             if (stop_id.includes(viewdirectionvalue)) {
-              results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 3)];
+              results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 4)];
               results += "<br>";
               for (let k = 0; k < recdata["busStop"][i]["bus"].length; k++) {
                 let currdata = recdata["busStop"][i]["bus"][k];
