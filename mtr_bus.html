@@ -81,6 +81,7 @@
         if (Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
           for (let i = 0; i < Object.keys(routedata[document.getElementById("route").value]["C"]).length; i++) {
             results += Object.values(routedata[document.getElementById("route").value]["C"])[i];
+            alert(recdata["busStop"][i][isSuspended]);
             if (recdata["busStop"][i][isSuspended] == "1") {
               results += "Suspended";
             }
