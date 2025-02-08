@@ -81,9 +81,9 @@
         if (Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
           for (let i = 0; i < Object.keys(routedata[document.getElementById("route").value]["C"]).length; i++) {
             results += Object.values(routedata[document.getElementById("route").value]["C"])[i];
-            
             for (const item of recdata["busStop"]) {
               if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[document.getElementById("route").value]["C"])[i]}`) {
+                alert(item[isSuspended]);
                 for (let i = 0; i < item["bus"].length; i++) {
                   results += "<br>";
                   results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
