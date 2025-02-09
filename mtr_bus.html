@@ -75,37 +75,23 @@
       }
       function todisplay() {
         let results = `Last Updated: ${updtime}<br><br>`;
-        if (Object.keys(routedata[document.getElementById("route").value])[0] == "C") {
-          for (let i = 0; i < Object.keys(routedata[document.getElementById("route").value]["C"]).length; i++) {
-            results += Object.values(routedata[document.getElementById("route").value]["C"])[i];
-            for (const item of recdata["busStop"]) {
-              if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[document.getElementById("route").value]["C"])[i]}`) {
-                alert(item["isSuspended"]);
-                for (let i = 0; i < item["bus"].length; i++) {
-                  results += "<br>";
-                  results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
-                }
-              }
-            }
-            results += "<br>";
-            results += "<br>";
-          }
-        } else {
-          let viewdirectionvalue = Object.keys(routedata[document.getElementById("route").value])[viewdirection];
-          for (let i = 0; i < recdata["busStop"].length; i++) {
-            let stop_id = recdata["busStop"][i]["busStopId"];
-            if (stop_id.includes(viewdirectionvalue)) {
-              results += routedata[document.getElementById("route").value][viewdirectionvalue][stop_id.substring(stop_id.length - 4)];
-              results += "<br>";
-              for (let k = 0; k < recdata["busStop"][i]["bus"].length; k++) {
-                let currdata = recdata["busStop"][i]["bus"][k];
-                results += `Bus ${currdata["busId"]} Arrive ${Math.round(currdata["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(currdata["departureTimeInSecond"]/6)/10}`;
-                results += getspeaker(currdata["busId"]);
+        let route = document.getElementById("route").value; 
+        if (Object.keys(routedata[route])[0] == "C") {
+          viewdirection = 0;
+        }
+        let viewdirectionval = Object.keys(routedata[route])[viewdirection];
+        for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
+          results += Object.values(routedata[route][viewdirectionval])[i];
+          for (const item of recdata["busStop"]) {
+            if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[route][viewdirectionval])[i]}`) {
+              for (let i = 0; i < item["bus"].length; i++) {
                 results += "<br>";
+                results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
               }
-              results += "<br>";
             }
           }
+          results += "<br>";
+          results += "<br>";
         }
         document.getElementById("results").innerHTML = results;
       }
