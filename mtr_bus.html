@@ -75,15 +75,15 @@
             updtime = new Date().toTimeString().split(" ")[0];
             todisplay();
           })
-          .catch (error) {
+          .catch (error => {
           if (error.name === "TimeoutError") {
             alert("Timeout. Try again.");
           } else if (err.name === "AbortError") {
             alert("Fetch stopped. Try again.");
           } else {
-            alert("Network problem. Try again.);
+            alert("Network problem. Try again.");
           }
-        }
+        })
       }
       function todisplay() {
         let results = `Last Updated: ${updtime}<br><br>`;
