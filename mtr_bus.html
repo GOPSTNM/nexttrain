@@ -63,11 +63,8 @@
           language: "en",
           routeName: document.getElementById("route").value
         };
-        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params), signal: AbortSignal.timeout(5000)})
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
           .then(response => {
-            if (!response.ok) {
-              alert("Error. Try again.");
-            }
             return response.json()
           })
           .then(data => {
@@ -75,15 +72,6 @@
             updtime = new Date().toTimeString().split(" ")[0];
             todisplay();
           })
-          .catch (error => {
-          if (error.name === "TimeoutError") {
-            alert("Timeout. Try again.");
-          } else if (err.name === "AbortError") {
-            alert("Fetch stopped. Try again.");
-          } else {
-            alert("Network problem. Try again.");
-          }
-        })
       }
       function todisplay() {
         let results = `Last Updated: ${updtime}<br><br>`;
@@ -140,11 +128,7 @@
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
-        if (to_change.style.display === "none" || to_change.style.display === "") {
-          to_change.style.display = "block";
-        } else {
-          to_change.style.display = "none";
-        }
+        to_change.style.display = to_change.style.display === "none" || to_change.style.display === "" ? "block" : "none";
       }
     </script>
   </body>
