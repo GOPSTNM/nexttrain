@@ -2,6 +2,17 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTR Bus Arrival Time</title>
+    <style>
+      input[type=button], button{
+        width: 300px;
+        background-color: #FF8C00;
+        padding: 7px 5px 8px;
+        margin: 2px;
+        color: #000000;
+        font-size: 20px;
+        border: 2px solid DarkOrange;
+      }
+    </style>
   </head>
   <body>
     <h1>MTR Bus Arrival Time</h1>
@@ -27,7 +38,6 @@
     </select>
     <input type="button" value="Update" onclick="update()">
     <input type="button" value="Change Direction" onclick="changedirection()">
-    <input type="button" value="Clear" onclick="localStorage.clear();">
     <div id="results"></div>
     <script>
       let viewdirection = 0;
