@@ -132,7 +132,8 @@
         }
         let viewdirectionval = Object.keys(routedata[route])[viewdirection];
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
-          results += Object.values(routedata[route][viewdirectionval])[i];
+          let stop_id = Object.keys(routedata[route][viewdirectionval][i]);
+          results += `<div class="stop_name" id="${stop_id}">${Object.values(routedata[route][viewdirectionval])[i]}</div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[route][viewdirectionval])[i]}`) {
               for (let i = 0; i < item["bus"].length; i++) {
@@ -141,15 +142,13 @@
               }
             }
           }
-          results += "<br>";
-          results += "<br>";
         }
         document.getElementById("results").innerHTML = results;
       }
       function getspeaker(id) {
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Minor Speaker Noise", 5:"Not Good"};
+            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Acceptable Speaker Noise", 5:"Not Recommended"};
             let mes;
             if (speaker[i][6] == "L") {
               mes = `Left ${speaker[i][8]}`;
@@ -158,10 +157,9 @@
             } else {
               mes = speaker[i].substring(8);
             }
-            return `<br>Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]`;
+            return `<div>Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]</div>`;
           }
         }
-        return "";
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
