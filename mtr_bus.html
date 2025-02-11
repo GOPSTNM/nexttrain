@@ -134,6 +134,7 @@
         let viewdirectionval = Object.keys(routedata[route])[viewdirection];
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval][i]);
+          alert(stop_id);
           results += `<div class="stop_name" id="${stop_id}">${Object.values(routedata[route][viewdirectionval])[i]}</div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[route][viewdirectionval])[i]}`) {
