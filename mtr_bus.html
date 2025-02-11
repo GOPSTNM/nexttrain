@@ -6,7 +6,7 @@
       @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
       * {
-        background-color: #f0f8ff;
+        background-color: #F8F8FF;
         font-family: "Roboto", "Noto Serif HK";
         font-weight: 580;
       }
@@ -52,7 +52,7 @@
   </head>
   <body>
     <h1>港鐵巴士到站時間 MTR Bus Arrival Time</h1>
-    <p>Please select bus route</p>
+    <p>請選擇路綫 Please select bus route</p>
     <select id="route"> 
       <option value="506">506屯門碼頭至兆麟</option>
       <option value="K51">K51富泰至大欖</option>
@@ -75,7 +75,6 @@
     </select>
     <input type="button" value="Update" onclick="update()">
     <input type="button" value="Change Direction" onclick="changedirection()">
-    
     <div id="results"></div>
     <script>
       let viewdirection = 0;
