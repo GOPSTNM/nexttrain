@@ -125,6 +125,7 @@
           })
       }
       function todisplay() {
+        let stop_id;
         let results = `Last Updated: ${updtime}<br><br>`;
         let route = document.getElementById("route").value; 
         if (Object.keys(routedata[route])[0] == "C") {
@@ -132,7 +133,7 @@
         }
         let viewdirectionval = Object.keys(routedata[route])[viewdirection];
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
-          let stop_id = Object.keys(routedata[route][viewdirectionval][i]);
+          stop_id = Object.keys(routedata[route][viewdirectionval][i]);
           results += `<div class="stop_name" id="${stop_id}">${Object.values(routedata[route][viewdirectionval])[i]}</div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${document.getElementById("route").value}-${Object.keys(routedata[route][viewdirectionval])[i]}`) {
