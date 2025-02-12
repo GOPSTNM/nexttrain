@@ -64,6 +64,7 @@
       .stop_name {
       }
       .stop_data {
+        display: none;
       }
     </style>
   </head>
@@ -179,7 +180,11 @@
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
-        to_change.style.display = "none";
+        if (to_change.style.display != "block") {
+          to_change.style.display = "block";
+        } else {
+          to_change.style.display = "none";
+        }
       }
     </script>
   </body>
