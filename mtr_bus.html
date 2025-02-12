@@ -149,15 +149,14 @@
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
           results += `<div class="stop_name" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div>${routedata[route][viewdirectionval][stop_id]}</div>`;
           for (const item of recdata["busStop"]) {
-            results += `<div class="stop_data" id='${stop_id}_data'>`
-            alert(`<div class="stop_data" id='${stop_id}_data'>`);
             if (item["busStopId"] == `${route}-${stop_id}`) {
+              results += `<div class="stop_data" id='${stop_id}_data'>`
               for (let i = 0; i < item["bus"].length; i++) {
                 results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
                 results += "<br>";
               }
+              results += "</div>";
             }
-            results += "</div>";
           }
         }
         document.getElementById("results").innerHTML = results;
@@ -180,7 +179,6 @@
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
-        alert(elem + "_data");
         to_change.style.display = "none";
       }
     </script>
