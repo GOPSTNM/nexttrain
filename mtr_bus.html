@@ -167,7 +167,7 @@
               results += "<table>";
               for (let i = 0; i < item["bus"].length; i++) {
                 results += "<tr>";
-                results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
+                results += `<td>Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}</td>`;
                 results += "</tr>";
               }
               results += "</table>";
@@ -192,6 +192,7 @@
             return `<div>Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]</div>`;
           }
         }
+        return "";
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
