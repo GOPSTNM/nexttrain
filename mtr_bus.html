@@ -164,10 +164,13 @@
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
               results += `<div class="stop_data" id='${stop_id}_data'>`
+              results += "<table>";
               for (let i = 0; i < item["bus"].length; i++) {
+                results += "<tr>";
                 results += `Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}`;
-                results += "<br>";
+                results += "</tr>";
               }
+              results += "</table>";
               results += "</div>";
             }
           }
