@@ -19,6 +19,9 @@
         font-size: 20px;
         color: #191970;
       }
+      td {
+        font-size: 20px;
+      }
       input[type=button] {
         display: inline-block;
         line-height: 45px;
@@ -81,7 +84,8 @@
     </style>
   </head>
   <body>
-    <h1>港鐵巴士到站時間<br>MTR Bus Arrival Time</h1>
+    <h1>港鐵巴士到站時間</h1><br>
+    <h1>MTR Bus Arrival Time</h1>
     <p>請選擇路綫 Please select bus route</p>
     <select id="route"> 
       <option value="506">506屯門碼頭至兆麟</option>
@@ -171,7 +175,7 @@
                 let arrive = Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10;
                 let depart = Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10;
                 if (!bus_id) {
-                  bus_id = "- - -";
+                  bus_id = " - - - ";
                 }
                 results += `<td>${bus_id}</td>`;
                 results += "</tr>";
