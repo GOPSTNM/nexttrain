@@ -167,7 +167,13 @@
               results += "<table>";
               for (let i = 0; i < item["bus"].length; i++) {
                 results += "<tr>";
-                results += `<td>Bus ${item["bus"][i]["busId"]} Arrive ${Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10} Depart ${Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10}</td>`;
+                let bus_id = item["bus"][i]["busId"];
+                let arrive = Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10;
+                let depart = Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10;
+                if (!bus_id) {
+                  bus_id = "---";
+                }
+                results += `<td>${bus_id}</td>`;
                 results += "</tr>";
               }
               results += "</table>";
