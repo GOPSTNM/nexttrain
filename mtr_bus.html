@@ -87,6 +87,9 @@
       .smalltxt {
         font-size: 0.75em;
       }
+      .boldtxt {
+        font-weight: 700;
+      }
     </style>
   </head>
   <body>
@@ -191,7 +194,7 @@
                 if (i == 0) {
                   time_data = `Depart ${depart} min`;
                 } else if (i == Object.keys(routedata[route][viewdirectionval]).length - 1) {
-                  time_data = `Terminating ${arrive} <span class="smalltxt">min</span>`;
+                  time_data = `Terminating <span class="boldtxt">${arrive}</span> <span class="smalltxt">min</span>`;
                 } else if (arrive < 0.5) {
                   time_data = "Departing";
                 } else if (arrive < 1) {
