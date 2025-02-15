@@ -184,9 +184,20 @@
                 if (item["bus"][i]["isScheduled"] == "1") {
                   note = "Scheduled";
                 }
+                let time_data = "";
+                if (i == 0) {
+                  time_data = `${depart}分鐘開出`;
+                } else if (i == Object.keys(routedata[route][viewdirectionval]).length - 1) {
+                  time_data = `${arrive}分鐘到達[NIS]`;
+                } else if (arrive < 0.5) {
+                  time_data = "即將開出";
+                } else if (arrive < 1) {
+                  time_data = "即將到達";
+                } else {
+                  time_data = `${arrive}分鐘到達`;
+                }
                 results += `<td>${bus_id}</td>`;
-                results += `<td>${arrive}分鐘到達</td>`;
-                results += `<td>${depart}分鐘離開</td>`;
+                results += `<td>${time_data}</td>`;
                 results += `<td>${note}</td>`;
                 results += "</tr>";
               }
