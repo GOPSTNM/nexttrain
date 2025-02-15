@@ -84,6 +84,9 @@
         display: none;
         margin-left: 43px;
       }
+      .smalltxt {
+        font-size: 0.5em;
+      }
     </style>
   </head>
   <body>
@@ -188,13 +191,13 @@
                 if (i == 0) {
                   time_data = `Depart ${depart} min`;
                 } else if (i == Object.keys(routedata[route][viewdirectionval]).length - 1) {
-                  time_data = `Terminating ${arrive} min`;
+                  time_data = `Terminating ${arrive} <span class="smalltxt">min</span>`;
                 } else if (arrive < 0.5) {
                   time_data = "Departing";
                 } else if (arrive < 1) {
                   time_data = "Arriving";
                 } else {
-                  time_data = `Arrive ${arrive} mins`;
+                  time_data = `Arrive ${arrive} min`;
                 }
                 results += `<td>${bus_id}</td>`;
                 results += `<td>${time_data}</td>`;
