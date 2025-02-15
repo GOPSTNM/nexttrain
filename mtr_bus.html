@@ -186,15 +186,15 @@
                 }
                 let time_data = "";
                 if (i == 0) {
-                  time_data = `${depart}分鐘開出`;
+                  time_data = `Depart ${depart} min`;
                 } else if (i == Object.keys(routedata[route][viewdirectionval]).length - 1) {
-                  time_data = `${arrive}分鐘到達[NIS]`;
+                  time_data = `Terminating ${arrive} min`;
                 } else if (arrive < 0.5) {
-                  time_data = "即將開出";
+                  time_data = "Departing";
                 } else if (arrive < 1) {
-                  time_data = "即將到達";
+                  time_data = "Arriving";
                 } else {
-                  time_data = `${arrive}分鐘到達`;
+                  time_data = `Arrive ${arrive} mins`;
                 }
                 results += `<td>${bus_id}</td>`;
                 results += `<td>${time_data}</td>`;
