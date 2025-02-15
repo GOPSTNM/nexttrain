@@ -213,6 +213,7 @@
                 results += `<td style="width: 50px">${bus_id}</td>`;
                 results += `<td style="width: 100px">${time_data}</td>`;
                 results += `<td>${note}</td>`;
+                results += getspeaker(bud_id);
                 results += "</tr>";
               }
               results += "</table>";
@@ -234,7 +235,7 @@
             } else {
               mes = speaker[i].substring(8);
             }
-            return `<div>Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]</div>`;
+            return `<td colspan="2">Speaker: ${typespeaker[Number(speaker[i][4])]} [ ${mes} ]</td>`;
           }
         }
         return "";
