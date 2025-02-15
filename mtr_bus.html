@@ -172,16 +172,16 @@
             if (item["busStopId"] == `${route}-${stop_id}`) {
               results += `<div class="stop_data" id='${stop_id}_data'>`
               results += "<table>";
-              for (let i = 0; i < item["bus"].length; i++) {
+              for (let k = 0; k < item["bus"].length; k++) {
                 results += "<tr>";
-                let bus_id = item["bus"][i]["busId"];
-                let arrive = Math.round(item["bus"][i]["arrivalTimeInSecond"]/6)/10;
-                let depart = Math.round(item["bus"][i]["departureTimeInSecond"]/6)/10;
+                let bus_id = item["bus"][k]["busId"];
+                let arrive = Math.round(item["bus"][k]["arrivalTimeInSecond"]/6)/10;
+                let depart = Math.round(item["bus"][k]["departureTimeInSecond"]/6)/10;
                 if (!bus_id) {
                   bus_id = "-";
                 }
                 let note = "";
-                if (item["bus"][i]["isScheduled"] == "1") {
+                if (item["bus"][k]["isScheduled"] == "1") {
                   note = "Scheduled";
                 }
                 let time_data = "";
