@@ -193,15 +193,15 @@
                 }
                 let time_data = "";
                 if (i == 0) {
-                  time_data = `Depart ${depart} min`;
+                  time_data = `${depart} <span class="smalltxt">min dep</span>`;
                 } else if (i == Object.keys(routedata[route][viewdirectionval]).length - 1) {
-                  time_data = `Terminating <span class="boldtxt">${arrive}</span> <span class="smalltxt">min</span>`;
+                  time_data = `<span class="boldtxt">${arrive}</span> <span class="smalltxt">min term</span>`;
                 } else if (arrive < 0.5) {
-                  time_data = "Departing";
+                  time_data = "<span class="boldtxt">Departing</span>";
                 } else if (arrive < 1) {
-                  time_data = "Arriving";
+                  time_data = "<span class="boldtxt">Arriving</span>";
                 } else {
-                  time_data = `Arrive ${arrive} min`;
+                  time_data = `<span class="boldtxt">${arrive}</span> <span class="smalltxt">min arr</span>`;
                 }
                 results += `<td>${bus_id}</td>`;
                 results += `<td>${time_data}</td>`;
