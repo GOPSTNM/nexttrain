@@ -19,6 +19,7 @@
 346 3 L 4
 
 //Minor Speaker Noise
+526 4 M Left 1 (Tall) (K65 Yau San St. Played)
 862 4 M Left 1 (Tall)
 
 //Not Good
