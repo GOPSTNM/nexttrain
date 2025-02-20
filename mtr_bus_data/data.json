@@ -1,4 +1,20 @@
 {
+  "K12": {
+    "U": {
+      "U010": "大埔墟站 Tai Po Market Station",
+      "U020": "大埔超級城 Tai Po Mega Mall",
+      "U030": "八號花園 Eightland Garden"
+    },
+    "D": {
+      "D010": "八號花園 Eightland Garden",
+      "D020": "大埔超級城 Tai Po Mega Mall",
+      "D030": "新達廣場 Uptown Plaza",
+      "D040": "大埔墟站 Tai Po Market Station"
+    }
+  }
+  "K14": {
+    "D"
+  }
   "506": {
     "U": {
       "U010": "屯門碼頭 Tuen Mun Ferry Pier",
