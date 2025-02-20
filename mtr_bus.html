@@ -232,7 +232,7 @@
       function getspeaker(id) {
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Acceptable Speaker Noise", 5:"Not Recommended"};
+            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Acceptable Speaker Noise", 5:"Not Recommended", 6:"EAL Bus with PA"};
             let mes;
             if (speaker[i][6] == "L") {
               mes = `Left ${speaker[i][8]}`;
