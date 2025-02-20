@@ -28,3 +28,6 @@
 354 5 M No Sound on Upper Deck
 365 5 M No Sound on Upper Deck
 806 5 M No Sound (As on Route K76S)
+
+//EAL Bus with PA
+384 6 M Currently No Exact Speaker Info
