@@ -19,6 +19,7 @@
 346 3 L 4
 
 //Minor Speaker Noise
+356 3 M Left 4, Right 4, Low Volume
 526 4 M Left 1 (Tall) (K65 Yau San St. Played)
 862 4 M Left 1 (Tall)
 
@@ -27,7 +28,8 @@
 343 5 M Severe Speaker Noise
 354 5 M No Sound on Upper Deck
 365 5 M No Sound on Upper Deck
+376 5 M Low Volume on Upper Deck
 806 5 M No Sound (As on Route K76S)
 
-//EAL Bus with PA
+//Tai Po Area
 384 6 M Currently No Exact Speaker Info
