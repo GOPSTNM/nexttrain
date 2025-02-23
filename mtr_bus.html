@@ -98,13 +98,14 @@
         font-size: 17px;
       }
       .strongtxt {
+        vertical-align: middle;
         color: #EB4605;
       }
     </style>
   </head>
   <body>
     <h1>港鐵巴士到站時間<br>MTR Bus Arrival Time</h1>
-    <p>請選擇路綫 Please select bus route</p>
+    <p>Please select bus route</p>
     <select id="route"> 
       <option value="506">506屯門碼頭至兆麟</option>
       <option value="K51">K51富泰至大欖</option>
@@ -132,7 +133,7 @@
     <input type="button" value="Update" onclick="update()">
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
-    <p>資訊不會自動更新 Info will not be updated automatically</p>
+    <p>Info will not be updated automatically</p>
     <script>
       let viewdirection = 0;
       let updtime;
@@ -179,7 +180,7 @@
       }
       function todisplay() {
         let stop_id;
-        let results = `<p>更新時間 Last Updated: ${updtime}</p>`;
+        let results = `<p>Last Updated: ${updtime}</p>`;
         let route = document.getElementById("route").value; 
         if (Object.keys(routedata[route]).length == 1) {
           viewdirection = 0;
