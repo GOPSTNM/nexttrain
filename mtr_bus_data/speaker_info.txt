@@ -1,6 +1,6 @@
 //High Volume
 322 1 L 1
-379 1 M Currently No Exact Speaker Info
+379 1 M Left 1, Left 4, Right 1
 
 //Moderate Volume
 149 2 L 1
@@ -11,27 +11,31 @@
 336 2 M Right 1, Right 3, Left 5
 349 2 L 6
 350 2 R 1
+358 2 L 1
+362 2 M Left 5 (Only Rear Speakers)
 522 2 M Right 4, Left 5 (Tall)
 532 2 M Left 1 (Tall)
 831 2 M Right 3 (Tall)
+833 2 M Left 4, 5 (Tall)
 
 //Acceptable Volume
 346 3 L 4
+366 3 M Left 4 (Higher Volume on “Hold Handrail”)
 
 //Minor Speaker Noise
-356 3 M Left 4, Right 4, Low Volume
 526 4 M Left 1 (Tall) (K65 Yau San St. Played)
 862 4 M Left 1 (Tall)
 
-//Not Good
+//Not Recommended
 325 5 M Low Volume on Upper Deck
 343 5 M Severe Speaker Noise
 354 5 M No Sound on Upper Deck
+356 5 M Left 4, Right 4 Low Volume
 365 5 M No Sound on Upper Deck
 376 5 M Low Volume on Upper Deck
 806 5 M No Sound (As on Route K76S)
 
-//Tai Po Area
+//Feeder Bus
 384 6 M Currently No Exact Speaker Info
 385 6 M Online Video
 386 6 M Online Video
