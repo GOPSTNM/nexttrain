@@ -197,7 +197,7 @@
         let viewdirectionval = Object.keys(routedata[route])[viewdirection];
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
-          results += `<div class="stop_name" id="${stop_id}" onclick="change('${stop_id}');"><div class="route_box"></div><div class="stop_circ"></div><div class="stop_name_text">${routedata[route][viewdirectionval][stop_id]}</div></div>`;
+          results += `<div class="stop_name" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><div class="stop_name_text">${routedata[route][viewdirectionval][stop_id]}</div></div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
               results += `<div class="stop_data" id='${stop_id}_data'>`
