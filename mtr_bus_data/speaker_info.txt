@@ -1,5 +1,5 @@
 //High Volume
-322 1 L 1
+322 1 M Left 1 (21/03/2025 No Sound)
 379 1 M Left 1, Left 4, Right 1
 
 //Moderate Volume
@@ -7,35 +7,43 @@
 319 2 R 4
 320 2 R 1
 323 2 R 1
+R 4 Lower volume
+L 1 good
 331 2 L 5
+Moderate
 336 2 M Right 1, Right 3, Left 5
-349 2 L 6
+349 2 L 5
 350 2 R 1
 358 2 L 1
+361 2 M Left 5 (Rest of the speakers in low volume)
 362 2 M Left 5 (Only Rear Speakers)
+Yes
 522 2 M Right 4, Left 5 (Tall)
 532 2 M Left 1 (Tall)
 831 2 M Right 3 (Tall)
 833 2 M Left 4, 5 (Tall)
 
 //Acceptable Volume
+324 3 L 3
 346 3 L 4
 366 3 M Left 4 (Higher Volume on “Hold Handrail”)
+375 3 M Low Volume
 
 //Minor Speaker Noise
 526 4 M Left 1 (Tall) (K65 Yau San St. Played)
 862 4 M Left 1 (Tall)
 
 //Not Recommended
-325 5 M Low Volume on Upper Deck
+325 5 M Low Volume
 343 5 M Severe Speaker Noise
-354 5 M No Sound on Upper Deck
-356 5 M Left 4, Right 4 Low Volume
-365 5 M No Sound on Upper Deck
-376 5 M Low Volume on Upper Deck
-806 5 M No Sound (As on Route K76S)
+354 5 M No Sound
+356 5 M Low Volume (No Sound Except Left 4, Right 4)
+365 5 M No Sound
+376 5 M Low Volume
+549 5 M System on test, no sound, not recommended
 
 //Feeder Bus
-384 6 M Currently No Exact Speaker Info
-385 6 M Online Video
+381 6 M Relatively Low Volume, Acceptable
+384 6 M No Exact
+385 6 R 1
 386 6 M Online Video
