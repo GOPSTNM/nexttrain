@@ -38,7 +38,7 @@
         if (document.getElementById("lightrailzone").value == 8) {
           let optionlist = '';
           for (let i = 1; i <= 6; i++) {
-            optionlist += `<optgroup label="Zone ${i === 5 ? '5A' : i}">${optionreturn(i-1)}</optgroup>`;
+            optionlist += `<optgroup label="Zone ${i === 6 ? '5A' : i}">${optionreturn(i-1)}</optgroup>`;
           }
           document.getElementById("lightrailstop").innerHTML = optionlist;
         } else {
