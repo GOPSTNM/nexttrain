@@ -160,7 +160,6 @@
         routedata = JSON.parse(routedata);
       }
       if (speaker === null) {
-        alert("There no storage");
         fetch("mtr_bus_data/speaker_info.txt")
           .then(response => response.text())
           .then(data => {
@@ -168,7 +167,6 @@
             speaker = data.split("\n");
           });
       } else {
-        alert("There is storage");
         speaker = speaker.split("\n");
       }
       function changedirection() {
@@ -181,12 +179,10 @@
           routeName: document.getElementById("route").value
         };
         let timeout = false;
-        const timeoutId = setTimeout(() => {timeout = true;
-                                            alert("No Data");
-                                           }, 3000);
+        const timeoutid = setTimeout(() => {timeout = true; alert("No response received, please try again.");}, 3000);
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
            .then(response => {
-             clearTimeout(timeoutId);
+             clearTimeout(timeoutid);
              if (timeout) return;
              return response.json();
            })
