@@ -33,29 +33,17 @@
           });
       } else {
         stopdata = JSON.parse(stopdata);
-      }
-      
+      }   
       function zonechange() {
-        var cont = "<option selected='true' value=0 disabled='true'>Choose a stop</option>";
-        if (document.getElementById("lightrailzone").value==8) {
-          for (let i = 0; i < 6; i++) {
-            var tempzone = i+1;
-            if (tempzone == 6) {var cont = cont + "<optgroup label='Zone 5A'>";
-            }else{var cont = cont + "<optgroup label='Zone " + tempzone + "'>";}
-            for (let i = 0; i < stn[(tempzone)*2-1].length; i++) {
-              var cont = cont + getname(tempzone, i);
-            }
-            var cont = cont + "</optgroup>";
-          }
-        }else{
-          for (let i = 0; i < stn[document.getElementById("lightrailzone").value*2-1].length; i++) {
-            var cont = cont + getname(document.getElementById("lightrailzone").value, i);
-          }
-        }
-        document.getElementById("lightrailstop").innerHTML = cont;
+        let optionlist = optionreturn(1);
+        document.getElementById("lightrailstop").innerHTML = optionlist;
       }
-      function getname(zone, i) {
-        return "<option value=" + stn[zone*2-1][i] + ">" + stn[zone*2-2][i] + "</option>";
+      function optionreturn(zone) {
+        let temp = "";
+        for (let i = 0; i < stopdata[zone].length; i++) {
+          temp += `<option>${Object.keys(stopdata[zone])[i]}</option>`;
+        }
+        return temp;
       }
       function lookfortrain () {
         var url = "https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value;
