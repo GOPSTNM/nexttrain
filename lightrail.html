@@ -35,15 +35,21 @@
         stopdata = JSON.parse(stopdata);
       }   
       function zonechange() {
-        let optionlist = optionreturn(document.getElementById("lightrailzone").value-1);
-        document.getElementById("lightrailstop").innerHTML = optionlist;
+        if (document.getElementById("lightrailzone") == 8 {
+          let optionlist = "";
+          optionlist += optionreturn(0);
+          optionlist += optionreturn(1);
+          optionlist += optionreturn(2);
+          optionlist += optionreturn(3);
+          optionlist += optionreturn(4);
+          optionlist += optionreturn(5);
+          document.getElementById("lightrailstop").innerHTML = optionlist;
+        } else {
+          document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value-1);
+        }
       }
       function optionreturn(zone) {
-        let temp = "";
-        for (let i = 0; i < Object.keys(stopdata[zone]).length; i++) {
-          temp += `<option value=${stopdata[zone][i]}>${Object.keys(stopdata[zone])[i]}</option>`;
-        }
-        return temp;
+        return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}">${key}</option>`).join('');
       }
       function lookfortrain () {
         var url = "https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value;
