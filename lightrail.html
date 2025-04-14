@@ -25,7 +25,6 @@
     <script>
       let stopdata = localStorage.getItem("light_rail_data");
       if (stopdata === null) {
-        alert("no data storaged");
         fetch("light_rail_data/stop_data.json")
           .then(response => response.json())
           .then(data => {
@@ -33,7 +32,6 @@
             stopdata = data;
           });
       } else {
-        alert("yes data storaged");
         stopdata = JSON.parse(stopdata);
       }
       
