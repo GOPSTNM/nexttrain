@@ -36,13 +36,10 @@
       }   
       function zonechange() {
         if (document.getElementById("lightrailzone").value == 8) {
-          let optionlist = "";
-          optionlist += `<optgroup label="Zone 1">${optionreturn(0)}</optgroup>`;
-          optionlist += `<optgroup label="Zone 2">${optionreturn(1)}</optgroup>`;
-          optionlist += `<optgroup label="Zone 3">${optionreturn(2)}</optgroup>`;
-          optionlist += `<optgroup label="Zone 4">${optionreturn(3)}</optgroup>`;
-          optionlist += `<optgroup label="Zone 5">${optionreturn(4)}</optgroup>`;
-          optionlist += `<optgroup label="Zone 5A">${optionreturn(5)}</optgroup>`;
+          let optionlist = '';
+          for (let i = 0; i <= 5; i++) {
+            optionlist += `<optgroup label="Zone ${i === 5 ? '5A' : i}">${optionreturn(i)}</optgroup>`;
+          }
           document.getElementById("lightrailstop").innerHTML = optionlist;
         } else {
           document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value-1);
@@ -51,7 +48,7 @@
       function optionreturn(zone) {
         return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}">${key}</option>`).join('');
       }
-      function lookfortrain () {
+      function update () {
         var url = "https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value;
         fetch(url).then(response => response.json()).then(function(data){
           if (data["status"] == 0) {
