@@ -40,9 +40,11 @@
       }
       function optionreturn(zone) {
         let temp = "";
+        alert(stopdata[zone].length);
         for (let i = 0; i < stopdata[zone].length; i++) {
           temp += `<option>${Object.keys(stopdata[zone])[i]}</option>`;
         }
+        alert(temp);
         return temp;
       }
       function lookfortrain () {
