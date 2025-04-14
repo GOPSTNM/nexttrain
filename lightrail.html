@@ -38,7 +38,12 @@
         if (document.getElementById("lightrailzone").value == 8) {
           let optionlist = "";
           optionlist += `<optgroup label="Zone 1">${optionreturn(0)}</optgroup>`;
-          alert(optionlist);
+          optionlist += `<optgroup label="Zone 2">${optionreturn(1)}</optgroup>`;
+          optionlist += `<optgroup label="Zone 3">${optionreturn(2)}</optgroup>`;
+          optionlist += `<optgroup label="Zone 4">${optionreturn(3)}</optgroup>`;
+          optionlist += `<optgroup label="Zone 5">${optionreturn(4)}</optgroup>`;
+          optionlist += `<optgroup label="Zone 5A">${optionreturn(5)}</optgroup>`;
+          document.getElementById("lightrailstop").innerHTML = optionlist;
         } else {
           document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value-1);
         }
