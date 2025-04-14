@@ -1,5 +1,5 @@
-[
-  [
+{
+  {
     "Tuen Mun Ferry Pier 屯門碼頭": 1,
     "Melody Garden 美樂": 10,
     "Butterfly 蝴蝶": 15,
@@ -10,8 +10,8 @@
     "Goodview Garden 豐景園": 260,
     "Siu Lun 兆麟": 265,
     "Sam Shing 三聖": 920
-  ],
-  [
+  },
+  {
     "Tsing Shan Tsuen 青山村": 40,
     "Tsing Wun 青雲": 50,
     "Kin On 建安": 60,
@@ -33,8 +33,8 @@
     "Hoh Fuk Tong 何福堂": 310,
     "San Hui 新墟": 320,
     "Prime View 景峰": 330
-  ],
-  [
+  },
+  {
     "Tuen Mun Hospital 屯門醫院": 90,
     "Siu Hong 兆康": 100,
     "Kei Lun 麒麟": 110,
@@ -47,8 +47,8 @@
     "Lam Tei 藍地": 350,
     "Nai Wai 泥圍": 360,
     "Chung Uk Tsuen 鍾屋村": 370
-  ],
-  [
+  },
+  {
     "Hung Shui Kiu 洪水橋": 380,
     "Tong Fong Tsuen 塘坊村": 390,
     "Ping Shan 屏山": 400,
@@ -62,15 +62,15 @@
     "Tin Shui 天瑞": 460,
     "Chestwood 翠湖": 490,
     "Tin Wing 天榮": 500
-  ],
-  [
+  },
+  {
     "Shui Pin Wai 水邊圍": 560,
     "Fung Nin Road 豐年路": 570,
     "Hong Lok Road 康樂路": 580,
     "Tai Tong Road 大棠路": 590,
     "Yuen Long 元朗": 600
-  ],
-  [
+  },
+  {
     "Chung Fu 頌富": 468,
     "Tin Fu 天富": 480,
     "Tin Yuet 天悅": 510,
@@ -78,11 +78,11 @@
     "Wetland Park 濕地公園": 530,
     "Tin Heng 天恒": 540,
     "Tin Yat 天逸": 550
-  ],
-  [
+  },
+  {
     "Tuen Mun 屯門": 295,
     "Siu Hong 兆康": 100,
     "Tin Shui Wai 天水圍": 430,
     "Yuen Long 元朗": 600
-  ]
-]
+  }
+}
