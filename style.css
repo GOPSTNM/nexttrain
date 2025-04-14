@@ -34,7 +34,7 @@ input[type=button] {
   font-size: 20px;
   border: 2px solid #FF8C00;
   border-radius: 8px;
-  margin: 2px;
+  margin: 2px 0px;
 }
 input[type=text], select {
   display: inline-block;
@@ -46,7 +46,7 @@ input[type=text], select {
   font-size: 20px;
   border: 2px solid #FF8C00;
   border-radius: 8px;
-  margin: 2px;
+  margin: 2px 0px;
   -webkit-transition: 0.5s;
   outline: none;
 }
