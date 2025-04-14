@@ -36,7 +36,9 @@
       }   
       function zonechange() {
         if (document.getElementById("lightrailzone").value == 8) {
-          alert(optionreturn(0));
+          let optionlist = "";
+          optionlist += `<optgroup label="Zone 1">${optionreturn(0)}</optgroup>`;
+          alert(optionlist);
         } else {
           document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value-1);
         }
