@@ -34,7 +34,7 @@ input[type=button] {
   font-size: 20px;
   border: 2px solid #FF8C00;
   border-radius: 8px;
-  margin: 2px 0px;
+  margin: 2px;
 }
 input[type=text], select {
   display: inline-block;
@@ -46,7 +46,7 @@ input[type=text], select {
   font-size: 20px;
   border: 2px solid #FF8C00;
   border-radius: 8px;
-  margin: 2px 0px;
+  margin: 2px;
   -webkit-transition: 0.5s;
   outline: none;
 }
@@ -54,6 +54,7 @@ input[type=text]:focus, select:focus {
   border: 2px solid #1A7CDB;
 }
 #results {
+  width: 100%;
   color: #191970;
   font-size: 20px;
 }
