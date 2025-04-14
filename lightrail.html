@@ -19,7 +19,7 @@
     </select>
     <select id="lightrailstop">
     </select>
-    <input type="button" onclick="lookfortrain();" value="Find">
+    <input type="button" onclick="alert(stopdata[0][0]); lookfortrain();" value="Find">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
     <script>
@@ -36,7 +36,7 @@
         alert("yes data storaged");
         stopdata = JSON.parse(stopdata);
       }
-      alert(stopdata[0][0]);
+      
       function zonechange() {
         var cont = "<option selected='true' value=0 disabled='true'>Choose a stop</option>";
         if (document.getElementById("lightrailzone").value==8) {
