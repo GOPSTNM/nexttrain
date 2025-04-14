@@ -19,11 +19,10 @@
     </select>
     <select id="lightrailstop">
     </select>
-    <input type="button" onclick="alert(stopdata[0][0]); lookfortrain();" value="Find">
+    <input type="button" onclick="update();" value="Find">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
     <script>
-      localStorage.clear();
       let stopdata = localStorage.getItem("light_rail_data");
       if (stopdata === null) {
         alert("no data storaged");
