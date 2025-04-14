@@ -3,6 +3,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTR Bus Arrival Time</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      td {
+        font-size: 20px;
+        color: #333333;
+        height: 25px;
+        line-height: 20px;
+        border-right: 15px solid #F0FFFF;
+        vertical-align: text-bottom;
+      }
+      #results {
+        width: 100%;
+        color: #191970;
+        font-size: 20px;
+      }
+      .stop_circ {
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        border-radius: 100%;
+        border: 2.5px solid #000000;
+        background-color: #FFE100;
+        margin-left: 5px;
+        margin-right: 15px;
+        vertical-align: middle;
+      }
+      .stop_name {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .stop_name_text {
+        vertical-align: middle;
+        line-height: 20px;
+        display: inline-block;
+        width: calc(100% - 43px)
+      }
+      .stop_data {
+        display: none;
+        margin-left: 43px;
+      }
+      .smalltxt {
+        line-height: 12px;
+        font-size: 12px;
+      }
+      .boldtxt {
+        font-weight: 700;
+      }
+      .medtxt {
+        line-height: 17px;
+        font-size: 17px;
+      }
+      .strongtxt {
+        color: #EB4605;
+      }
+    </style>
   </head>
   <body>
     <h1>MTR Bus Arrival Time</h1>
