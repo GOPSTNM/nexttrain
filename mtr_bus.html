@@ -188,6 +188,7 @@
              return response.json();
            })
            .then(data => {
+             if (timeout) return;
              recdata = data;
              updtime = new Date().toTimeString().split(" ")[0];
              todisplay();
