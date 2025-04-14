@@ -147,27 +147,30 @@
       let viewdirection = 0;
       let updtime;
       let recdata;
-      let speaker;
+      let speaker = localStorage.getItem("mtr_bus_speaker_info");
       let routedata = localStorage.getItem("mtr_bus_data");
       if (routedata === null) {
         fetch("mtr_bus_data/data.json")
-          .then(response => {
-            return response.json();
-          })
+          .then(response => response.json())
           .then(data => {
             localStorage.setItem("mtr_bus_data", JSON.stringify(data));
             routedata = data;
-          })
+          });
       } else {
         routedata = JSON.parse(routedata);
       }
-      fetch("mtr_bus_data/speaker_info.txt")
-        .then(response => {
-          return response.text();
-        })
-        .then(data => {
-          speaker = data.split("\n");
-        })
+      if (speaker === null) {
+        alert("There no storage");
+        fetch("mtr_bus_data/speaker_info.txt")
+          .then(response => response.text())
+          .then(data => {
+            localStorage.setItem("mtr_bus_speaker_info", data);
+            speaker = data.split("\n");
+          });
+      } else {
+        alert("There is storage");
+        speaker = speaker.split("\n");
+      }
       function changedirection() {
         viewdirection = (viewdirection + 1) % 2;
         todisplay();
