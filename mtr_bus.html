@@ -177,22 +177,21 @@
           language: "en",
           routeName: document.getElementById("route").value
         };
+        let timeout = false;
+        const timeoutId = setTimeout(() => {timeout = true;
+                                            alert("No Data");
+                                           }, 3000);
         fetch("https://rt.data.gov.hk/v1/transport/mtr/bus/getSchedule", {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(params)})
-          .then(response => {
-            return response.json();
-          })
-          .then(data => {
-            recdata = data;
-            updtime = new Date().toTimeString().split(" ")[0];
-            todisplay();
-            setTimeout(() => {
-      alert("Data fetched successfully!");
-      // You can also display this message in the UI if needed
-    }, 3000); // Adjust the timeout duration as necessary
-  })
-  .catch(error => {
-    console.error("Error fetching data:", error);
-  });
+           .then(response => {
+             clearTimeout(timeoutId);
+             if (timeout) return;
+             return response.json();
+           })
+           .then(data => {
+             recdata = data;
+             updtime = new Date().toTimeString().split(" ")[0];
+             todisplay();
+           })
       }
       function todisplay() {
         let stop_id;
@@ -266,7 +265,7 @@
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
         to_change.style.display = (to_change.style.display !== "block") ? "block" : "none";
-        }
+      }
     </script>
   </body>
 </html>
