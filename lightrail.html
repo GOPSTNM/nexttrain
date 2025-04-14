@@ -26,7 +26,7 @@
       let stopdata = localStorage.getItem("light_rail_data");
       if (stopdata === null) {
         alert("no data storaged");
-        fetch("light_rail_data/data.json")
+        fetch("light_rail_data/stop_data.json")
           .then(response => response.json())
           .then(data => {
             localStorage.setItem("light_rail_data", JSON.stringify(data));
