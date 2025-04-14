@@ -7,7 +7,7 @@
   <body>
     <h1>Light Rail Arrival Time</h1>
     <p>Please select Light Rail Stop</p>
-    <select id="lightrailzone" onchange="zonechange()">
+    <select id="lightrailzone" onchange="zonechange();">
       <option selected="true" value=8>Show Stops in All Zones</option>
       <option value=7>Tuen Ma Line Interchange</option>
       <option value=1>Zone 1</option>
@@ -17,9 +17,9 @@
       <option value=5>Zone 5</option>
       <option value=6>Zone 5A</option>
     </select>
-    <select id="lightrailstop" onchange="stopchange()">
+    <select id="lightrailstop">
     </select>
-    <input type="button" onclick="lookfortrain ()" value="Find">
+    <input type="button" onclick="lookfortrain();" value="Find">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
     <script>
