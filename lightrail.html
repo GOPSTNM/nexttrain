@@ -35,7 +35,7 @@
         stopdata = JSON.parse(stopdata);
       }   
       function zonechange() {
-        if (document.getElementById("lightrailzone") == 8) {
+        if (document.getElementById("lightrailzone").value == 8) {
           alert(optionreturn(0));
         } else {
           document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value-1);
