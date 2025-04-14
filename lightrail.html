@@ -35,16 +35,14 @@
         stopdata = JSON.parse(stopdata);
       }   
       function zonechange() {
-        let optionlist = optionreturn(1);
+        let optionlist = optionreturn(document.getElementById("lightrailzone").value-1);
         document.getElementById("lightrailstop").innerHTML = optionlist;
       }
       function optionreturn(zone) {
         let temp = "";
-        alert(Object.keys(stopdata[zone]).length);
         for (let i = 0; i < Object.keys(stopdata[zone]).length; i++) {
-          temp += `<option>${Object.keys(stopdata[zone])[i]}</option>`;
+          temp += `<option value=${stopdata[zone][i]}>${Object.keys(stopdata[zone])[i]}</option>`;
         }
-        alert(temp);
         return temp;
       }
       function lookfortrain () {
