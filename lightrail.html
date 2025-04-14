@@ -3,16 +3,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Light Rail Arrival Time</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-      
-    </style>
   </head>
   <body>
     <h1>Light Rail Arrival Time</h1>
     <p>Please select Light Rail Stop</p>
     <select id="lightrailzone" onchange="zonechange()">
-      <option selected="true" disabled="true" value=0>Choose a zone</option>
-      <option value=8>Show Stops in All Zones</option>
+      <option selected="true" value=8>Show Stops in All Zones</option>
       <option value=7>Tuen Ma Line Interchange</option>
       <option value=1>Zone 1</option>
       <option value=2>Zone 2</option>
@@ -22,8 +18,6 @@
       <option value=6>Zone 5A</option>
     </select>
     <select id="lightrailstop" onchange="stopchange()">
-      <option disabled="true" value=0>Choose a stop</option>
-      <option disabled="true" value=0>Choose a zone before choosing a stop</option>
     </select>
     <input type="button" onclick="lookfortrain ()" value="Find">
     <div id="results"></div>
