@@ -35,7 +35,8 @@
           });
       } else {
         stopdata = JSON.parse(stopdata);
-      }   
+      } 
+      zonechange();
       function zonechange() {
         if (document.getElementById("lightrailzone").value == 8) {
           let optionlist = '';
