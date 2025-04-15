@@ -69,8 +69,8 @@
       }
       function todisplay() {
         let results = `<p>Last Updated: ${updtime}</p>`;
-        recdata["platform_list"].forEach((i) => {
-          results += i;
+        recdata["platform_list"].forEach(platform => {
+          results += platform["platform_id"];
         });
         document.getElementById("results").innerHTML = results;
       }
