@@ -23,6 +23,8 @@
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
     <script>
+      let updtime;
+      let recdata;
       let stopdata = localStorage.getItem("light_rail_data");
       if (stopdata === null) {
         fetch("light_rail_data/stop_data.json")
@@ -48,40 +50,25 @@
       function optionreturn(zone) {
         return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}">${key}</option>`).join('');
       }
-      function update () {
-        var url = "https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value;
-        fetch(url).then(response => response.json()).then(function(data){
-          if (data["status"] == 0) {
-            alert("No Data."); 
-          } else {
-            var table = "<table><tr><td width=12.5%>Route</td><td width=60%>Destination</td><td width=7.5%>Car</td><td width=20%>Min</td></tr>";
-            for (let i = 0; i < data["platform_list"].length; i++) {
-              let plat = i;
-              var table = table + "<tr><th colspan=4>Platform " + data["platform_list"][plat]["platform_id"] + 
-                "</th></tr>";
-              for (let i = 0; i < data["platform_list"][plat]["route_list"].length; i++) {
-                var time = parseInt(data["platform_list"][plat]["route_list"][i]["time_en"]);
-                if (isNaN(time) == true){
-                  var time = data["platform_list"][plat]["route_list"][i]["time_en"];
-                  if (time == "Arriving"){
-                    var time = "<div class='blink'>1</div>";
-                  }
-                  if (time == "-"){
-                    var time = "<div class='blink'>0</div>";
-                  }
-                  if (time == "Departing"){
-                    var time = "-";
-                  }
-                }
-                var table = table + "<tr><td>" + data["platform_list"][plat]["route_list"][i]["route_no"] + "</td><td>" + 
-                  data["platform_list"][plat]["route_list"][i]["dest_en"] + "</td><td>" + 
-                  data["platform_list"][plat]["route_list"][i]["train_length"] + "</td><td>" + 
-                  time + "</td></tr>";
-              }
-            }
-            document.getElementById("results").innerHTML = table + "</table>";
-          }
-        });
+      function update() {
+        let timeout = false;
+        const timeoutid = setTimeout(() => {timeout = true; alert("No response received, please try again.");}, 3000);
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value)
+           .then(response => {
+             clearTimeout(timeoutid);
+             if (timeout) return;
+             return response.json();
+           })
+           .then(data => {
+             if (timeout) return;
+             recdata = data;
+             updtime = new Date().toTimeString().split(" ")[0];
+             todisplay();
+           })
+      }
+      function todisplay() {
+        let results = `<p>Last Updated: ${updtime}</p>`;
+        document.getElementById("results").innerHTML = results;
       }
     </script>
   </body>
