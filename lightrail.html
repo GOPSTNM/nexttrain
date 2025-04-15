@@ -85,7 +85,9 @@
       function todisplay() {
         let results = `<p>Last Updated: ${updtime}</p>`;
         recdata["platform_list"].forEach(platform => {
-          results += `<p class="lr_plat_text">Platform</p><div class="lr_plat_circ">${platform["platform_id"]}</div>`;
+          results += `<p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div>`;
+          results += "<table>";
+          results += "</table>";
         });
         document.getElementById("results").innerHTML = results;
       }
