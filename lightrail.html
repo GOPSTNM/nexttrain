@@ -27,6 +27,7 @@
         display: inline-block;
         font-size: 15px;
         text-align: center;
+        vertical-align: inherit;
       }
     </style>
   </head>
@@ -96,7 +97,7 @@
       function todisplay() {
         let results = `<p>Last Updated: ${updtime}</p>`;
         recdata["platform_list"].forEach(platform => {
-          results += `<table><tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr><td width='80px'>Route</td><td width='180px'>Destination</td><td width='60px'>Car</td><td width='80px'>Min</td></tr>`;
+          results += `<table><tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr><td width='80px'>Route</td><td width='220px'>Destination</td><td width='60px'>Car</td><td width='60px'>Min</td></tr>`;
           results += "</table>";
         });
         document.getElementById("results").innerHTML = results;
