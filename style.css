@@ -45,3 +45,17 @@ input[type=text], select {
 input[type=text]:focus, select:focus {
   border: 2px solid #1A7CDB;
 }
+.smalltxt {
+  line-height: 12px;
+  font-size: 12px;
+}
+.boldtxt {
+  font-weight: 700;
+}
+.medtxt {
+  line-height: 17px;
+  font-size: 17px;
+}
+.strongtxt {
+  color: #EB4605;
+}
