@@ -99,7 +99,7 @@
         recdata["platform_list"].forEach(platform => {
           results += `<table><tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr><td width='80px'>Route</td><td width='220px'>Destination</td><td width='60px'>Car</td><td width='60px'>Min</td></tr>`;
           platform["route_list"].forEach(train => {
-            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", "<span class='smalltxt'>min</span>")}</td></tr>`;
+            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
           });
           results += "</table>";
         });
