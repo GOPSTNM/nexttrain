@@ -3,6 +3,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Light Rail Arrival Time</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .lr_plat_circ {
+        height: 20px;
+        width: 20px;
+        background-color: #bbb;
+        border-radius: 100%;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <h1>Light Rail Arrival Time</h1>
@@ -70,7 +79,7 @@
       function todisplay() {
         let results = `<p>Last Updated: ${updtime}</p>`;
         recdata["platform_list"].forEach(platform => {
-          results += platform["platform_id"];
+          results += `<p>Platform </p><div class="lr_plat_circ">${platform["platform_id"]}</div>`;
         });
         document.getElementById("results").innerHTML = results;
       }
