@@ -29,19 +29,8 @@
         text-align: center;
         vertical-align: inherit;
       }
-      .route_logo_frame {
-        width: 70px;
-        background-color: Orange; /* Blue background */
-        border: 3px solid black; /* Black border */
-        border-radius: 30px; /* Rounded edges */
-        padding: 8px; /* Padding for blue background */
-      }
-      .route_logo {
-        background-color: white; /* Inner badge color */
-        color: black; /* Text color */
-        font-size: 20px; /* Text size */
-        padding: 0px 5px; /* Padding for the badge */
-        border-radius: 25px; /* Rounded edges */
+      tr.train_info {
+        font-size: 25px;
       }
     </style>
   </head>
@@ -116,7 +105,7 @@
         recdata["platform_list"].forEach(platform => {
           results += `<table><tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr><td width='80px'>Route</td><td width='190px'>Destination</td><td width='70px'>Car</td><td width='80px'>Min</td></tr>`;
           platform["route_list"].forEach(train => {
-            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
+            results += `<tr class='train_info'><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
           });
           results += "</table>";
         });
