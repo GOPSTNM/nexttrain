@@ -8,8 +8,14 @@
         border: none;
         margin: 20px 0px;
       }
-      td {
+      tr:nth-child(1) {
         font-size: 20px;
+        color: #333333;
+        height: 25px;
+        line-height: 20px;
+      }
+      tr:not(:nth-child(1)) {
+        font-size: 40px;
         color: #333333;
         height: 25px;
         line-height: 20px;
@@ -28,9 +34,6 @@
         font-size: 15px;
         text-align: center;
         vertical-align: inherit;
-      }
-      tr.train_info {
-        font-size: 40px;
       }
     </style>
   </head>
@@ -102,7 +105,7 @@
         recdata["platform_list"].forEach(platform => {
           results += `<table><tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr><td width='80px'>Route</td><td width='190px'>Destination</td><td width='70px'>Car</td><td width='80px'>Min</td></tr>`;
           platform["route_list"].forEach(train => {
-            results += `<tr class='train_info'><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
+            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
           });
           results += "</table>";
         });
