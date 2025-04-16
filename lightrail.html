@@ -10,13 +10,13 @@
       }
       tr {
         font-size: 20px;
-        color: #333333;
+        color: #8C8C8C;
         height: 25px;
         line-height: 20px;
       }
       tr:not(:nth-child(2)) {
         font-size: 22px;
-        color: #004152;
+        color: #333333;
         height: 30px;
         line-height: 20px;
       }
@@ -55,7 +55,6 @@
     <input type="button" onclick="update();" value="Find">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
-    <img src="logo/light_rail_car_logo.svg" width="35" height="20">
     <script>
       let updtime;
       let recdata;
@@ -106,7 +105,7 @@
         recdata["platform_list"].forEach(platform => {
           results += `<table><tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr><td width='80px'>Route</td><td width='190px'>Destination</td><td width='70px'>Car</td><td width='80px'>Min</td></tr>`;
           platform["route_list"].forEach(train => {
-            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${train["train_length"]}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
+            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${"<img src='logo/light_rail_car_logo.svg' width='35' height='20'>".repeat(train["train_length"] == '1' ? 1 : train["train_length"] == '2' ? 2 : 0)}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
           });
           results += "</table>";
         });
