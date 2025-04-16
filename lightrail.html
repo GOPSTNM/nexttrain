@@ -7,6 +7,7 @@
       table {
         border: none;
         margin: 20px 0px;
+        table-layout: fixed;
       }
       tr {
         font-size: 15px;
@@ -56,7 +57,6 @@
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
     <script>
-      alert(window.innerWidth);
       let updtime;
       let recdata;
       let stopdata = localStorage.getItem("light_rail_data");
