@@ -15,7 +15,7 @@ p {
   color: #191970;
 }
 input[type=button] {
-  display: inline;
+  display: inline-block;
   line-height: 45px;
   width: 300px;
   height: 45px;
@@ -28,7 +28,7 @@ input[type=button] {
   vertical-align: middle;
 }
 input[type=text], select {
-  display: inline;
+  display: inline-block;
   line-height: 45px;
   height: 45px;
   width: 300px;
