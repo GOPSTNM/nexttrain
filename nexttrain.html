@@ -39,9 +39,11 @@
       <option value="DRL">Disneyland Resort Line</option>
     </select>
     <input type="text" onkeyup="key()" id="stninput" placeholder="Enter Station Code">
-    <input type="button" onclick="lookfortrain ()" value="Find">
-    <p id="data"></p>
+    <input type="button" onclick="update()" value="Find">
+    <div id="results"></div>
     <script>
+      let updtime;
+      let recdata;
       const dest = {
         ADM: "Admiralty", TUM: "Tuen Mun", WKS: "Wu Kai Sha", LOW: "Lo Wu", LMC: "Lok Ma Chau", SOH: "South Horizons", TIK: "Tiu Keng Leng", 
         WHA: "Whampoa", HOK: "Hong Kong", AWE : "AsiaWorld Expo", TUC: "Tung Chung", NOP: "North Point", LHP: "LOHAS Park", POA: "Po Lam", 
@@ -51,26 +53,29 @@
         PRE: "Prince Edward", TSY: "Tsing Yi", HOM: "Ho Man Tin", TAP: "Tai Po Market", SHT: "Sha Tin", FOT: "Fo Tan", MKK: "Mong Kok East", 
         SHS: "Sheung Shui", MEF: "Mei Foo", DIH: "Diamond Hill", CIO: "City One", TIS: "Tin Shui Wai"
       };
-      function lookfortrain () {
-        var stninput = document.getElementById("stninput").value;
-        var lineinput = document.getElementById("lineinput").value;
-        if (lineinput == "FAV") {
-          var lineinput = "TML";
-        }
-        const url = "https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=" + lineinput + "&sta=" + stninput;
-        fetch(url).then(response => response.json()).then(function(data){
-          if (data["status"] == 0) {
-            if (data["message"] == "Data is not available (0).") {
-              alert("No Data. Because of wrong station code.");
-            } else {
-              alert("No Data. Because of an incident on the line.");
-            }
-          } else {
-          upd (data["data"][lineinput + "-" + stninput]);
-          }
-        });
+      function update () {
+        let stninput = document.getElementById("stninput").value;
+        let lineinput = document.getElementById("lineinput").value;
+        let timeout = false;
+        const timeoutid = setTimeout(() => {timeout = true; alert("No response received, please try again.");}, 3000);
+        fetch("https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=" + lineinput + "&sta=" + stninput)
+           .then(response => {
+             clearTimeout(timeoutid);
+             if (timeout) return;
+             return response.json();
+           })
+           .then(data => {
+             if (timeout) return;
+             recdata = data;
+             updtime = new Date().toTimeString().split(" ")[0];
+             if (data["status"] == 0) {
+               alert("No Data. Because of wrong station code or an incident on the line.");
+             } else {
+               todisplay();
+             }
+           })
       }
-      function upd(data) {
+      function todisplay() {
         var dir = "UP";
         if (location.search.split('m=')[1] !== undefined) {
           var mes = location.search.split('m=')[1].replace(/%20/g, " ");
@@ -113,14 +118,14 @@
           alert("No Data. Because there is no train data from the data source.");
         } else {
           var table = table + "</table>";
-          document.getElementById("data").innerHTML = table;
+          document.getElementById("results").innerHTML = table;
         }
       }
       function key() {
         let enter = document.getElementById("stninput");
         enter.value = enter.value.toUpperCase();
         if (event.key === 'Enter') {
-          lookfortrain();
+          update();
         }
       }
     </script>
