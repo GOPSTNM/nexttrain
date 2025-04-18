@@ -107,7 +107,7 @@
         recdata["platform_list"].forEach(platform => {
           results += `<tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr class='desc'><td width='40px'>Route</td><td width='155px'>Destination</td><td width='70px'>Car</td><td width='110px'>Time</td></tr>`;
           platform["route_list"].forEach(train => {
-            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${"<img src='logo/light_rail_car_logo.svg' height='20'>".repeat(train["train_length"] == '1' ? 1 : train["train_length"] == '2' ? 2 : 1)}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
+            results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${"<img src='logo/light_rail_car_logo.svg' style='margin-right: 2px;' height='20'>".repeat(train["train_length"] == '1' ? 1 : train["train_length"] == '2' ? 2 : 1)}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
           });
         });
         results += "</table>";
