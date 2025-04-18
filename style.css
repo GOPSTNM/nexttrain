@@ -25,7 +25,6 @@ input[type=button] {
   border: 2px solid #FF8C00;
   border-radius: 8px;
   margin: 2px;
-  vertical-align: middle;
 }
 input[type=text], select {
   display: inline-block;
