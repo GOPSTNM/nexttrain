@@ -40,7 +40,6 @@ input[type=text], select {
   margin: 2px;
   -webkit-transition: 0.5s;
   outline: none;
-  vertical-align: middle;
 }
 input[type=text]:focus, select:focus {
   border: 2px solid #1A7CDB;
