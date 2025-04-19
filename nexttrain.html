@@ -44,12 +44,12 @@
     <script>
       let updtime;
       let recdata;
-      const dest = {
+      const destlist = {
         ADM: "Admiralty", TUM: "Tuen Mun", WKS: "Wu Kai Sha", LOW: "Lo Wu", LMC: "Lok Ma Chau", SOH: "South Horizons", TIK: "Tiu Keng Leng", 
         WHA: "Whampoa", HOK: "Hong Kong", AWE : "AsiaWorld Expo", TUC: "Tung Chung", NOP: "North Point", LHP: "LOHAS Park", POA: "Po Lam", 
         CEN: "Central", TSW: "Tsuen Wan", KET: "Kennedy Town", CHW: "Chai Wan", SUN: "Sunny Bay", DIS: "Disneyland Resort"
       };
-      const specialdest = {
+      const specialdestlist = {
         PRE: "Prince Edward", TSY: "Tsing Yi", HOM: "Ho Man Tin", TAP: "Tai Po Market", SHT: "Sha Tin", FOT: "Fo Tan", MKK: "Mong Kok East", 
         SHS: "Sheung Shui", MEF: "Mei Foo", DIH: "Diamond Hill", CIO: "City One", TIS: "Tin Shui Wai"
       };
@@ -85,7 +85,7 @@
             results += "<table><tr class='desc'><td>Destination</td><td>Platform</td><td>Time</td><td>Min</td></tr>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
               let dest = train["dest"];
-              dest = (stn[dest] !== undefined ? stn[dest] : specialstn[dest] !== undefined ? specialstn[dest] : dest);
+              dest = destlist[dest] || specialdestlist[dest] || dest;
               let plat = train["plat"];
               let time = train["time"].substring(11,16);
               let min = Math.ceil((new Date(train["time"]) - new Date())/60000);
