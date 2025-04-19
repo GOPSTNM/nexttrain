@@ -83,7 +83,7 @@
         results += "<table>";
         for (let i = 0; i < 2; i++) {
           if (recdata["data"][lineinput + "-" + stninput][direction]) {
-            results += "<tr class='desc'><td width='155px'>Destination</td><td width='40px'>Platform</td><td width='110px'>Time</td><td width='70px'>Min</td></tr>";
+            results += "<tr class='desc'><td width='255px'>Destination</td><td width='40px'>Platform</td><td width='40px'>Time</td><td width='40px'>Min</td></tr>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
               let dest = train["dest"];
               dest = destlist[dest] || specialdestlist[dest] || dest;
