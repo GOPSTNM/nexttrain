@@ -81,9 +81,10 @@
         let results = `<p>Last Updated: ${updtime}</p>`;
         let direction = "UP";
         for (let i = 0; i < 2; i++) {
-          recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
-            results += train["dest"];
-          });
+          if (recdata["data"][lineinput + "-" + stninput][direction]) {
+            recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
+              results += train["dest"];
+            });
           direction = "DOWN";
         }
         document.getElementById("results").innerHTML = results;
