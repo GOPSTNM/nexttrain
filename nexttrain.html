@@ -80,9 +80,10 @@
       function todisplay() {
         let results = `<p>Last Updated: ${updtime}</p>`;
         let direction = "UP";
+        results += "<table>";
         for (let i = 0; i < 2; i++) {
           if (recdata["data"][lineinput + "-" + stninput][direction]) {
-            results += "<table><tr class='desc'><td>Destination</td><td>Platform</td><td>Time</td><td>Min</td></tr>";
+            results += "<tr class='desc'><td>Destination</td><td>Platform</td><td>Time</td><td>Min</td></tr>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
               let dest = train["dest"];
               dest = destlist[dest] || specialdestlist[dest] || dest;
@@ -91,10 +92,10 @@
               let min = Math.ceil((new Date(train["time"]) - new Date())/60000);
               results += `<tr><td>${dest}</td><td>${plat}</td><td>${time}</td><td>${min}</td></tr>`;
             });
-            results += "</table>";
           }
           direction = "DOWN";
         }
+        results += "</table>";
         document.getElementById("results").innerHTML = results;
       }
       function key() {
