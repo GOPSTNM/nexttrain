@@ -45,7 +45,7 @@
       let updtime;
       let recdata;
       const destlist = {
-        ADM: "Admiralty", TUM: "Tuen Mun", WKS: "Wu Kai Sha", LOW: "Lo Wu", LMC: "Lok Ma Chau Via Racecouse", SOH: "South Horizons", TIK: "Tiu Keng Leng", 
+        ADM: "Admiralty", TUM: "Tuen Mun", WKS: "Wu Kai Sha", LOW: "Lo Wu", LMC: "Lok Ma Chau", SOH: "South Horizons", TIK: "Tiu Keng Leng", 
         WHA: "Whampoa", HOK: "Hong Kong", AWE : "AsiaWorld Expo", TUC: "Tung Chung", NOP: "North Point", LHP: "LOHAS Park", POA: "Po Lam", 
         CEN: "Central", TSW: "Tsuen Wan", KET: "Kennedy Town", CHW: "Chai Wan", SUN: "Sunny Bay", DIS: "Disneyland Resort"
       };
@@ -93,7 +93,7 @@
               let plat = train["plat"];
               let time = train["time"].substring(11,16);
               let min = Math.ceil((new Date(train["time"]) - new Date())/60000);
-              results += `<tr><td>${dest}</td><td>${plat}</td><td>${time}</td><td>${min}</td></tr>`;
+              results += `<tr><td>${dest}</td><td style='text-align: center;'>${plat}</td><td>${time}</td><td>${min}</td></tr>`;
             });
           }
           direction = "DOWN";
