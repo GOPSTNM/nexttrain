@@ -79,6 +79,10 @@
       }
       function todisplay() {
         let results = `<p>Last Updated: ${updtime}</p>`;
+        let direction = "UP";
+        recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
+          results += train["dest"];
+        });
         document.getElementById("results").innerHTML = results;
       }
       function key() {
