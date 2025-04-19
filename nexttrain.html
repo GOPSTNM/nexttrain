@@ -82,9 +82,13 @@
         let direction = "UP";
         for (let i = 0; i < 2; i++) {
           if (recdata["data"][lineinput + "-" + stninput][direction]) {
+            results += "<table>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
+              results += "<tr>";
               results += train["dest"];
+              results += "</tr>";
             });
+            results += "</table>";
           }
           direction = "DOWN";
         }
