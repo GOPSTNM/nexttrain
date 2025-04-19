@@ -53,9 +53,11 @@
         PRE: "Prince Edward", TSY: "Tsing Yi", HOM: "Ho Man Tin", TAP: "Tai Po Market", SHT: "Sha Tin", FOT: "Fo Tan", MKK: "Mong Kok East", 
         SHS: "Sheung Shui", MEF: "Mei Foo", DIH: "Diamond Hill", CIO: "City One", TIS: "Tin Shui Wai"
       };
+      let stninput;
+      let lineinput;
       function update () {
-        let stninput = document.getElementById("stninput").value;
-        let lineinput = document.getElementById("lineinput").value;
+        stninput = document.getElementById("stninput").value;
+        lineinput = document.getElementById("lineinput").value;
         let timeout = false;
         const timeoutid = setTimeout(() => {timeout = true; alert("No response received, please try again.");}, 3000);
         fetch("https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=" + lineinput + "&sta=" + stninput)
