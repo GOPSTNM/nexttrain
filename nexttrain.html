@@ -85,6 +85,7 @@
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
               results += train["dest"];
             });
+          }
           direction = "DOWN";
         }
         document.getElementById("results").innerHTML = results;
