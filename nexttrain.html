@@ -84,9 +84,8 @@
           if (recdata["data"][lineinput + "-" + stninput][direction]) {
             results += "<table>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
-              results += "<tr>";
-              results += train["dest"];
-              results += "</tr>";
+              let dest = train["dest"];
+              results += `<tr><td>${dest}</td></tr>`;
             });
             results += "</table>";
           }
