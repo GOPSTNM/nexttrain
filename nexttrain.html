@@ -85,7 +85,10 @@
             results += "<table><tr class='desc'><td>Destination</td><td>Platform</td><td>Time</td><td>Min</td></tr>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
               let dest = train["dest"];
-              results += `<tr><td>${dest}</td></tr>`;
+              let plat = train["plat"];
+              let time = train["time"].substring(11,16);
+              let min = Math.ceil((new Date(train["time"]) - new Date())/60000);
+              results += `<tr><td>${dest}</td><td>${plat}</td><td>${time}</td><td>${min}</td></tr>`;
             });
             results += "</table>";
           }
