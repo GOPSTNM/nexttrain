@@ -45,6 +45,17 @@ input[type=text], select {
 input[type=text]:focus, select:focus {
   border: 2px solid #1A7CDB;
 }
+input[type=checkbox] {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #FF8C00;
+  border-radius: 8px;
+  margin: 2px;
+  vertical-align: middle;
+}
 .smalltxt {
   line-height: 12px;
   font-size: 12px;
