@@ -6,9 +6,11 @@
   </head>
   <body>
     <h1>Settings</h1>
-    <p>MTR Bus Language</p>
+    <p>Light Rail Stop Data Storage</p>
+    <input type="button" value="Clear Storage" onclick="localStorage.removeItem('light_rail_data'); alert('Cleared');">
     <p>MTR Bus Stop Data Storage</p>
-    <input type="button" value="Clear Storage" onclick="localStorage.removeItem(key); alert('Cleared');">
+    <input type="button" value="Clear Storage" onclick="localStorage.removeItem('mtr_bus_data'); alert('Cleared');">
+    <p>All Data Storage</p>
     <input type="button" value="Clear Storage" onclick="localStorage.clear(); alert('Cleared');">
   </body>
 </html>
