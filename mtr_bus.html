@@ -181,15 +181,8 @@
       function getspeaker(id) {
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            let typespeaker = {1:"High Volume", 2:"Moderate Volume", 3:"Acceptable Volume", 4:"Acceptable Speaker Noise", 5:"Not Recommended", 6:"EAL Bus with PA"};
             let mes;
-            if (speaker[i][6] == "L") {
-              mes = `Left ${speaker[i][8]}`;
-            } else if (speaker[i][6] == "R") {
-              mes = `Right ${speaker[i][8]}`;
-            } else {
-              mes = speaker[i].substring(8);
-            }
+            mes = speaker[i];
             return `<tr><td colspan="3" class="strongtxt">${typespeaker[Number(speaker[i][4])]} [ ${mes} ]</td></tr>`;
           }
         }
