@@ -182,7 +182,7 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let mes = speaker[i];
-            return `<tr><td colspan="3" class="strongtxt">${typespeaker[Number(speaker[i][4])]} [ ${mes} ]</td></tr>`;
+            return `<tr><td colspan="3" class="strongtxt">${mes}</td></tr>`;
           }
         }
         return "";
