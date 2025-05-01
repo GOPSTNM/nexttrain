@@ -182,8 +182,8 @@
         let mes = "";
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            let speaker_details = JSON.parse("{" + speaker[i].substring(15).replaceAll("\t", ", ") + "}");
-            mes += speaker[i].substring(0, 10) + speaker_details[0];
+            let speaker_details = "{" + speaker[i].substring(15).replaceAll("\t", ", ") + "}";
+            mes += speaker[i].substring(0, 10) + speaker_details;
           }
         }
         if (mes == "") {
