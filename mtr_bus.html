@@ -185,7 +185,9 @@
             mes += speaker[i];
           }
         }
-        if (mes != "") {
+        if (mes == "") {
+          return "";
+        } else {
           return `<tr><td colspan="3" class="strongtxt">${mes}</td></tr>`;
         }
       }
