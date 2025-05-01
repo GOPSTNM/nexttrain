@@ -182,7 +182,7 @@
         let mes = "";
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            let speaker_details = speaker[i].substring(15).replace("/\t/g", ", ");
+            let speaker_details = speaker[i].substring(15).replace("\t", ", ");
             mes += speaker[i].substring(0, 10) + speaker_details;
           }
         }
