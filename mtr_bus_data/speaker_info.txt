@@ -1,49 +1,36 @@
-//High Volume
-322 1 M Left 1 (21/03/2025 No Sound)
-379 1 M Left 1, Left 4, Right 1
-
-//Moderate Volume
-149 2 L 1
-319 2 R 4
-320 2 R 1
-323 2 R 1
-R 4 Lower volume
-L 1 good
-331 2 L 5
-Moderate
-336 2 M Right 1, Right 3, Left 5
-349 2 L 5
-350 2 R 1
-358 2 L 1
-361 2 M Left 5 (Rest of the speakers in low volume)
-362 2 M Left 5 (Only Rear Speakers)
-Yes
-522 2 M Right 4, Left 5 (Tall)
-532 2 M Left 1 (Tall)
-831 2 M Right 3 (Tall)
-833 2 M Left 4, 5 (Tall)
-
-//Acceptable Volume
-324 3 L 3
-346 3 L 4
-366 3 M Left 4 (Higher Volume on “Hold Handrail”)
-375 3 M Low Volume
-
-//Minor Speaker Noise
-526 4 M Left 1 (Tall) (K65 Yau San St. Played)
-862 4 M Left 1 (Tall)
-
-//Not Recommended
-325 5 M Low Volume
-343 5 M Severe Speaker Noise
-354 5 M No Sound
-356 5 M Low Volume (No Sound Except Left 4, Right 4)
-365 5 M No Sound
-376 5 M Low Volume
-549 5 M System on test, no sound, not recommended
-
-//Feeder Bus
-381 6 M Relatively Low Volume, Acceptable
-384 6 M No Exact
-385 6 R 1
-386 6 M Online Video
+08/12/2024	149	L1	8	8	10	10	
+03/03/2025	379	L1	10	10	10	10	
+05/04/2025	381	R1	6	9	10	10	EAL Feeder Bus
+11/04/2025	379	R1	10	8	10	10	
+15/04/2025	145	L1	9	9	1	10	
+15/04/2025	145	R1	9	9	10	10	
+19/04/2025	523	L4	8	7	10	10	
+22/04/2025	507	R4	8	7	10	10	
+26/04/2025	341	L4	6	7	10	10	
+26/04/2025	369	L2	7	9	5	5	
+27/04/2025	148	R1	4	6	10	10	
+28/04/2025	335	L3	5	8	10	8	Strong AC Noise
+21/03/2025	322	L1	0	0	0	0	No Sound
+31/01/2025	320	R1	7	8	10	10	
+19/01/2025	323	R1	6	8	10	10	
+23/03/2025	331	L5	8	6	10	10	
+22/02/2025	336	R1	7	7	10	10	R1, R3, L5
+25/01/2025	349	L5	5	4	8	10	
+31/03/2025	350	R1	8	7	10	10	
+23/03/2025	362	L5	8	8	10	8	Only Rear Speakers
+01/02/2025	522	R4	8	8	10	10	
+24/02/2025	833	L4	8	7	10	10	
+27/01/2025	831	R3	8	8	10	10	
+21/03/2025	324	L3	4	7	10	10	
+31/01/2025	346	L4	7	7	10	10	
+03/03/2025	366	L4	7	8	10	10	
+01/05/2025	375	R1	3	5	10	10	
+16/02/2025	526	L1	6	6	7	10	
+01/05/2025	325	L1	3	5	10	10	
+25/01/2025	343	R4	5	5	2	10	
+01/05/2025	354	L1	0	0	0	0	No Sound
+22/02/2025	356	L4	4	7	10	10	No Sound Except L4, R4
+01/05/2025	365	L1	0	0	0	0	No Sound
+01/05/2025	376	L1	3	5	10	10	Low Volume
+01/05/2025	549	L1	0	0	0	0	System on Test
+08/03/2025	385	R1	8	9	10	10	EAL Feeder Bus
