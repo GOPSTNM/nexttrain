@@ -179,13 +179,13 @@
         document.getElementById("results").innerHTML = results;
       }
       function getspeaker(id) {
+        let mes;
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
-            let mes = speaker[i];
-            return `<tr><td colspan="3" class="strongtxt">${mes}</td></tr>`;
+            mes += speaker[i];
           }
         }
-        return "";
+        return `<tr><td colspan="3" class="strongtxt">${mes}</td></tr>`;
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
