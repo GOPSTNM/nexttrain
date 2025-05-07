@@ -183,7 +183,7 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let speaker_details = speaker[i].split("\t");
-            mes += speaker_details[0] + speaker_circ(speaker_details[3]);
+            mes += speaker_details[0] + speaker_circ(speaker_details[3]) + speaker_circ(speaker_details[4]) + speaker_circ(speaker_details[5]) + speaker_circ(speaker_details[6]);
           }
         }
         if (mes == "") {
@@ -197,23 +197,18 @@
         to_change.style.display = (to_change.style.display !== "block") ? "block" : "none";
       }
       function speaker_circ(number) {
-        let backgroundColor;
-        let textColor = 'white';
+        let colour;
         if (number >= 0 && number <= 4) {
-          backgroundColor = 'red';
+          colour = "#D2222D";
         } else if (number >= 5 && number <= 7) {
-          backgroundColor = 'yellow';
+          colour = "FFBF00";
         } else if (number >= 8 && number <= 10) {
-          backgroundColor = 'green';
+          colour = "238823";
         } else {
-          backgroundColor = 'gray'; // Default color for invalid input
+          colour = 'gray';
           return '<div style="width: 100px; height: 100px; border-radius: 50%; background-color: gray; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white;">N/A</div>';
         }
-        return `
-        <div style="width: 100px; height: 100px; border-radius: 50%; background-color: ${backgroundColor}; display: flex; align-items: center; justify-content: center; font-size: 24px; color: ${textColor};">
-            ${number}
-        </div>
-        `;
+        return `<div style="width: 20px; height: 20px; border-radius: 100%; background-color: ${colour}; display: inline-block; font-size: 20px; color: #ffffff">${number}</div>`;
       }
     </script>
   </body>
