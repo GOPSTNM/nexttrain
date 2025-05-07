@@ -183,7 +183,7 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let speaker_details = speaker[i].split("\t");
-            mes += speaker_details.toString();
+            mes += speaker_details[0] + speaker_circ(speaker_details[3]);
           }
         }
         if (mes == "") {
@@ -195,6 +195,25 @@
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
         to_change.style.display = (to_change.style.display !== "block") ? "block" : "none";
+      }
+      function speaker_circ(number) {
+        let backgroundColor;
+        let textColor = 'white';
+        if (t >= 0 && t <= 4) {
+          backgroundColor = 'red';
+        } else if (t >= 5 && t <= 7) {
+          backgroundColor = 'yellow';
+        } else if (t >= 8 && t <= 10) {
+          backgroundColor = 'green';
+        } else {
+          backgroundColor = 'gray'; // Default color for invalid input
+          return '<div style="width: 100px; height: 100px; border-radius: 50%; background-color: gray; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white;">N/A</div>';
+        }
+        return `
+        <div style="width: 100px; height: 100px; border-radius: 50%; background-color: ${backgroundColor}; display: flex; align-items: center; justify-content: center; font-size: 24px; color: ${textColor};">
+            ${t}
+        </div>
+        `;
       }
     </script>
   </body>
