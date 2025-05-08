@@ -43,6 +43,15 @@
         display: none;
         margin-left: 43px;
       }
+      .speaker_circ {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        display: inline-block;
+        font-size: 15px;
+        color: #ffffff";
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -183,6 +192,9 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let speaker_details = speaker[i].split("\t");
+            if (i != 0) {
+              mes += "\n";
+            }
             mes += `${speaker_details[0]} Volume${speaker_circ(speaker_details[3])} Low-Freq${speaker_circ(speaker_details[4])} Noise${speaker_circ(speaker_details[5])} General${speaker_circ(speaker_details[6])} ${speaker_details[7]}`;
           }
         }
@@ -205,7 +217,7 @@
         } else if (number >= 8 && number <= 10) {
           colour = "#238823";
         }
-        return `<div style="width: 20px; height: 20px; border-radius: 100%; background-color: ${colour}; display: inline-block; font-size: 15px; color: #ffffff" text-align: center;>${number}</div>`;
+        return `<div class="speaker_circ" style="background-color: ${colour};>${number}</div>`;
       }
     </script>
   </body>
