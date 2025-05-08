@@ -193,7 +193,7 @@
           if (speaker[i].includes(id)) {
             let speaker_details = speaker[i].split("\t");
             if (i != 0) {
-              mes += "\n";
+              mes += "<br>";
             }
             mes += `${speaker_details[0]} Volume${speaker_circ(speaker_details[3])} Low-Freq${speaker_circ(speaker_details[4])} Noise${speaker_circ(speaker_details[5])} General${speaker_circ(speaker_details[6])} ${speaker_details[7]}`;
           }
