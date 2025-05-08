@@ -190,19 +190,15 @@
       function getspeaker(id) {
         let mes = "";
         for (let i in speaker) {
-          alert(i);
           if (speaker[i].includes(id)) {
             let speaker_details = speaker[i].split("\t");
-            if (i != 0) {
-              mes += "<br>";
-            }
-            mes += `${speaker_details[0]} Volume${speaker_circ(speaker_details[3])} Low-Freq${speaker_circ(speaker_details[4])} Noise${speaker_circ(speaker_details[5])} General${speaker_circ(speaker_details[6])} ${speaker_details[7]}`;
+            mes += `${speaker_details[0]} Volume${speaker_circ(speaker_details[3])} Low-Freq${speaker_circ(speaker_details[4])} Noise${speaker_circ(speaker_details[5])} General${speaker_circ(speaker_details[6])} ${speaker_details[7]}<br>`;
           }
         }
         if (mes == "") {
           return "";
         } else {
-          return `<tr><td colspan="3" class="strongtxt">${mes}</td></tr>`;
+          return `<tr><td colspan="3" class="strongtxt">${mes.substr(-5)}</td></tr>`;
         }
       }
       function change(elem) {
