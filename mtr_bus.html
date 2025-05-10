@@ -192,7 +192,7 @@
         for (let i in speaker) {
           if (speaker[i].includes(id)) {
             let speaker_details = speaker[i].split("\t");
-            mes += `<details><summary>${speaker_details[0]} ${speaker_details[2]}</summary>Volume${speaker_circ(speaker_details[3])} Low-Freq${speaker_circ(speaker_details[4])} Noise${speaker_circ(speaker_details[5])} General${speaker_circ(speaker_details[6])} ${speaker_details[7]}</details>`;
+            mes += `<details><summary>${speaker_details[0]} ${speaker_details[2]}</summary>Volume${speaker_circ(speaker_details[3])} Low-Freq${speaker_circ(speaker_details[4])} Noise${speaker_circ(speaker_details[5])} General${speaker_circ(speaker_details[6])} ${speaker_details[7]}</details><br>`;
           }
         }
         if (mes == "") {
