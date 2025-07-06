@@ -85,7 +85,7 @@
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
-    <input type="button" value="Update Bus Data" onclick="localStorage.removeItem('mtr_bus_speaker_info'); location.reload(); alert('Updated');">
+    <input type="button" value="Update Bus Data" onclick="update_speaker();">
     <script>
       let viewdirection = 0;
       let updtime;
@@ -216,6 +216,15 @@
           colour = "#238823";
         }
         return `<div class="speaker_circ" style="background-color: ${colour};">${number}</div>`;
+      }
+      function update_speaker() {
+        fetch("mtr_bus_data/speaker_info.txt")
+          .then(response => response.text())
+          .then(data => {
+            localStorage.setItem("mtr_bus_speaker_info", data);
+            speaker = data.split("\n");
+            alert('Updated');
+          });
       }
     </script>
   </body>
