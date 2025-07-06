@@ -85,7 +85,14 @@
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
-    <input type="button" value="Update Bus Data" onclick="localStorage.removeItem('mtr_bus_speaker_info'); alert('Updated');">
+    <input type="button" value="Update Bus Data" onclick="localStorage.removeItem('mtr_bus_speaker_info');
+      fetch('mtr_bus_data/data.json')
+        .then(response => response.json())
+        .then(data => {
+          localStorage.setItem('mtr_bus_data', JSON.stringify(data));
+          routedata = data;
+        });
+      alert('Updated');">
     <script>
       let viewdirection = 0;
       let updtime;
