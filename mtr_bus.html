@@ -85,6 +85,7 @@
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
+    <input type="button" value="Update Data" onclick="localStorage.removeItem('mtr_bus_speaker_info'); alert('Cleared');">
     <script>
       let viewdirection = 0;
       let updtime;
