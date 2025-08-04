@@ -28,6 +28,7 @@
     </label>
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
+    <p class="description_text">Testing message</p>
     <script>
       let updtime;
       let recdata;
@@ -48,11 +49,11 @@
         if (document.getElementById("lightrailzone").value == 7) {
           let optionlist = '';
           for (let i = 0; i < 7; i++) {
-            optionlist += `<optgroup label="Zone ${i === 6 ? '5A' : i}">${optionreturn(i-1)}</optgroup>`;
+            optionlist += `<optgroup label="Zone ${i === 6 ? '5A' : i}">${optionreturn(i)}</optgroup>`;
           }
           document.getElementById("lightrailstop").innerHTML = optionlist;
         } else {
-          document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value-1);
+          document.getElementById("lightrailstop").innerHTML = optionreturn(document.getElementById("lightrailzone").value);
         }
       }
       function optionreturn(zone) {
