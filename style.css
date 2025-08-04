@@ -79,11 +79,9 @@ tr {
   height: 30px;
   line-height: 20px;
 }
-.lr_plat_circ {
+.inline_circle {
   height: 20px;
   width: 20px;
-  color: #000000;
-  background-color: #F5C402;
   border-radius: 100%;
   display: inline-block;
   font-size: 15px;
