@@ -54,7 +54,7 @@
       }
       function update() {
         let timeout = false;
-        const timeoutid = setTimeout(() => {timeout = true; document.getElementById("message_area").innerHTML = "<p>No response received, please try again.</p>";);
+        const timeoutid = setTimeout(() => {timeout = true; document.getElementById("message_area").innerHTML = "<p>No response received, please try again.</p>";});
         fetch("https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value)
            .then(response => {
              clearTimeout(timeoutid);
