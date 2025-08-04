@@ -16,6 +16,7 @@ p {
 }
 input[type=button] {
   display: inline-block;
+  height: 45px;
   width: 300px;
   background-color: #FF8C00;
   color: #FFFFFF;
@@ -35,6 +36,7 @@ select {
 }
 input[type=text], select {
   display: inline-block;
+  height: 45px;
   width: 300px;
   background-color: #FFFFFF;
   color: #000000;
@@ -86,6 +88,8 @@ tr {
   display: inline-block;
 }
 .inline_circle {
+  height: 20px;
+  width: 20px;
   border-radius: 100%;
   display: inline-block;
   font-size: 15px;
