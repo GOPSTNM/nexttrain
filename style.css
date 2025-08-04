@@ -89,28 +89,21 @@ tr {
   text-align: center;
   vertical-align: middle;
 }
-/* Customize the label (the container) */
 .checkbox_container {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: auto;
+  width: fit-content;
 }
-
-/* Hide the browser's default checkbox */
 .checkbox_container input {
   position: absolute;
-  opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+  display: none;
 }
 
 /* Create a custom checkbox */
