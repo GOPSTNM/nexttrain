@@ -50,7 +50,7 @@
         }
       }
       function optionreturn(zone) {
-        return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}">${key}</option>`).join("");
+        return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}"><div>${key}</div></option>`).join("");
       }
       function update() {
         let timeout = false;
