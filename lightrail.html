@@ -25,8 +25,6 @@
     <p>Please note that the info will not be updated automatically</p>
     <p class="description_text">Testing message</p>
     <script>
-      let updtime;
-      let recdata;
       let stopdata = localStorage.getItem("light_rail_data");
       if (stopdata === null) {
         fetch("light_rail_data/light_rail_stop_list.json")
@@ -52,7 +50,7 @@
         }
       }
       function optionreturn(zone) {
-        return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}">${key}</option>`).join('');
+        return Object.keys(stopdata[zone]).map(key => `<option value="${stopdata[zone][key]}">${key}</option>`).join("");
       }
       function update() {
         let timeout = false;
@@ -65,12 +63,10 @@
            })
            .then(data => {
              if (timeout) return;
-             recdata = data;
-             updtime = new Date().toTimeString().split(" ")[0];
-             todisplay();
+             todisplay(data, new Date().toTimeString().split(" ")[0]);
            })
       }
-      function todisplay() {
+      function todisplay(recdata, updtime) {
         let results = `<p>Last Updated: ${updtime}</p>`;
         results += "<table>";
         recdata["platform_list"].forEach(platform => {
