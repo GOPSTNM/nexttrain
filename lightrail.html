@@ -20,12 +20,7 @@
     <select id="lightrailstop">
     </select>
     <input type="button" onclick="update();" value="Find">
-    <input type="checkbox"><br>
-    <label class="checkbox_container">
-      <input type="checkbox">
-      <span class="checkbox_checkmark"></span>
-      <p>This is a testing message</p>
-    </label>
+    <div id="message_area"></div>
     <div id="results"></div>
     <p>Please note that the info will not be updated automatically</p>
     <p class="description_text">Testing message</p>
@@ -49,7 +44,7 @@
         if (document.getElementById("lightrailzone").value == 7) {
           let optionlist = '';
           for (let i = 0; i < 7; i++) {
-            optionlist += `<optgroup label="Zone ${i === 6 ? '5A' : i}">${optionreturn(i)}</optgroup>`;
+            optionlist += `<optgroup label="Zone ${number < 5 ? number + 1 : (number === 5 ? "5A" : "Tuen Ma Line Interchange")}">${optionreturn(i)}</optgroup>`;
           }
           document.getElementById("lightrailstop").innerHTML = optionlist;
         } else {
