@@ -59,9 +59,6 @@ input[type=text]:focus, select:focus {
 .strong_text {
   color: #EB4605;
 }
-.inline_text {
-  display: inline-block;
-}
 .description_text {
   color: #8C8C8C;
   font-size: 15px;
@@ -78,6 +75,10 @@ tr {
   color: #333333;
   height: 30px;
   line-height: 20px;
+}
+.inline_circle_text {
+  margin: 0px;
+  display: inline-block;
 }
 .inline_circle {
   height: 20px;
