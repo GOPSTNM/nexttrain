@@ -26,6 +26,7 @@ input[type=button] {
   border-radius: 8px;
   margin: 2px;
   vertical-align: middle;
+  cursor: pointer;
 }
 input[type=text], select {
   display: inline-block;
@@ -114,9 +115,6 @@ tr {
   background-color: #FFFFFF;
   border: 2px solid #FF8C00;
   border-radius: 8px;
-}
-.checkbox_container:hover input ~ .checkbox_checkmark {
-  background-color: #F0FFFF;
 }
 .checkbox_container input:checked ~ .checkbox_checkmark {
   background-color: #FF8C00;
