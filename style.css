@@ -91,16 +91,12 @@ tr {
 }
 /* Customize the label (the container) */
 .checkbox_container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
+  display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: auto;
 }
 
 /* Hide the browser's default checkbox */
