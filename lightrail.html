@@ -8,14 +8,14 @@
     <h1>Light Rail Arrival Time</h1>
     <p>Please select Light Rail Stop</p>
     <select id="lightrailzone" onload="zonechange();" onchange="zonechange();">
-      <option selected="true" value=8>Show Stops in All Zones</option>
-      <option value=7>Tuen Ma Line Interchange</option>
-      <option value=1>Zone 1</option>
-      <option value=2>Zone 2</option>
-      <option value=3>Zone 3</option>
-      <option value=4>Zone 4</option>
-      <option value=5>Zone 5</option>
-      <option value=6>Zone 5A</option>
+      <option selected="true" value=7>Show Stops in All Zones</option>
+      <option value=6>Tuen Ma Line Interchange</option>
+      <option value=0>Zone 1</option>
+      <option value=1>Zone 2</option>
+      <option value=2>Zone 3</option>
+      <option value=3>Zone 4</option>
+      <option value=4>Zone 5</option>
+      <option value=5>Zone 5A</option>
     </select>
     <select id="lightrailstop">
     </select>
@@ -33,7 +33,7 @@
       let recdata;
       let stopdata = localStorage.getItem("light_rail_data");
       if (stopdata === null) {
-        fetch("https://gopstnm.github.io/nexttrain/light_rail_data/stop_data.json")
+        fetch("light_rail_data/light_rail_stop_list.json")
           .then(response => response.json())
           .then(data => {
             localStorage.setItem("light_rail_data", JSON.stringify(data));
@@ -45,9 +45,9 @@
         zonechange();
       }
       function zonechange() {
-        if (document.getElementById("lightrailzone").value == 8) {
+        if (document.getElementById("lightrailzone").value == 7) {
           let optionlist = '';
-          for (let i = 1; i <= 6; i++) {
+          for (let i = 0; i < 7; i++) {
             optionlist += `<optgroup label="Zone ${i === 6 ? '5A' : i}">${optionreturn(i-1)}</optgroup>`;
           }
           document.getElementById("lightrailstop").innerHTML = optionlist;
