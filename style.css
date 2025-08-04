@@ -75,7 +75,7 @@ table {
   border: none;
   margin: 20px 0px;
   table-layout: fixed;
-  width: 180px;
+  width: fit-content;
 }
 tr {
   font-size: 22px;
