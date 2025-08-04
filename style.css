@@ -62,17 +62,16 @@ input[type=text]:focus, select:focus {
 .inline_text {
   display: inline-block;
 }
+.description_text {
+  color: #8C8C8C;
+  font-size: 15px;
+  line-height: 20px;
+}
 table {
   border: none;
   margin: 20px 0px;
   table-layout: fixed;
   width: 375px;
-}
-tr.desc {
-  font-size: 15px;
-  color: #8C8C8C;
-  height: 20px;
-  line-height: 20px;
 }
 tr {
   font-size: 22px;
