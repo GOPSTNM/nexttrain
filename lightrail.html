@@ -71,7 +71,7 @@
         let results = `<p>Last Updated: ${updtime}</p>`;
         results += "<table>";
         recdata["platform_list"].forEach(platform => {
-          results += `<tr style='height: 0px;'><td width='30px'></td><td width='80px'></td><td width='40px'></td><td width='30px'></td></tr><tr><td colspan=4><p class='inline_circle_text'>Platform </p><div class='inline_circle' style='color: #000000; background-color: #F5C402;'>${platform["platform_id"]}</div></td></tr><tr class='description_text'><td>Route</td><td>Destination</td><td>Car</td><td>Time</td></tr>`;
+          results += `<tr style='height: 0px;'><td width='60px'></td><td width='160px'></td><td width='80px'></td><td width='60px'></td></tr><tr><td colspan=4><p class='inline_circle_text'>Platform </p><div class='inline_circle' style='color: #000000; background-color: #F5C402;'>${platform["platform_id"]}</div></td></tr><tr class='description_text'><td>Route</td><td>Destination</td><td>Car</td><td>Time</td></tr>`;
           platform["route_list"].forEach(train => {
             if (train["route_no"] && train["dest_en"] && train["time_en"]) {
               results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${"<img src='logo/light_rail_train_car.svg' style='margin-right: 2px;' height='20'>".repeat(train["train_length"] == '1' ? 1 : train["train_length"] == '2' ? 2 : 1)}</td><td>${train["time_en"].replace(" mins", " <span class='small_text'>min</span>")}</td></tr>`;
