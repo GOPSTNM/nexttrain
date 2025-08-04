@@ -133,10 +133,9 @@ tr {
   top: 5px;
   width: 5px;
   height: 10px;
-  border: 2px solid #FFFFFF;
+  border: auto solid #FFFFFF;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  border-radius: 2px;
 }
