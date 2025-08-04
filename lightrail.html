@@ -42,7 +42,7 @@
       }
       function zonechange() {
         if (document.getElementById("lightrailzone").value == 7) {
-          let optionlist = '';
+          let optionlist = "";
           for (let i = 0; i < 7; i++) {
             optionlist += `<optgroup label="Zone ${number < 5 ? number + 1 : (number === 5 ? "5A" : "Tuen Ma Line Interchange")}">${optionreturn(i)}</optgroup>`;
           }
