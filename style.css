@@ -105,15 +105,15 @@ tr {
   cursor: pointer;
   display: none;
 }
-
-/* Create a custom checkbox */
 .checkbox_checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: #FFFFFF;
+  border: 2px solid #FF8C00;
+  border-radius: 8px;
 }
 
 /* On mouse-over, add a grey background color */
