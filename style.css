@@ -26,7 +26,6 @@ input[type=button] {
   margin: 2px;
   vertical-align: middle;
   cursor: pointer;
-  padding: 12.5px auto;
 }
 input[type=text] {
   cursor: text;
@@ -47,7 +46,6 @@ input[type=text], select {
   vertical-align: middle;
   -webkit-transition: 0.5s;
   outline: none;
-  padding: 12.5px auto;
 }
 input[type=text]:focus, select:focus {
   border: 2px solid #1A7CDB;
@@ -96,7 +94,6 @@ tr {
   text-align: center;
   vertical-align: middle;
   margin: auto 5px;
-  padding: 2.5px;
 }
 .checkbox_container {
   display: block;
