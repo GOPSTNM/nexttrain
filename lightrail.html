@@ -54,7 +54,7 @@
       }
       function update() {
         let timeout = false;
-        const timeoutid = setTimeout(() => {timeout = true; alert("No response received, please try again.");}, 3000);
+        const timeoutid = setTimeout(() => {timeout = true; document.getElementById("message_area").innerHTML = "<p>No response received, please try again.</p>";);
         fetch("https://rt.data.gov.hk/v1/transport/mtr/lrt/getSchedule?station_id=" + document.getElementById("lightrailstop").value)
            .then(response => {
              clearTimeout(timeoutid);
@@ -67,6 +67,7 @@
            })
       }
       function todisplay(recdata, updtime) {
+        document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
         results += "<table>";
         recdata["platform_list"].forEach(platform => {
