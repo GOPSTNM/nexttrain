@@ -2,112 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Light Rail Arrival Time</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-      * {
-        background-color: #F0FFFF;
-        font-family: "Roboto", "Noto Serif HK";
-        font-weight: 580;
-      }
-      h1 {
-        font-size: 30px;
-        color: #191970;
-        font-weight: 700;
-      }
-      p {
-        font-size: 20px;
-        color: #191970;
-      }
-      input[type=button] {
-        display: inline-block;
-        line-height: 45px;
-        width: 300px;
-        height: 45px;
-        background-color: #FF8C00;
-        color: #FFFFFF;
-        font-size: 20px;
-        border: 2px solid #FF8C00;
-        border-radius: 8px;
-        margin: 2px;
-        vertical-align: middle;
-      }
-      input[type=text], select {
-        display: inline-block;
-        line-height: 45px;
-        height: 45px;
-        width: 300px;
-        background-color: #FFFFFF;
-        color: #000000;
-        font-size: 20px;
-        border: 2px solid #FF8C00;
-        border-radius: 8px;
-        margin: 2px;
-        vertical-align: middle;
-        -webkit-transition: 0.5s;
-        outline: none;
-      }
-      input[type=text]:focus, select:focus {
-        border: 2px solid #1A7CDB;
-      }
-      input[type=checkbox] {
-        display: inline-block;
-        height: 20px;
-        width: 20px;
-        background-color: #FFFFFF;
-        color: #000000;
-        border: 2px solid #FF8C00;
-        border-radius: 8px;
-        margin: 2px;
-        vertical-align: middle;
-      }
-      .smalltxt {
-        line-height: 12px;
-        font-size: 12px;
-      }
-      .boldtxt {
-        font-weight: 700;
-      }
-      .medtxt {
-        line-height: 17px;
-        font-size: 17px;
-      }
-      .strongtxt {
-        color: #EB4605;
-      }
-      table {
-        border: none;
-        margin: 20px 0px;
-        table-layout: fixed;
-      }
-      tr.desc {
-        font-size: 15px;
-        color: #8C8C8C;
-        height: 20px;
-        line-height: 20px;
-      }
-      tr {
-        font-size: 22px;
-        color: #333333;
-        height: 30px;
-        line-height: 20px;
-      }
-      .lr_plat_text {
-        margin: 0px;
-        display: inline-block;
-      }
-      .lr_plat_circ {
-        height: 20px;
-        width: 20px;
-        color: #000000;
-        background-color: #F5C402;
-        border-radius: 100%;
-        display: inline-block;
-        font-size: 15px;
-        text-align: center;
-        vertical-align: inherit;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Light Rail Arrival Time</h1>
@@ -177,7 +72,7 @@
         let results = `<p>Last Updated: ${updtime}</p>`;
         results += "<table>";
         recdata["platform_list"].forEach(platform => {
-          results += `<tr><td colspan=4><p class="lr_plat_text">Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr class='desc'><td width='40px'>Route</td><td width='155px'>Destination</td><td width='70px'>Car</td><td width='110px'>Time</td></tr>`;
+          results += `<tr><td colspan=4><p>Platform</p> <div class="lr_plat_circ">${platform["platform_id"]}</div></td></tr><tr class='desc'><td width='40px'>Route</td><td width='155px'>Destination</td><td width='70px'>Car</td><td width='110px'>Time</td></tr>`;
           platform["route_list"].forEach(train => {
             if (train["route_no"] && train["dest_en"] && train["time_en"]) {
               results += `<tr><td>${train["route_no"]}</td><td>${train["dest_en"].replace("Tuen Mun ", "")}</td><td>${"<img src='https://gopstnm.github.io/nexttrain/logo/light_rail_train_car.svg' style='margin-right: 2px;' height='20'>".repeat(train["train_length"] == '1' ? 1 : train["train_length"] == '2' ? 2 : 1)}</td><td>${train["time_en"].replace(" mins", " <span class='smalltxt'>min</span>")}</td></tr>`;
