@@ -28,6 +28,12 @@ input[type=button] {
   vertical-align: middle;
   cursor: pointer;
 }
+input[type=text] {
+  cursor: text;
+}
+select {
+  cursor: pointer;
+}
 input[type=text], select {
   display: inline-block;
   line-height: 45px;
