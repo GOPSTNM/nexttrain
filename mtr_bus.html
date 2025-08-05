@@ -23,6 +23,8 @@
     <p class="description_text">The information is provided by the Digital Policy Office and for reference only</p>
     <script>
       let viewdirection = 0;
+      let recdata;
+      let updtime;
       let speaker = localStorage.getItem("mtr_bus_speaker_info");
       let routedata = localStorage.getItem("mtr_bus_data");
       if (routedata === null) {
@@ -73,10 +75,12 @@
            })
            .then(data => {
              if (timeout) return;
-             todisplay(data, new Date().toTimeString().split(" ")[0]);
+             recdata = data;
+             updtime = new Date().toTimeString().split(" ")[0];
+             todisplay();
            })
       }
-      function todisplay(recdata, updtime) {
+      function todisplay() {
         document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
         let route = document.getElementById("route").value; 
