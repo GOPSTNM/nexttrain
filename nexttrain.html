@@ -68,7 +68,7 @@
       function todisplay(recdata, updtime, stninput, lineinput) {
         document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
-        results += `<table><tr><td colspan='4'>${stninput} Station</td></tr>`;
+        results += `<p>${stninput} Station</p><table>`;
         let direction = "UP";
         for (let i = 0; i < 2; i++) {
           if (recdata["data"][lineinput + "-" + stninput][direction]) {
