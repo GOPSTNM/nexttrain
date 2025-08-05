@@ -50,7 +50,11 @@
              console.log(data);
              if (timeout) return;
              if (data["status"] == 0) {
-               document.getElementById("message_area").innerHTML = "<p>No Data. Because of wrong station code or an incident on the line.</p>";
+               if (data["error"]["errorCode"] == "NT-204") {
+                 document.getElementById("message_area").innerHTML = "<p>Because of wrong station code or an incident on the line.</p>";
+               } else {
+                 document.getElementById("message_area").innerHTML = "<p>No Data. Because of wrong station code or an incident on the line.</p>";
+               }
              } else {
                todisplay(data, new Date().toTimeString().split(" ")[0], stninput, lineinput);
              }
