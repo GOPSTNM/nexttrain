@@ -77,6 +77,17 @@ input[type=text]:focus, select:focus {
 .no_margin {
   margin: 0px;
 }
+.stop_circ {
+  height: 18px;
+  width: 18px;
+  border-radius: 100%;
+  border: 2.5px solid #000000;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 15px;
+  vertical-align: middle;
+  background-color: #FFE100;
+}
 table {
   border: none;
   margin: 20px 0px;
