@@ -2,26 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTR Train Arrival Time</title>
-    <link rel="stylesheet" href="TEMP_style.css">
-    <style>
-      table {
-        border: none;
-        margin: 20px 0px;
-        table-layout: fixed;
-      }
-      tr.desc {
-        font-size: 15px;
-        color: #8C8C8C;
-        height: 20px;
-        line-height: 20px;
-      }
-      tr {
-        font-size: 22px;
-        color: #333333;
-        height: 30px;
-        line-height: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>MTR Train Arrival Time</h1>
@@ -56,6 +37,8 @@
       let stninput;
       let lineinput;
       function update () {
+        let enter = document.getElementById("stninput");
+        enter.value = enter.value.toUpperCase();
         stninput = document.getElementById("stninput").value;
         lineinput = document.getElementById("lineinput").value;
         let timeout = false;
@@ -104,7 +87,7 @@
       function key() {
         let enter = document.getElementById("stninput");
         enter.value = enter.value.toUpperCase();
-        if (event.key === 'Enter') {
+        if (event.key === "Enter") {
           update();
         }
       }
