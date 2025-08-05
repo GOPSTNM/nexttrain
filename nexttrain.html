@@ -50,10 +50,15 @@
              console.log(data);
              if (timeout) return;
              if (data["status"] == 0) {
-               if (data["error"]["errorCode"] == "NT-204") {
-                 document.getElementById("message_area").innerHTML = "<p>Because of wrong station code or an incident on the line.</p>";
-               } else {
-                 document.getElementById("message_area").innerHTML = "<p>No Data. Because of wrong station code or an incident on the line.</p>";
+               switch (data["error"]["errorCode"]) {
+                 case "NT-204":
+                   document.getElementById("message_area").innerHTML = "<p>Wrong station code, please check and try again.</p>";
+                   break;
+                 case "NT-301":
+                   document.getElementById("message_area").innerHTML = "<p>Station code cannot be empty, please input station code and try again.</p>";
+                   break;
+                 default:
+                   document.getElementById("message_area").innerHTML = "<p>There is no data because of an incident on the line or other reason, please try again later</p>";
                }
              } else {
                todisplay(data, new Date().toTimeString().split(" ")[0], stninput, lineinput);
