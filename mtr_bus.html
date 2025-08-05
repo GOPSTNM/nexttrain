@@ -88,7 +88,7 @@
         let stop_id;
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
-          results += `<div class="stop_name" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><div class="stop_name_text">${routedata[route][viewdirectionval][stop_id]}</div></div>`;
+          results += `<div class="" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p class="">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
               results += `<div class="stop_data" id='${stop_id}_data'>`
@@ -107,15 +107,15 @@
                 }
                 let time_data = "";
                 if (i == 0) {
-                  time_data = `<span class="boldtxt">${depart}</span> <span class="smalltxt">min</span>`;
+                  time_data = `<span class="bold_text">${depart}</span> <span class="small_text">min</span>`;
                 } else if (i == Object.keys(routedata[route][viewdirectionval]).length - 1) {
-                  time_data = `<span class="boldtxt">${arrive}</span> <span class="smalltxt">min</span>`;
+                  time_data = `<span class="bold_text">${arrive}</span> <span class="small_text">min</span>`;
+                } else if (arrive < 0.25) {
+                  time_data = "<span class='bold_text'>Departing</span>";
                 } else if (arrive < 0.5) {
-                  time_data = "<span class='boldtxt'>Departing</span>";
-                } else if (arrive < 1) {
-                  time_data = "<span class='boldtxt'>Arriving</span>";
+                  time_data = "<span class='bold_text'>Arriving</span>";
                 } else {
-                  time_data = `<span class="boldtxt">${arrive}</span> <span class="smalltxt">min</span>`;
+                  time_data = `<span class="bold_text">${arrive}</span> <span class="small_text">min</span>`;
                 }
                 results += `<td style="width: 50px">${bus_id}</td>`;
                 results += `<td style="width: 100px">${time_data}</td>`;
