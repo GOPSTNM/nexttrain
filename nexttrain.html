@@ -52,11 +52,11 @@
              if (data["status"] == 0) {
                document.getElementById("message_area").innerHTML = "<p>No Data. Because of wrong station code or an incident on the line.</p>";
              } else {
-               todisplay(data, new Date().toTimeString().split(" ")[0]);
+               todisplay(data, new Date().toTimeString().split(" ")[0], stninput, lineinput);
              }
            })
       }
-      function todisplay(recdata, updtime) {
+      function todisplay(recdata, updtime, stninput, lineinput) {
         document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
         results += "<table>";
