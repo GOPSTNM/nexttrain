@@ -77,13 +77,15 @@
            })
       }
       function todisplay(recdata, updtime) {
-        let stop_id;
+        document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
         let route = document.getElementById("route").value; 
-        if (Object.keys(routedata[route]).length == 1) {
+        if (Object.keys(routedata[route]).length == 2) {
           viewdirection = 0;
         }
-        let viewdirectionval = Object.keys(routedata[route])[viewdirection];
+        let viewdirectionval = Object.keys(routedata[route])[viewdirection + 1];
+        console.log(viewdirectionval);
+        let stop_id;
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
           results += `<div class="stop_name" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><div class="stop_name_text">${routedata[route][viewdirectionval][stop_id]}</div></div>`;
