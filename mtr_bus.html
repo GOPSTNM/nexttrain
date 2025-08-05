@@ -100,7 +100,7 @@
           results += `<div style="display: flex; align-items: center;" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p style="margin: 0px; display: inline-block;">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
-              results += `<table style='margin: 0px 0px 0px 43px;' style='display: none;' id='${stop_id}_data'>`;
+              results += `<table style='margin: 0px 0px 0px 43px; display: none;' id='${stop_id}_data'>`;
               for (let k = 0; k < item["bus"].length; k++) {
                 results += "<tr>";
                 let bus_id = item["bus"][k]["busId"];
