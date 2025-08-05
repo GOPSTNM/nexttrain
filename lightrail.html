@@ -31,6 +31,7 @@
         fetch("light_rail_data/light_rail_stop_list.json")
           .then(response => response.json())
           .then(data => {
+            console.log("fetch");
             localStorage.setItem("light_rail_data", JSON.stringify(data));
             stopdata = data;
             zonechange();
