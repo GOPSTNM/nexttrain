@@ -13,6 +13,11 @@
     <div id="message_area"></div>
     <div id="results"></div>
     <p>Please note that the information will not be updated automatically</p>
+    <label class="checkbox_container">
+      <input type="checkbox" id="rte_description_english" onchange="routedata_to_options();">
+      <span class="checkbox_checkmark"></span>
+      <p>Show English Route Description</p>
+    </label>
     <p class="underline_text" onclick="update_route();">Update Route Information</p>
     <p class="underline_text" onclick="update_speaker();">Update Speaker Information</p>
     <p class="description_text">The information is provided by the Digital Policy Office and for reference only</p>
@@ -45,7 +50,7 @@
       function routedata_to_options() {
         let optionlist = "";
         for (const item in routedata) {
-          optionlist += `<option value="${item}">${item} ${routedata[item]["Description"][0]}</option>`;
+          optionlist += `<option value="${item}">${item} ${routedata[item]["Description"][document.getElementById("rte_description_english").checked == true ? 1 : 0]}</option>`;
         }
         document.getElementById("route").innerHTML = optionlist;
       }
