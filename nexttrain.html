@@ -47,7 +47,6 @@
              return response.json();
            })
            .then(data => {
-             console.log(data);
              if (timeout) return;
              if (data["status"] == 0) {
                switch (data["error"]["errorCode"]) {
