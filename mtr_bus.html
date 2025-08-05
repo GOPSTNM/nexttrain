@@ -26,9 +26,11 @@
           .then(data => {
             localStorage.setItem("mtr_bus_data", JSON.stringify(data));
             routedata = data;
+            routedata_to_options();
           });
       } else {
         routedata = JSON.parse(routedata);
+        routedata_to_options();
       }
       if (speaker === null) {
         fetch("mtr_bus_data/speaker_info.txt")
@@ -45,6 +47,7 @@
         for (const item of routedata) {
           console.log(item);
         }
+        document.getElementById("route").innerHTML = optionlist;
       }
       function changedirection() {
         viewdirection = (viewdirection + 1) % 2;
