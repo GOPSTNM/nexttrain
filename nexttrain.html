@@ -67,11 +67,11 @@
       }
       function todisplay(recdata, updtime, stninput, lineinput) {
         document.getElementById("message_area").innerHTML = "";
-        let results = `<p>Last Updated: ${updtime}</p><p style='margin-bottom: 0px;'>${stninput} Station</p><table style='margin-top: 0px;'>`;
+        let results = `<p>Last Updated: ${updtime}</p><table><tr style='height: 0px;'><td width='60px'></td><td width='140px'></td><td width='80px'></td><td width='60px'></td><tr><td colspan=4>${stninput} Station</td></tr>`;
         let direction = "UP";
         for (let i = 0; i < 2; i++) {
           if (recdata["data"][lineinput + "-" + stninput][direction]) {
-            results += "<tr class='description_text'><td width='210px'>Destination</td><td width='50px'>Platform</td><td width='70px'>Time</td><td width='30px'>Min</td></tr>";
+            results += "<tr class='description_text'><td width='200px'>Destination</td><td width='60px'>Platform</td><td width='60px'>Time</td><td width='30px'>Min</td></tr>";
             recdata["data"][lineinput + "-" + stninput][direction].forEach(train => {
               let dest = train["dest"];
               dest = destlist[dest] || `<span class='strong_text'>${specialdestlist[dest]}</span>` || dest;
