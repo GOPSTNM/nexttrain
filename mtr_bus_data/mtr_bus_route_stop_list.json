@@ -33,6 +33,7 @@
     }
   },
   "K51": {
+    "Description": ["富泰至大欖", "Fu Tai to Tai Lam"],
     "U": {
       "U010": "富泰 Fu Tai",
       "U020": "聚康山莊 Beneville",
@@ -93,6 +94,7 @@
     }
   },
   "K51A": {
+    "Description": ["富泰至掃管笏", "Fu Tai to So Kwun Wat"],
     "U": {
       "U010": "富泰 Fu Tai",
       "U020": "聚康山莊 Beneville",
@@ -150,6 +152,7 @@
     }
   },
   "K52": {
+    "Description": ["悅湖山莊至龍鼓灘", "Yuet Wu Villa to Lung Kwu Tan"],
     "nU": {
       "nU010": "悅湖山莊 Yuet Wu Villa",
       "nU020": "邁亞美海灣 Miami Beach Towers",
@@ -216,6 +219,7 @@
     }
   },
   "K52A": {
+    "Description": ["屯門站至曾咀", "Tuen Mun Station to Tsang Tsui"],
     "U": {
       "U010": "屯門站 Tuen Mun Station",
       "U015": "輕鐵屯門站 (港鐵屯門站) LR Tuen Mun Stop (MTR Tuen Mun Station)",
@@ -260,6 +264,7 @@
     }
   },
   "K53": {
+    "Description": ["屯門站至掃管笏 (循環綫)", "Tuen Mun Station to So Kwun Wat (Circular)"],
     "C": {
       "U010": "屯門站 (輕鐵屯門站) Tuen Mun Station (LR Tuen Mun Stop)",
       "U020": "屯門市中心 Tuen Mun Town Centre",
@@ -299,6 +304,7 @@
     }
   },
   "K54": {
+    "Description": ["和田邨至屯門市中心 (循環線)", "Wo Tin Estate to Tuen Mun Town Centre (Circular)"],
     "C": {
       "U010": "和田邨 Wo Tin Estate",
       "U020": "菁田邨 Ching Tin Estate",
@@ -317,6 +323,7 @@
     }
   },
   "K54A": {
+    "Description": ["和田邨至兆康站", "Wo Tin Estate to Siu Hong Station"],
     "U": {
       "U010": "和田邨 Wo Tin Estate",
       "U020": "菁田邨 Ching Tin Estate",
@@ -333,6 +340,7 @@
     }
   },
   "K58": {
+    "Description": ["富泰至掃管笏", "Fu Tai to So Kwun Wat"],
     "U": {
       "U010": "富泰 Fu Tai",
       "U020": "聚康山莊 Beneville",
@@ -406,6 +414,7 @@
     }
   },
   "K65": {
+    "Description": ["元朗站至流浮山", "Yuen Long Station to Lau Fau Shan"],
     "U": {
       "U010": "元朗站 (輕鐵元朗站) (港鐵元朗站) Yuen Long Station (LR Yuen Long Stop) (MTR Yuen Long Station)",
       "U020": "又新街 Yau San Street",
@@ -454,6 +463,7 @@
     }
   },
   "K65A": {
+    "Description": ["天水圍站至流浮山", "Tin Shui Wai Station to Lau Fau Shan"],
     "U": {
       "U010": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)",
       "U020": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
@@ -484,6 +494,7 @@
     }
   },
   "K66": {
+    "Description": ["朗屏至大棠黃泥墩村", "Long Ping to Tai Tong Wong Nai Tun Tsuen"],
     "U": {
       "U010": "朗屏 Long Ping",
       "U020": "楊屋村 Yeung Uk Tsuen",
@@ -536,6 +547,7 @@
     }
   },
   "K68": {
+    "Description": ["元朗工業邨至元朗公園 (循環綫)", "Yuen Long Industrial Estate to Yuen Long Park (Circular)"],
     "C": {
       "U010": "元朗工業邨 Yuen Long Industrial Estate",
       "U020": "凸版資訊卡 Toppan Forms Card Tech Ltd",
@@ -578,6 +590,7 @@
     }
   },
   "K73": {
+    "Description": ["天恆至元朗西", "Tin Heng to Yuen Long West"],
     "U": {
       "U010": "天恆 Tin Heng",
       "U020": "天逸邨逸潭樓 Yat Tam House, Tin Yat Estate",
@@ -611,6 +624,7 @@
     }
   },
   "K74": {
+    "Description": ["天水圍市中心至凹頭 (循環綫)", "Tin Shui Wai Town Centre to Au Tau (Circular)"],
     "C": {
       "U001": "天水圍市中心 Tin Shui Wai Town Centre",
       "U004": "天頌苑頌棋閣 Chung Ki House Tin Chung Court",
@@ -641,6 +655,7 @@
     }
   },
   "K75A": {
+    "Description": ["天水圍站至洪水橋 (循環綫)", "Tin Shui Wai Station to Hung Shui Kiu (Circular)"],
     "C": {
       "U010": "天水圍站 (輕鐵天水圍站) Tin Shui Wai Station (LR Tin Shui Wai Stop)",
       "U020": "天盛苑 (港鐵天水圍站) Tin Shing Court (MTR Tin Shui Wai Station)",
@@ -660,6 +675,7 @@
     }
   },
   "K75P": {
+    "Description": ["天瑞至洪水橋 (循環綫)", "Tin Shui to Hung Shui Kiu (Circular)"],
     "C": {
       "U010": "天瑞 Tin Shui",
       "U020": "天水圍公園 Tin Shui Wai Park",
@@ -687,6 +703,7 @@
     }
   },
   "K76": {
+    "Description": ["天恆至天水圍站", "Tin Heng to Tin Shui Wai Station"],
     "U": {
       "U010": "天恆 Tin Heng",
       "U020": "天逸邨逸潭樓 Yat Tam House, Tin Yat Estate",
@@ -702,6 +719,7 @@
     }
   },
   "K12": {
+    "Description": ["大埔墟站至八號花園", "Tai Po Market Station to Eightland Garden"],
     "U": {
       "U010": "大埔墟站 Tai Po Market Station",
       "U020": "大埔超級城 Tai Po Mega Mall",
@@ -715,6 +733,7 @@
     }
   },
   "K14": {
+    "Description": ["大埔超級城至大埔墟站", "Tai Po Mega Mall to Tai Po Market Station"],
     "D": {
       "D010": "大埔超級城 Tai Po Mega Mall",
       "D020": "新達廣場 Uptown Plaza",
@@ -722,6 +741,7 @@
     }
   },
   "K17": {
+    "Description": ["大埔墟站至富善", "Tai Po Market Station to Fu Shin"],
     "U": {
       "U010": "大埔墟站 Tai Po Market Station",
       "U020": "大埔中心第五期 Tai Po Centre Phase 5",
@@ -735,6 +755,7 @@
     }
   },
   "K18": {
+    "Description": ["大埔墟站至廣福", "Tai Po Market Station to Kwong Fuk"],
     "U": {
       "U010": "大埔墟站 Tai Po Market Station",
       "U020": "宏福苑 Wang Fuk Court",
