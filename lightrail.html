@@ -23,6 +23,7 @@
     <div id="message_area"></div>
     <div id="results"></div>
     <p>Please note that the information will not be updated automatically</p>
+    <p class="underline_text" onclick="update_route();">Update Route Information</p>
     <p class="description_text">The information is provided by the Digital Policy Office and for reference only</p>
     <script>
       let stopdata = localStorage.getItem("light_rail_data");
@@ -82,6 +83,13 @@
         });
         results += "</table>";
         document.getElementById("results").innerHTML = results;
+      }
+      function update_route() {
+        if (confirm("Are you sure to update the route information?") == true) {
+          localStorage.removeItem("mtr_bus_data");
+          location.reload();
+          alert("Updated");
+        }
       }
     </script>
   </body>
