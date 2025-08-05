@@ -95,8 +95,7 @@
           results += `<div class="no_margin" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p class="no_margin">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
-              results += `<div style="display: none;" id='${stop_id}_data'>`
-              results += "<table>";
+              results += "<table class='no_margin' style='display: none;' id=`${stop_id}_data`>";
               for (let k = 0; k < item["bus"].length; k++) {
                 results += "<tr>";
                 let bus_id = item["bus"][k]["busId"];
@@ -128,7 +127,6 @@
                 results += getspeaker(bus_id);
               }
               results += "</table>";
-              results += "</div>";
             }
           }
         }
