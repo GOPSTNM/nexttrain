@@ -150,8 +150,15 @@
         return `<div class="speaker_circ" style="background-color: ${colour};">${number}</div>`;
       }
       function update_speaker() {
-        if (confirm("Are you sure to update the route information") == true) {
+        if (confirm("Are you sure to update the speaker information?") == true) {
           localStorage.removeItem("mtr_bus_speaker_info");
+          location.reload();
+          alert("Updated");
+        }
+      }
+      function update_route() {
+        if (confirm("Are you sure to update the route information?") == true) {
+          localStorage.removeItem("mtr_bus_data");
           location.reload();
           alert("Updated");
         }
