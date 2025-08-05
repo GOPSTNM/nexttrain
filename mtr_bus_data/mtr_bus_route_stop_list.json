@@ -1,50 +1,6 @@
 {
-  "K12": {
-    "U": {
-      "U010": "大埔墟站 Tai Po Market Station",
-      "U020": "大埔超級城 Tai Po Mega Mall",
-      "U030": "八號花園 Eightland Garden"
-    },
-    "D": {
-      "D010": "八號花園 Eightland Garden",
-      "D020": "大埔超級城 Tai Po Mega Mall",
-      "D030": "新達廣場 Uptown Plaza",
-      "D040": "大埔墟站 Tai Po Market Station"
-    }
-  },
-  "K14": {
-    "D": {
-      "D010": "大埔超級城 Tai Po Mega Mall",
-      "D020": "新達廣場 Uptown Plaza",
-      "D030": "大埔墟站 Tai Po Market Station"
-    }
-  },
-  "K17": {
-    "U": {
-      "U010": "大埔墟站 Tai Po Market Station",
-      "U020": "大埔中心第五期 Tai Po Centre Phase 5",
-      "U030": "怡雅苑 Yee Nga Court",
-      "U040": "富善 Fu Shin"
-    },
-    "D": {
-      "D010": "富善 Fu Shin",
-      "D020": "新達廣場 Uptown Plaza",
-      "D030": "大埔墟站 Tai Po Market Station"
-    }
-  },
-  "K18": {
-    "U": {
-      "U010": "大埔墟站 Tai Po Market Station",
-      "U020": "宏福苑 Wang Fuk Court",
-      "U030": "廣福 Kwong Fuk"
-    },
-    "D": {
-      "D010": "廣福 Kwong Fuk",
-      "D020": "新達廣場 Uptown Plaza",
-      "D030": "大埔墟站 Tai Po Market Station"
-    }
-  },
   "506": {
+    "Description": ["屯門碼頭至兆麟", "Tuen Mun Ferry Pier to Siu Lun"],
     "U": {
       "U010": "屯門碼頭 Tuen Mun Ferry Pier",
       "U020": "美樂花園 Melody Garden",
@@ -743,6 +699,51 @@
       "D020": "天恩邨 Tin Yan Estate",
       "D030": "天澤邨 Tin Chak Estate",
       "D040": "天恆 Tin Heng"
+    }
+  },
+  "K12": {
+    "U": {
+      "U010": "大埔墟站 Tai Po Market Station",
+      "U020": "大埔超級城 Tai Po Mega Mall",
+      "U030": "八號花園 Eightland Garden"
+    },
+    "D": {
+      "D010": "八號花園 Eightland Garden",
+      "D020": "大埔超級城 Tai Po Mega Mall",
+      "D030": "新達廣場 Uptown Plaza",
+      "D040": "大埔墟站 Tai Po Market Station"
+    }
+  },
+  "K14": {
+    "D": {
+      "D010": "大埔超級城 Tai Po Mega Mall",
+      "D020": "新達廣場 Uptown Plaza",
+      "D030": "大埔墟站 Tai Po Market Station"
+    }
+  },
+  "K17": {
+    "U": {
+      "U010": "大埔墟站 Tai Po Market Station",
+      "U020": "大埔中心第五期 Tai Po Centre Phase 5",
+      "U030": "怡雅苑 Yee Nga Court",
+      "U040": "富善 Fu Shin"
+    },
+    "D": {
+      "D010": "富善 Fu Shin",
+      "D020": "新達廣場 Uptown Plaza",
+      "D030": "大埔墟站 Tai Po Market Station"
+    }
+  },
+  "K18": {
+    "U": {
+      "U010": "大埔墟站 Tai Po Market Station",
+      "U020": "宏福苑 Wang Fuk Court",
+      "U030": "廣福 Kwong Fuk"
+    },
+    "D": {
+      "D010": "廣福 Kwong Fuk",
+      "D020": "新達廣場 Uptown Plaza",
+      "D030": "大埔墟站 Tai Po Market Station"
     }
   }
 }
