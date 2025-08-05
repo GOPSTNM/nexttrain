@@ -74,6 +74,9 @@ input[type=text]:focus, select:focus {
 .underline_text {
   text-decoration: underline;
 }
+.no_margin {
+  margin: 0px;
+}
 table {
   border: none;
   margin: 20px 0px;
