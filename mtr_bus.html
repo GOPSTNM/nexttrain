@@ -44,7 +44,7 @@
       let speaker = localStorage.getItem("mtr_bus_speaker_info");
       let routedata = localStorage.getItem("mtr_bus_data");
       if (routedata === null) {
-        fetch("mtr_bus_data/data.json")
+        fetch("mtr_bus_data/mtr_bus_route_stop_list.json")
           .then(response => response.json())
           .then(data => {
             localStorage.setItem("mtr_bus_data", JSON.stringify(data));
