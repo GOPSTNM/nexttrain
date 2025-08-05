@@ -21,10 +21,11 @@
     </select>
     <input type="text" onkeyup="key()" id="stninput" placeholder="Enter Station Code">
     <input type="button" onclick="update()" value="Find">
+    <div id="message_area"></div>
     <div id="results"></div>
+    <p>Please note that the information will not be updated automatically</p>
+    <p class="description_text">The information is provided by the Digital Policy Office and for reference only</p>
     <script>
-      let updtime;
-      let recdata;
       const destlist = {
         ADM: "Admiralty", TUM: "Tuen Mun", WKS: "Wu Kai Sha", LOW: "Lo Wu", LMC: "Lok Ma Chau", SOH: "South Horizons", TIK: "Tiu Keng Leng", 
         WHA: "Whampoa", HOK: "Hong Kong", AWE : "AsiaWorld Expo", TUC: "Tung Chung", NOP: "North Point", LHP: "LOHAS Park", POA: "Po Lam", 
@@ -34,15 +35,11 @@
         PRE: "Prince Edward", TSY: "Tsing Yi", HOM: "Ho Man Tin", TAP: "Tai Po Market", SHT: "Sha Tin", FOT: "Fo Tan", MKK: "Mong Kok East", 
         SHS: "Sheung Shui", MEF: "Mei Foo", DIH: "Diamond Hill", CIO: "City One", TIS: "Tin Shui Wai"
       };
-      let stninput;
-      let lineinput;
       function update () {
-        let enter = document.getElementById("stninput");
-        enter.value = enter.value.toUpperCase();
-        stninput = document.getElementById("stninput").value;
-        lineinput = document.getElementById("lineinput").value;
+        let stninput = document.getElementById("stninput").value.toUpperCase();
+        let lineinput = document.getElementById("lineinput").value;
         let timeout = false;
-        const timeoutid = setTimeout(() => {timeout = true; alert("No response received, please try again.");}, 3000);
+        const timeoutid = setTimeout(() => {timeout = true; document.getElementById("message_area").innerHTML = "<p>No response received, please try again.</p>";}, 3000);
         fetch("https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=" + lineinput + "&sta=" + stninput)
            .then(response => {
              clearTimeout(timeoutid);
@@ -51,16 +48,15 @@
            })
            .then(data => {
              if (timeout) return;
-             recdata = data;
-             updtime = new Date().toTimeString().split(" ")[0];
              if (data["status"] == 0) {
-               alert("No Data. Because of wrong station code or an incident on the line.");
+               document.getElementById("message_area").innerHTML = "<p>No Data. Because of wrong station code or an incident on the line.</p>";
              } else {
-               todisplay();
+               todisplay(data, new Date().toTimeString().split(" ")[0]);
              }
            })
       }
-      function todisplay() {
+      function todisplay(recdata, updtime) {
+        document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
         let direction = "UP";
         results += "<table>";
@@ -85,8 +81,7 @@
         document.getElementById("results").innerHTML = results;
       }
       function key() {
-        let enter = document.getElementById("stninput");
-        enter.value = enter.value.toUpperCase();
+        let document.getElementById("stninput").value = document.getElementById("stninput").value.toUpperCase();
         if (event.key === "Enter") {
           update();
         }
