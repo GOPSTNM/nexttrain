@@ -92,7 +92,7 @@
         let stop_id;
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
-          results += `<div style="margin-bottom: 25px;" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p class="">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
+          results += `<div style="margin-bottom: 5px;" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p class="">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
               results += `<div style="display: none;" id='${stop_id}_data'>`
