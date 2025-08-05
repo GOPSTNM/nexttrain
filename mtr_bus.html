@@ -40,6 +40,12 @@
       } else {
         speaker = speaker.split("\n");
       }
+      function routedata_to_options() {
+        let optionlist = "";
+        for (const item of routedata) {
+          console.log(item);
+        }
+      }
       function changedirection() {
         viewdirection = (viewdirection + 1) % 2;
         todisplay();
