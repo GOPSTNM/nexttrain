@@ -68,7 +68,7 @@
               let dest = train["dest"];
               dest = destlist[dest] || `<span class='strong_text'>${specialdestlist[dest]}</span>` || dest;
               if (train["route"] == "RAC") {
-                dest = dest + " Via Racecourse";
+                dest = `<span class='strong_text'>${dest} Via Racecourse</span>`;
               }
               let plat = train["plat"];
               let time = train["time"].substring(11,16);
