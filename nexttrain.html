@@ -86,7 +86,7 @@
           }
           direction = "DOWN";
         }
-        results += `<tr><td colspan='4'>${recdata["isdelay"] === "Y" ? "Train service is delayed" : ""}</td></tr>`;
+        results += recdata["isdelay"] === "Y" ? "<tr><td colspan='4'>Train service is delayed</td></tr>" : "";
         results += "</table>";
         document.getElementById("results").innerHTML = results;
       }
