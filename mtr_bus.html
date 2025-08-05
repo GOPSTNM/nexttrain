@@ -2,57 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTR Bus Arrival Time</title>
-    <link rel="stylesheet" href="TEMP_style.css">
-    <style>
-      td {
-        font-size: 20px;
-        color: #333333;
-        height: 25px;
-        line-height: 20px;
-        border-right: 15px solid #F0FFFF;
-        vertical-align: text-bottom;
-      }
-      #results {
-        width: 100%;
-        color: #191970;
-        font-size: 20px;
-      }
-      .stop_circ {
-        display: inline-block;
-        height: 18px;
-        width: 18px;
-        border-radius: 100%;
-        border: 2.5px solid #000000;
-        background-color: #FFE100;
-        margin-left: 5px;
-        margin-right: 15px;
-        vertical-align: middle;
-      }
-      .stop_name {
-        width: 100%;
-        margin-top: 15px;
-        margin-bottom: 5px;
-      }
-      .stop_name_text {
-        vertical-align: middle;
-        line-height: 20px;
-        display: inline-block;
-        width: calc(100% - 43px)
-      }
-      .stop_data {
-        display: none;
-        margin-left: 43px;
-      }
-      .speaker_circ {
-        width: 20px;
-        height: 20px;
-        border-radius: 100%;
-        display: inline-block;
-        font-size: 15px;
-        color: #ffffff;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>MTR Bus Arrival Time</h1>
@@ -84,8 +34,9 @@
     <input type="button" value="Update" onclick="update()">
     <input type="button" value="Change Direction" onclick="changedirection()">
     <div id="results"></div>
-    <p>Please note that the info will not be updated automatically</p>
+    <p>Please note that the information will not be updated automatically</p>
     <input type="button" value="Update Bus Data" onclick="update_speaker();">
+    <p class="description_text">The information is provided by the Digital Policy Office and for reference only</p>
     <script>
       let viewdirection = 0;
       let updtime;
