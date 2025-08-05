@@ -16,7 +16,7 @@
     <label class="checkbox_container">
       <input type="checkbox" id="rte_description_english" onchange="routedata_to_options();">
       <span class="checkbox_checkmark"></span>
-      <p>Show English Route Description</p>
+      <p>Show Route Description in English</p>
     </label>
     <p class="underline_text" onclick="update_route();">Update Route Information</p>
     <p class="underline_text" onclick="update_speaker();">Update Speaker Information</p>
@@ -92,10 +92,10 @@
         let stop_id;
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
-          results += `<div class="" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p class="">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
+          results += `<div style="margin-bottom: 25px;" id="${stop_id}" onclick="change('${stop_id}');"><div class="stop_circ"></div><p class="">${routedata[route][viewdirectionval][stop_id]}</p></div>`;
           for (const item of recdata["busStop"]) {
             if (item["busStopId"] == `${route}-${stop_id}`) {
-              results += `<div class="stop_data" id='${stop_id}_data'>`
+              results += `<div style="display: none;" id='${stop_id}_data'>`
               results += "<table>";
               for (let k = 0; k < item["bus"].length; k++) {
                 results += "<tr>";
