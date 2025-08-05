@@ -45,7 +45,7 @@
       function routedata_to_options() {
         let optionlist = "";
         for (const item in routedata) {
-          optionlist += `<option value="${item}">${item}${routedata[item]["description"][0]}</option>`;
+          optionlist += `<option value="${item}">${item} ${routedata[item]["Description"][0]}</option>`;
         }
         document.getElementById("route").innerHTML = optionlist;
       }
