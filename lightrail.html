@@ -69,7 +69,7 @@
       function todisplay(recdata, updtime) {
         document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
-        results += "<table><tr style='height: 0px;'><td width='55px'></td><td width='135px'></td><td width='80px'></td><td width='70px'></td></tr>";
+        results += "<table><tr style='height: 0px;'><td width='55px'></td><td width='135px'></td><td width='75px'></td><td width='75px'></td></tr>";
         recdata["platform_list"].forEach(platform => {
           results += `<tr><td colspan=4><p class='inline_circle_text'>Platform </p><div class='inline_circle' style='color: #000000; background-color: #F5C402;'>${platform["platform_id"]}</div></td></tr><tr class='description_text'><td>Route</td><td>Destination</td><td>Car</td><td>Time</td></tr>`;
           platform["route_list"].forEach(train => {
