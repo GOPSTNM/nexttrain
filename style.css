@@ -86,6 +86,7 @@ input[type=text]:focus, select:focus {
   margin: 5px 15px 5px 5px;
   vertical-align: middle;
   background-color: #FFE100;
+  flex-shrink: 0;
 }
 table {
   border: none;
