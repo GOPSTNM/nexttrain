@@ -89,7 +89,7 @@
       }
       function todisplay() {
         document.getElementById("message_area").innerHTML = "";
-        let results = `<p>Last Updated: ${updtime}</p><p>Route ${recdata["routeName"]}</p>`;
+        let results = `<p>Last Updated: ${updtime} Route ${recdata["routeName"]}</p>`;
         if (Object.keys(routedata[route]).length == 2) {
           viewdirection = 0;
         }
