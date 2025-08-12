@@ -138,26 +138,20 @@
         document.getElementById("results").innerHTML = results;
       }
       function getspeaker(id) {
-        return "";
-        let mes = "";
+        let speaker_message = "";
         for (let i in speaker) {
-          if (speaker[i].includes(id)) {
+          if ((speaker[i].includes(id)) && (id != "-")) {
             let speaker_details = speaker[i].split("\t");
-            mes += `<details><summary>${speaker_details[0]} ${speaker_details[2]} ${speaker_circ(Math.min(speaker_details[3], speaker_details[4], speaker_details[5], speaker_details[6]))}</summary>Volume ${speaker_circ(speaker_details[3])} Low-Freq ${speaker_circ(speaker_details[4])} Noise ${speaker_circ(speaker_details[5])} General ${speaker_circ(speaker_details[6])} ${speaker_details[7]}</details><br>`;
+            speaker_message += `<details><summary>${speaker_details[0]} ${speaker_details[2]} ${speaker_circ(Math.min(speaker_details[3], speaker_details[4], speaker_details[5], speaker_details[6]))}</summary>Volume ${speaker_circ(speaker_details[3])} Low-Freq ${speaker_circ(speaker_details[4])} Noise ${speaker_circ(speaker_details[5])} General ${speaker_circ(speaker_details[6])} ${speaker_details[7]}</details><br>`;
           }
         }
-        if (mes == "") {
-          return "";
-        } else {
-          return `<tr><td colspan="3" class="strongtxt">${mes}</td></tr>`;
-        }
+        return speaker_message;
       }
       function change(elem) {
         let to_change = document.getElementById(elem + "_data");
         to_change.style.display = (to_change.style.display !== "block") ? "block" : "none";
       }
       function speaker_circ(number) {
-        return;
         let colour;
         if (number >= 0 && number <= 4) {
           colour = "#D2222D";
