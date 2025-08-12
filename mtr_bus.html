@@ -151,16 +151,16 @@
         let to_change = document.getElementById(elem + "_data");
         to_change.style.display = (to_change.style.display !== "block") ? "block" : "none";
       }
-      function speaker_circ(number) {
+      function speaker_circ(x) {
         let colour;
-        if (number >= 0 && number <= 4) {
+        if (x >= 0 && x <= 4) {
           colour = "#D2222D";
-        } else if (number >= 5 && number <= 7) {
+        } else if (x >= 5 && x <= 7) {
           colour = "#FFBF00";
-        } else if (number >= 8 && number <= 10) {
+        } else if (x >= 8 && x <= 10) {
           colour = "#238823";
         }
-        return `<div class="speaker_circ" style="background-color: ${colour};">${number}</div>`;
+        return `<div class="inline_circle" style="background-color: ${colour};">${x}</div>`;
       }
       function update_speaker() {
         if (confirm("Are you sure to update the speaker information?") == true) {
