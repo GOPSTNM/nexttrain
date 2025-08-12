@@ -29,6 +29,7 @@
     <script>
       let viewdirection = 0;
       let recdata;
+      let route;
       let updtime;
       let speaker = localStorage.getItem("mtr_bus_speaker_info");
       let routedata = localStorage.getItem("mtr_bus_data");
@@ -66,9 +67,10 @@
         todisplay();
       }
       function update() {
+        route = document.getElementById("route").value;
         let params = {
           language: "en",
-          routeName: document.getElementById("route").value
+          routeName: route
         };
         let timeout = false;
         const timeoutid = setTimeout(() => {timeout = true; document.getElementById("message_area").innerHTML = "<p>No response received, please try again.</p>";}, 3000);
@@ -88,7 +90,6 @@
       function todisplay() {
         document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p>`;
-        let route = document.getElementById("route").value; 
         if (Object.keys(routedata[route]).length == 2) {
           viewdirection = 0;
         }
@@ -162,7 +163,7 @@
         } else if (x >= 8 && x <= 10) {
           colour = "#238823";
         }
-        return `<div class="inline_circle" style="color: #FFFFFF; background-color: ${colour};">${x}</div>`;
+        return `<div class="inline_circle" style="background-color: ${colour};">${x}</div>`;
       }
       function update_speaker() {
         if (confirm("Are you sure to update the speaker information?") == true) {
