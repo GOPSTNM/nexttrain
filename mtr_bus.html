@@ -144,7 +144,7 @@
         for (let i in speaker) {
           if ((speaker[i].includes(id)) && (id != "-")) {
             let speaker_details = speaker[i].split("\t");
-            speaker_message += `<tr class='strong_text'><td colspan='3'>${speaker_details[0]} ${speaker_details[2]} ${speaker_circ(Math.min(speaker_details[3], speaker_details[4], speaker_details[5], speaker_details[6]))} V ${speaker_circ(speaker_details[3])} F ${speaker_circ(speaker_details[4])} N ${speaker_circ(speaker_details[5])} G ${speaker_circ(speaker_details[6])} ${speaker_details[7]}</td></tr>`;
+            speaker_message += `<tr class='strong_text'><td colspan='3'>${speaker_details[0]} ${speaker_details[2]} ${speaker_circ(speaker_details[3])} ${speaker_circ(speaker_details[4])} ${speaker_circ(speaker_details[5])} ${speaker_circ(speaker_details[6])} ${speaker_details[7]}</td></tr>`;
           }
         }
         return speaker_message;
