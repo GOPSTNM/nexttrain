@@ -89,12 +89,11 @@
       }
       function todisplay() {
         document.getElementById("message_area").innerHTML = "";
-        let results = `<p>Last Updated: ${updtime}</p>`;
+        let results = `<p>Last Updated: ${updtime}</p><p>Route ${recdata["routeName"]}</p>`;
         if (Object.keys(routedata[route]).length == 2) {
           viewdirection = 0;
         }
         let viewdirectionval = Object.keys(routedata[route])[viewdirection + 1];
-        console.log(viewdirectionval);
         let stop_id;
         for (let i = 0; i < Object.keys(routedata[route][viewdirectionval]).length; i++) {
           stop_id = Object.keys(routedata[route][viewdirectionval])[i];
