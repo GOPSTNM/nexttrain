@@ -129,7 +129,9 @@
                 results += `<td style="width: 100px">${time_data}</td>`;
                 results += `<td>${note}</td>`;
                 results += "</tr>";
-                results += getspeaker(bus_id);
+                if (document.getElementById("show_speaker").checked == true) {
+                  results += getspeaker(bus_id);
+                }
               }
               results += "</table>";
             }
