@@ -57,7 +57,7 @@
                    document.getElementById("message_area").innerHTML = "<p>Station code cannot be empty, please input station code and try again.</p>";
                    break;
                  default:
-                   document.getElementById("message_area").innerHTML = "<p>There is no data because of an incident on the line or other reason, please try again later</p>";
+                   document.getElementById("message_area").innerHTML = "<p>There is no data available, please try again later.</p>";
                }
              } else {
                todisplay(data, new Date().toTimeString().split(" ")[0], stninput, lineinput);
@@ -65,6 +65,9 @@
            })
       }
       function todisplay(recdata, updtime, stninput, lineinput) {
+        if (recdata[sys_time] == "-") {
+          document.getElementById("message_area").innerHTML = "<p>There is no data available, please try again later.</p>";
+        }
         document.getElementById("message_area").innerHTML = "";
         let results = `<p>Last Updated: ${updtime}</p><table><tr style='height: 0px;'><td width='180px'></td><td width='60px'></td><td width='60px'></td><td width='40px'></td><tr><td colspan=4>${stninput} Station</td></tr>`;
         let direction = "UP";
