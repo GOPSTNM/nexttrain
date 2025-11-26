@@ -82,6 +82,7 @@
            })
            .then(data => {
              if (timeout) return;
+             navigator.clipboard.writeText(JSON.stringify(data));
              recdata = data;
              updtime = new Date().toTimeString().split(" ")[0];
              todisplay();
