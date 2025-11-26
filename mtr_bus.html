@@ -82,8 +82,6 @@
            })
            .then(data => {
              if (timeout) return;
-             navigator.clipboard.writeText(JSON.stringify(data));
-             alert(JSON.stringify(data));
              recdata = data;
              updtime = new Date().toTimeString().split(" ")[0];
              todisplay();
@@ -139,7 +137,8 @@
             }
           }
         }
-        document.getElementById("results").innerHTML = results;
+        //document.getElementById("results").innerHTML = results;
+        document.getElementById("results").innerHTML = JSON.stringify(data);
       }
       function getspeaker(id) {
         let speaker_message = "";
