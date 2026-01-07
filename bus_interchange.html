@@ -16,7 +16,12 @@
              return response.json();
            })
            .then(data => {
-             let a = data["data"][0]["stop"];
+             let a = "";
+             for (const item of data["data"]) {
+               if (item["name_en"].includes("WESTERN HARBOUR TUNNEL BBI")) {
+                 a += item["stop"];
+               }
+             }
              alert(a);
            })
     </script>
