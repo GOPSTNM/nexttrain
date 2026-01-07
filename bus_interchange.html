@@ -10,23 +10,35 @@
     <select id="bus_stop" onload="stopchange();" onchange="stopchange();">
       <option value=6>Test</option>
     </select>
+    <input type="button" onclick="update();" value="Find">
+    <div id="results"></div>
     <script>
+      let plat_list = {};
       fetch("https://data.etabus.gov.hk/v1/transport/kmb/stop")
-           .then(response => {
-             return response.json();
-           })
-           .then(data => {
-             let a = "";
-             for (const item of data["data"]) {
-               if (item["name_en"].includes("WESTERN HARBOUR TUNNEL BBI")) {
-                 a += item["name_tc"];
-                 a += " ";
-                 a += item["stop"];
-                 a += "\n";
-               }
-             }
-             alert(a);
-           })
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          let a = "";
+          for (const item of data["data"]) {
+            if (item["name_en"].includes("WESTERN HARBOUR TUNNEL BBI")) {
+              a += `${item["name_tc"]} ${item["stop"]}\n`;
+              plat_list.push([item["name_tc"], item["stop"]]);
+            }
+          }
+          alert(a);
+        });
+      function update() {
+        let results = "";
+        for (const plat of plat_list) {
+          fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
+            .then(response => response.json())
+            .then(data => {
+              results += data["data"][0]["route"];
+            });
+        }
+        document.getElementById("results").innerHTML = results;
+      }
     </script>
   </body>
 </html
