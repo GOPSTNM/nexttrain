@@ -37,6 +37,9 @@
               results += data["data"][0]["route"];
             });
         }
+        setTimeout(() => {
+  document.getElementById("results").innerHTML = results;
+}, 1000);
         document.getElementById("results").innerHTML = results;
       }
     </script>
