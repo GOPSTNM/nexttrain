@@ -20,6 +20,9 @@
              for (const item of data["data"]) {
                if (item["name_en"].includes("WESTERN HARBOUR TUNNEL BBI")) {
                  a += item["name_tc"];
+                 a += " ";
+                 a += item["stop"];
+                 a += "\n";
                }
              }
              alert(a);
