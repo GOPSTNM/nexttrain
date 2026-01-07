@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Interchange Arrival Time</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Bus Interchange Arrival Time</h1>
+    <p>Please select Bus Interchange</p>
+    <select id="bus_stop" onload="stopchange();" onchange="stopchange();">
+      <option value=6>Test</option>
+    </select>
+    <script>
+      fetch("https://data.etabus.gov.hk/v1/transport/kmb/stop")
+           .then(response => {
+             return response.json();
+           })
+           .then(data => {
+             let a = data["data"][0]["stop"];
+             alert(a);
+           })
+    </script>
+  </body>
+</html
