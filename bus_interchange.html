@@ -42,7 +42,7 @@
       }
       function to_display() {
         let results = "Routes";
-        for (const item in received_data) {
+        for (const item of received_data) {
           results += item["data"][0]["route"];
         }
         document.getElementById("results").innerHTML = results;
