@@ -29,17 +29,32 @@
           alert(a);
         });
       function update() {
-        let results = "Routes";
+        let received_data = [];
         for (const plat of plat_list) {
           fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
             .then(response => response.json())
             .then(data => {
-              results += data["data"][0]["route"];
+              received_data.push(data); 
             });
         }
-        setTimeout(() => {
-  document.getElementById("results").innerHTML = results;
-}, 1000);
+        let fetch_data = new Promise(function(resolve) {
+          for (const plat of plat_list) {
+          fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
+            .then(response => response.json())
+            .then(data => {
+              received_data.push(data); 
+            });
+        }
+          resolve(received_data);
+        });
+        document.getElementById("demo").innerHTML = await fetch_data;
+        to_display(received_data)
+      }
+      function to_display(data) {
+        let results = "Routes";
+        for (const item in data) {
+          results += item["data"][0]["route"];
+        }
         document.getElementById("results").innerHTML = results;
       }
     </script>
