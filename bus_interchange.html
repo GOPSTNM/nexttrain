@@ -39,9 +39,9 @@
         }
         setTimeout(to_display, 1000);
       }
-      function to_display(data) {
+      function to_display() {
         let results = "Routes";
-        for (const item in data) {
+        for (const item in received_data) {
           results += item["data"][0]["route"];
         }
         document.getElementById("results").innerHTML = results;
