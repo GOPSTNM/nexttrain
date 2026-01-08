@@ -30,6 +30,7 @@
         });
       let received_data = [];
       function update() {
+        let received_data = [];
         for (const plat of plat_list) {
           fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
             .then(response => response.json())
