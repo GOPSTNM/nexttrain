@@ -28,8 +28,8 @@
           }
           alert(a);
         });
+      let received_data = [];
       function update() {
-        let received_data = [];
         for (const plat of plat_list) {
           fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
             .then(response => response.json())
@@ -37,7 +37,7 @@
               received_data.push(data); 
             });
         }
-        setTimeout(to_display(received_data), 1000);
+        setTimeout(to_display, 1000);
       }
       function to_display(data) {
         let results = "Routes";
