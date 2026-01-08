@@ -47,8 +47,7 @@
         }
           resolve(received_data);
         });
-        document.getElementById("demo").innerHTML = await fetch_data;
-        to_display(received_data)
+        to_display(await fetch_data);
       }
       function to_display(data) {
         let results = "Routes";
@@ -59,4 +58,4 @@
       }
     </script>
   </body>
-</html
+</html>
