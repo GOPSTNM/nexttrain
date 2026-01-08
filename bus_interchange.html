@@ -44,7 +44,7 @@
         let results = "Routes";
         for (const item of received_data) {
           for (const i of item["data"]) {
-            results += "\n" + ["route"];
+            results += "\n" + i["route"];
           }
         }
         document.getElementById("results").innerHTML = results;
