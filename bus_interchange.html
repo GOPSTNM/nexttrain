@@ -44,7 +44,7 @@
         let results = "Routes";
         for (const item of received_data) {
           for (const i of item["data"]) {
-            results += `<br>${i["route"]} ${i["dest_en"]} ${i["eta"]}`;
+            results += `<br>${i["route"]} ${i["dest_en"]} ${(i["eta"] - new Data()) / 1000 / 60}`;
           }
         }
         document.getElementById("results").innerHTML = results;
