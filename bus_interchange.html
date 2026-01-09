@@ -39,6 +39,17 @@
             });
         }
         setTimeout(to_display, 1000);
+        
+        const urls = [];
+        for (const plat of plat_list) {
+          urls.push(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`);
+        }
+        try {
+          const responses = await Promise.all(urls.map(url => fetch(url)));
+          const data = await Promise.all(responses.map(response => response.json()));
+          alert(data);
+        } catch (error) {
+        }
       }
       function to_display() {
         let results = "Routes";
