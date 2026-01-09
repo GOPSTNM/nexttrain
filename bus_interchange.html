@@ -46,9 +46,14 @@
           const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
           const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
           results += `<p>${plat_data[i][0]}</p>`;
+          let processed_data = {};
           for (const k of received_data[i]["data"]) {
-            if (new Date(k["eta"]) >= new Date()) {
-              results += `<br>${k["route"]} ${k["dest_en"]} ${Math.round((new Date(k["eta"]) - new Date()) / (1000 * 60))}`;
+            if (!processed_data[k["route"]][k["dest_en"]].includes(new Date(k["eta"])) {
+              if (processed_data[k["route"]][k["dest_en"]]) {
+                processed_data[k["route"]][k["dest_en"]].push(new Date(k["eta"]))
+              } else {
+                processed_data[k["route"]][k["dest_en"]] = [new Date(k["eta"])]
+              }
             }
           }
         }
