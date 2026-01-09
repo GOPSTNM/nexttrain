@@ -1,20 +1,20 @@
 {
   "Western Harbour Crossing": {
-    "Nga Cheung Road": {
+    "Nga Cheung Road": [
       ["西隧轉車站 - 雅翔道 (YT300)", "FB9FA7AAA17E9E9D"],
       ["西隧轉車站 - 雅翔道 (YT301)", "31072508CEF942C6"]
-    },
-    "To Hong Kong": {
+    ],
+    "To Hong Kong": [
       ["西隧轉車站 (YT311)", "E18D73287340B634"],
       ["西隧轉車站 (YT310)", "0F5CEC693FD6EB66"],
       ["西隧轉車站 (YT312)", "466111DE1A3E4656"],
       ["西隧轉車站 (YT313)", "72F743E4D464E498"]
-    },
-    "To Kowloon": {
+    ],
+    "To Kowloon": [
       ["西隧轉車站 (YT600)", "DEBD2B9A856C0B1F"],
       ["西隧轉車站 (YT601)", "7C99CFD0D8908BE7"],
       ["西隧轉車站 (YT602)", "3CA62A3B1C8415D0"],
       ["西隧轉車站 (YT603)", "AD97EA183A25102C"]
-    }
+    ]
   }
 }
