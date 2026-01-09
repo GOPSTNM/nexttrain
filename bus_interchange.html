@@ -41,19 +41,17 @@
         }
       }
       function to_display(received_data) {
-        let results = "<p>Routes";
+        let results = "";
         for (let i = 0; i < received_data.length; i++) {
           const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
           const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
-          results += "\n\n";
-          results += plat_data[i][0];
+          results += `<p>${plat_data[i][0]}</p>`;
           for (const k of received_data[i]["data"]) {
             if (new Date(k["eta"]) >= new Date()) {
-              results += `\n${k["route"]} ${k["dest_en"]} ${Math.round((new Date(k["eta"]) - new Date()) / (1000 * 60))}`;
+              results += `<br>${k["route"]} ${k["dest_en"]} ${Math.round((new Date(k["eta"]) - new Date()) / (1000 * 60))}`;
             }
           }
         }
-        results += "</p>";
         document.getElementById("results").innerHTML = results;
       }
     </script>
