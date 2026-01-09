@@ -48,6 +48,9 @@
           results += `<p>${plat_data[i][0]}</p>`;
           let processed_data = {};
           for (const k of received_data[i]["data"]) {
+            if ((new Date(value[i]) - new Date())/60000 < -2) {
+              return;
+            }
             if (processed_data[k["route"]] && !processed_data[k["route"]].includes(new Date(k["eta"]))) {
               processed_data[k["route"]].push(new Date(k["eta"]));
             } else {
