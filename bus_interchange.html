@@ -57,7 +57,7 @@
           Object.entries(processed_data).forEach(([key, value]) => {
             results += `<br>${key} ${value[0]}`;
             for (let i = 1; i < value.length; i++) {
-              results += ` ${(new Date(value[i]) - new Date())/60000}`;
+              results += ` ${Math.round((new Date(value[i]) - new Date())/6000)/10}`;
             }
           });
         }
