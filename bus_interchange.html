@@ -54,6 +54,7 @@
               processed_data[k["route"]] = [new Date(k["eta"])];
             }
           }
+          results += processed_data;
         }
         document.getElementById("results").innerHTML = results;
       }
