@@ -56,8 +56,8 @@
           }
           Object.entries(processed_data).forEach(([key, value]) => {
             results += `<br>${key} ${value[0]}`;
-            for (const k of received_data[i]["data"]) {
-              results += k;
+            for (let i = 1; i < value.length; i++) {
+              results += value[i];
             }
           });
         }
