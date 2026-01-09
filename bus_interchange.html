@@ -47,9 +47,9 @@
           const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
           results += "\n\n";
           results += plat_data[i][0];
-          for (const i of received_data[i]["data"]) {
-            if (new Date(i["eta"]) >= new Date()) {
-              results += `<br>${i["route"]} ${i["dest_en"]} ${Math.round((new Date(i["eta"]) - new Date()) / (1000 * 60))}`;
+          for (const k of received_data[i]["data"]) {
+            if (new Date(k["eta"]) >= new Date()) {
+              results += `<br>${k["route"]} ${k["dest_en"]} ${Math.round((new Date(k["eta"]) - new Date()) / (1000 * 60))}`;
             }
           }
         }
