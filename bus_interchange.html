@@ -8,50 +8,38 @@
     <h1>Bus Interchange Arrival Time</h1>
     <p>Please select Bus Interchange</p>
     <select id="bus_stop" onload="stopchange();" onchange="stopchange();">
-      <option value=6>Western Harbour Crossing</option>
+      <option value=0>Western Harbour Crossing</option>
+    </select>
+    <select id="stop_dir" onload="stopchange();" onchange="stopchange();">
+      <option value=0>Nga Cheung Road</option>
+      <option value=1>To Hong Kong</option>
+      <option value=2>To Kowloon</option>
     </select>
     <input type="button" onclick="update();" value="Find">
     <div id="results"></div>
     <script>
-      let plat_list = [];
-      fetch("https://data.etabus.gov.hk/v1/transport/kmb/stop")
+      let all_stop_data;
+      function setup_stop_data() {
+        fetch("bus_data/bus_interchange.json")
         .then(response => {
           return response.json();
         })
         .then(data => {
-          let a = "";
-          for (const item of data["data"]) {
-            if (item["name_en"].includes("WESTERN HARBOUR TUNNEL BBI")) {
-              a += `${item["name_tc"]} ${item["stop"]}\n`;
-              plat_list.push([item["name_tc"], item["stop"]]);
-            }
-          }
-          alert(a);
+          all_stop_data = data;
         });
-      let received_data = [];
+      }
       async function update() {
-        received_data = [];
-        for (const plat of plat_list) {
-          fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
-            .then(response => response.json())
-            .then(data => {
-              //received_data.push(data); 
-            });
-        }
-        //setTimeout(to_display, 1000);
-        
-        const urls = [];
-        for (const plat of plat_list) {
-          urls.push(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`);
-        }
+        const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
+        const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
         try {
-          const responses = await Promise.all(urls.map(url => fetch(url)));
-          received_data = await Promise.all(responses.map(response => response.json()));
-          to_display();
+          const responses = await Promise.all(plat_data.map(pd => fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${pd[1]}`)));
+          const received_data = await Promise.all(responses.map(response => response.json()));
+          to_display(received_data);
         } catch (error) {
+          alert("Error");
         }
       }
-      function to_display() {
+      function to_display(received_data) {
         let results = "Routes";
         for (const item of received_data) {
           for (const i of item["data"]) {
