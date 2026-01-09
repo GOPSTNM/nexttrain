@@ -51,10 +51,15 @@
             if (processed_data[k["route"]] && !processed_data[k["route"]].includes(new Date(k["eta"]))) {
               processed_data[k["route"]].push(new Date(k["eta"]));
             } else {
-              processed_data[k["route"]] = [new Date(k["eta"])];
+              processed_data[k["route"]] = [k["dest_en"], new Date(k["eta"])];
             }
           }
-          results += processed_data;
+          Object.entries(processed_data).forEach(([key, value]) => {
+            results += `<br>${key} ${value[0]}`;
+            for (const k of received_data[i]["data"]) {
+              results += k;
+            }
+          });
         }
         document.getElementById("results").innerHTML = results;
       }
