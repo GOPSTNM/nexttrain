@@ -42,8 +42,12 @@
       }
       function to_display(received_data) {
         let results = "Routes";
-        for (const item of received_data) {
-          for (const i of item["data"]) {
+        for (i = 0, i < received_data.length(), i++) {
+          const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
+          const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
+          results += "\n\n";
+          results += plat_data[i][0];
+          for (const i of received_data[i]["data"]) {
             if (new Date(i["eta"]) >= new Date()) {
               results += `<br>${i["route"]} ${i["dest_en"]} ${Math.round((new Date(i["eta"]) - new Date()) / (1000 * 60))}`;
             }
