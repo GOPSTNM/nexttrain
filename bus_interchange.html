@@ -19,6 +19,7 @@
     <div id="results"></div>
     <script>
       let all_stop_data;
+      setup_stop_data();
       function setup_stop_data() {
         fetch("bus_data/bus_interchange.json")
         .then(response => {
