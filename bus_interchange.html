@@ -48,9 +48,6 @@
           results += `<p>${plat_data[i][0]}</p>`;
           let processed_data = {};
           for (const k of received_data[i]["data"]) {
-            if ((new Date(value[i]) - new Date())/60000 < -2) {
-              return;
-            }
             if (processed_data[k["route"]] && !processed_data[k["route"]].includes(new Date(k["eta"]))) {
               processed_data[k["route"]].push(new Date(k["eta"]));
             } else {
@@ -60,6 +57,9 @@
           Object.entries(processed_data).forEach(([key, value]) => {
             results += `<br>${key} ${value[0]}`;
             for (let i = 1; i < value.length; i++) {
+              if ((new Date(value[i]) - new Date())/60000 < -2) {
+                return;
+              }
               results += ` ${Math.round((new Date(value[i]) - new Date())/6000)/10}`;
             }
           });
