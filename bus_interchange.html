@@ -37,7 +37,7 @@
           const received_data = await Promise.all(responses.map(response => response.json()));
           to_display(received_data);
         } catch (error) {
-          alert("Error");
+          console.log(error);
         }
       }
       function to_display(received_data) {
