@@ -35,10 +35,10 @@
           fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${plat[1]}`)
             .then(response => response.json())
             .then(data => {
-              received_data.push(data); 
+              //received_data.push(data); 
             });
         }
-        setTimeout(to_display, 1000);
+        //setTimeout(to_display, 1000);
         
         const urls = [];
         for (const plat of plat_list) {
@@ -46,8 +46,8 @@
         }
         try {
           const responses = await Promise.all(urls.map(url => fetch(url)));
-          const data = await Promise.all(responses.map(response => response.json()));
-          alert(data);
+          received_data = await Promise.all(responses.map(response => response.json()));
+          to_display();
         } catch (error) {
         }
       }
