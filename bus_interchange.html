@@ -48,22 +48,18 @@
           results += `<p>${plat_data[i][0]}</p>`;
           let processed_data = {};
           for (const k of received_data[i]["data"]) {
-            if (processed_data[k["route"]] && !processed_data[k["route"]].includes(new Date(k["eta"]))) {
-              processed_data[k["route"]].push(new Date(k["eta"]));
-            } else {
-              processed_data[k["route"]] = [k["dest_en"], new Date(k["eta"])];
+            if (!eta) {
+              if (!processed_data["N"][k["route"]]) {
+                processed_data["N"][k["route"]] = [k["dest_en"], k["dest_tc"], k["rmk_en"], k["rmk_tc"]];
+              }
+              return;
+            }
+            if (!processed_data["S"][k["route"]]) {
+              processed_data["S"][k["route"]] = [k["dest_en"], k["dest_tc"], k["eta"]];
             }
           }
-          Object.entries(processed_data).forEach(([key, value]) => {
-            results += `<br>${key} ${value[0]}`;
-            for (let i = 1; i < value.length; i++) {
-              if ((new Date(value[i]) - new Date())/60000 < -2) {
-                return;
-              }
-              results += ` ${Math.round((new Date(value[i]) - new Date())/6000)/10}`;
-            }
-          });
         }
+        console.log(processed_data);
         document.getElementById("results").innerHTML = results;
       }
     </script>
