@@ -46,19 +46,25 @@
           const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
           const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
           results += `<p>${plat_data[i][0]}</p>`;
-          let processed_data = {"N": [], "S": []};
+          let processed_data = {};
           for (const k of received_data[i]["data"]) {
-            if (!k["eta"]) {
-              if (!processed_data["N"][k["route"]]) {
-                processed_data["N"][k["route"]] = [k["dest_en"], k["dest_tc"], k["rmk_en"], k["rmk_tc"]];
+            if (k["eta"]) {
+              if (processed_data[k["route"]] && !processed_data[k["route"]].includes(new Date(k["eta"]))) {
+                processed_data[k["route"]].push(new Date(k["eta"]));
+              } else {
+                processed_data[k["route"]] = [k["dest_en"], new Date(k["eta"])];
               }
-              return;
-            }
-            if (!processed_data["S"][k["route"]]) {
-              processed_data["S"][k["route"]] = [k["dest_en"], k["dest_tc"], k["eta"]];
             }
           }
-          console.log(processed_data);
+          Object.entries(processed_data).forEach(([key, value]) => {
+            results += `<br>${key} ${value[0]}`;
+            for (let i = 1; i < value.length; i++) {
+              if ((new Date(value[i]) - new Date())/60000 < -2) {
+                return;
+              }
+              results += ` ${Math.round((new Date(value[i]) - new Date())/6000)/10}`;
+            }
+          });
         }
         document.getElementById("results").innerHTML = results;
       }
