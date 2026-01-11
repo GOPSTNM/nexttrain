@@ -50,9 +50,9 @@
           for (const k of received_data[i]["data"]) {
             if (k["eta"]) {
               if (processed_data[k["route"]] && !processed_data[k["route"]].includes(new Date(k["eta"]))) {
-                processed_data[k["route"]].push(new Date(k["eta"]));
+                processed_data[k["route"]].push([k["seq"], new Date(k["eta"])]);
               } else {
-                processed_data[k["route"]] = [k["dest_en"], new Date(k["eta"])];
+                processed_data[k["route"]] = [k["dest_en"], [k["seq"], new Date(k["eta"])]];
               }
             }
           }
@@ -60,10 +60,10 @@
           Object.entries(processed_data).forEach(([key, value]) => {
             results += `<br>${key} ${value[0]}`;
             for (let i = 1; i < value.length; i++) {
-              if ((new Date(value[i]) - new Date())/60000 < -2) {
+              if ((new Date(value[i][1]) - new Date())/60000 < -2) {
                 return;
               }
-              results += ` ${Math.round((new Date(value[i]) - new Date())/6000)/10}`;
+              results += ` ${Math.round((new Date(value[i][1]) - new Date())/6000)/10}`;
             }
           });
         }
