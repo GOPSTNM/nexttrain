@@ -48,7 +48,7 @@
           results += `<p>${plat_data[i][0]}</p>`;
           let processed_data = {};
           for (const k of received_data[i]["data"]) {
-            if (!eta) {
+            if (!k["eta"]) {
               if (!processed_data["N"][k["route"]]) {
                 processed_data["N"][k["route"]] = [k["dest_en"], k["dest_tc"], k["rmk_en"], k["rmk_tc"]];
               }
