@@ -23,7 +23,14 @@
         });
       }
       async function update() {
-        alert(route_data["data"][0]["route"]);
+        let rte_input = document.getElementById("rte_input").value;
+        let rte_options = [];
+        for (const rte_data of route_data["data"]) {
+          if (rte_data["route"] == rte_input.toUpperCase()) {
+            rte_options.push(rte_data);
+          }
+        }
+        alert(rte_options.toString());
       }
       function to_display(received_data) {
         let results = "";
