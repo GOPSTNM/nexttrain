@@ -7,7 +7,8 @@
   <body>
     <h1>KMB Arrival Time</h1>
     <p>Please input route</p>
-    <input type="text" onkeyup="" id="rte_input" placeholder="Enter Route">
+    <input type="text" onkeyup="rte_input_change();" id="rte_input" placeholder="Enter Route">
+    <select id="rte_options_select"></select>
     <input type="button" onclick="update();" value="Update">
     <div id="results"></div>
     <script>
@@ -22,15 +23,18 @@
           route_data = data;
         });
       }
-      async function update() {
+      function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
         let rte_options = [];
+        let rte_options_select = document.getElementById("rte_options_select");
+        rte_options_select.innerHTML = "";
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input.toUpperCase()) {
-            rte_options.push(rte_data);
+            rte_options_select.append(new Option(`${rte_data["orig_tc"]}往${rte_data["dest_tc"]}${rte_data["service_type"]}`, ""));
           }
         }
-        alert(rte_options.toString());
+      }
+      async function update() {
       }
       function to_display(received_data) {
         let results = "";
