@@ -1,14 +1,14 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Interchange Arrival Time</title>
+    <title>KMB Arrival Time</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Bus Interchange Arrival Time</h1>
+    <h1>KMB Arrival Time</h1>
     <p>Please input route</p>
-    <input type="text" onkeyup="" id="rteinput" placeholder="Enter Route">
-    <input type="button" onclick="update();" value="Find">
+    <input type="text" onkeyup="" id="rte_input" placeholder="Enter Route">
+    <input type="button" onclick="update();" value="Update">
     <div id="results"></div>
     <script>
       let route_data;
@@ -23,16 +23,7 @@
         });
       }
       async function update() {
-        alert(route_data[0]["route"]);
-        const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
-        const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
-        try {
-          const responses = await Promise.all(plat_data.map(pd => fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop-eta/${pd[1]}`)));
-          const received_data = await Promise.all(responses.map(response => response.json()));
-          to_display(received_data);
-        } catch (error) {
-          console.log(error);
-        }
+        alert(route_data["data"][0]["route"]);
       }
       function to_display(received_data) {
         let results = "";
