@@ -30,7 +30,7 @@
         rte_options_select.innerHTML = "";
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input.toUpperCase()) {
-            let rte_option_display = ${往${rte_data["dest_tc"]}(${rte_data["service_type"]})`;
+            let rte_option_display = `${往${rte_data["dest_tc"]}(${rte_data["service_type"]})`;
             if (rte_data["service_type"] != "1") {
               rte_option_display = `${rte_data["orig_tc"]}往${rte_data["dest_tc"]}(${rte_data["service_type"]})`;
             }
