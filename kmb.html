@@ -11,18 +11,19 @@
     <input type="button" onclick="update();" value="Find">
     <div id="results"></div>
     <script>
-      let all_stop_data;
-      setup_stop_data();
-      function setup_stop_data() {
-        fetch("bus_data/bus_interchange.json")
+      let route_data;
+      setup_data()
+      function setup_data() {
+        fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
         .then(response => {
           return response.json();
         })
         .then(data => {
-          all_stop_data = data;
+          route_data = data;
         });
       }
       async function update() {
+        alert(route_data[0]["route"]);
         const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
         const plat_data = stop_data[Object.keys(stop_data)[document.getElementById("stop_dir").value]];
         try {
