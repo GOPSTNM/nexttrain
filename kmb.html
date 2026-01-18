@@ -76,14 +76,18 @@
         console.log(eta_data);
         for (let i = 0; i < stop_names.length; i++) {
           results += `<p>${stop_names[i]}</p>`;
-          if (!eta_data[dir][i]) {
+          if (!eta_data[dir][i] || stop_eta_data.length == 0) {
             results += "No data at this stop";
             return;
           }
+          results += "<table>";
           stop_eta_data = eta_data[dir][i];
           for (let k = 0; k < stop_eta_data.length; k++) {
+            results += "<tr>";
             results += time_show_format(stop_eta_data[k][0]);
+            results += "</tr>";
           }
+          results += "</table>";
         }
         document.getElementById("results").innerHTML = results;
       }
