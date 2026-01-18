@@ -78,7 +78,6 @@
           results += `<p>${stop_names[i]}</p>`;
           if (!eta_data[dir][i] || eta_data[dir][i].length == 0) {
             results += "No data at this stop";
-            return;
           }
           results += "<table>";
           stop_eta_data = eta_data[dir][i];
