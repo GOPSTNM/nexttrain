@@ -35,8 +35,16 @@
         }
       }
       async function update() {
+        try {
+          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${service_type}`);
+          const received_data = await responses.json();
+          to_display(received_data);
+        } catch (error) {
+          console.log(error);
+        }
       }
       function to_display(received_data) {
+        console.log(received_data);
         let results = "";
         for (let i = 0; i < received_data.length; i++) {
           const stop_data = all_stop_data[Object.keys(all_stop_data)[document.getElementById("bus_stop").value]];
