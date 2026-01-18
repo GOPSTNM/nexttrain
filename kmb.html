@@ -61,7 +61,7 @@
           stop_names[seq] = name;
         });
         console.log(stop_names);
-        let eta_data = [];
+        let eta_data = {};
         for (const i of received_data["data"]) {
           if (!eta_data[i["dir"]][Number(i["seq"])-1]) {
             eta_data[i["dir"]][Number(i["seq"])-1] = [];
