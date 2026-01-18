@@ -74,7 +74,7 @@
         console.log(eta_data);
         for (let i = 0; i < stop_names.length; i++) {
           results += `<p>${stop_names[i]}</p>`;
-          console.log(dir);
+          console.log(eta_data[dir][i]);
           for (const k of eta_data[dir][i]) {
             results += k[0];
           }
