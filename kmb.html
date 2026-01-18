@@ -76,7 +76,7 @@
         console.log(eta_data);
         for (let i = 0; i < stop_names.length; i++) {
           results += `<p>${stop_names[i]}</p>`;
-          if (!eta_data[dir][i] || stop_eta_data.length == 0) {
+          if (!eta_data[dir][i] || eta_data[dir][i].length == 0) {
             results += "No data at this stop";
             return;
           }
