@@ -56,8 +56,8 @@
           const received_data = await response.json();
           return { seq: Number(i["seq"]), name: received_data["data"]["name_tc"] };
         });
-        const results = await Promise.all(fetchPromises);
-        results.forEach(({ seq, name }) => {
+        const stop_name_results = await Promise.all(fetchPromises);
+        stop_name_results.forEach(({ seq, name }) => {
           stop_names[seq] = name;
         });
         console.log(stop_names);
