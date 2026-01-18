@@ -75,9 +75,12 @@
         for (let i = 0; i < stop_names.length; i++) {
           results += `<p>${stop_names[i]}</p>`;
           stop_eta_data = eta_data[dir][i];
-          console.log(stop_eta_data.length);
-          for (const q of stop_eta_data) {
-            results += q[0];
+          if (!stop_eta_data) {
+            results += "No data at this stop";
+            return;
+          }
+          for (let k = 0; k < stop_eta_data.length; k++) {
+            results += stop_eta_data[k][1];
           }
         }
         document.getElementById("results").innerHTML = results;
