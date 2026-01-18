@@ -86,7 +86,7 @@
         document.getElementById("results").innerHTML = results;
       }
       function time_show_format(t) {
-        return t.toTimeString().slice(0, 8);
+        return new Date(t).toTimeString().slice(0, 8);
       }
     </script>
   </body>
