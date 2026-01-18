@@ -74,11 +74,11 @@
         console.log(eta_data);
         for (let i = 0; i < stop_names.length; i++) {
           results += `<p>${stop_names[i]}</p>`;
-          stop_eta_data = eta_data[dir][i];
-          if (!stop_eta_data) {
+          if (!eta_data[dir][i]) {
             results += "No data at this stop";
             return;
           }
+          stop_eta_data = eta_data[dir][i];
           for (let k = 0; k < stop_eta_data.length; k++) {
             results += stop_eta_data[k][1];
           }
