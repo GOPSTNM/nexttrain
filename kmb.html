@@ -83,9 +83,22 @@
           results += "<table>";
           stop_eta_data = eta_data[dir][i];
           for (let k = 0; k < stop_eta_data.length; k++) {
+            let eta_time = stop_eta_data[k][0];
+            let eta_time_mins = time_difference_format(eta_time);
+            if (k == 0) {
+              time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
+            } else if (k == stop_eta_data.length - 1) {
+              time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
+            } else if (arrive < 0.25) {
+              time_data = "<span class='bold_text'>Departing</span>";
+            } else if (arrive < 0.5) {
+              time_data = "<span class='bold_text'>Arriving</span>";
+            } else {
+              time_data = `<span class="bold_text">${arrive}</span> <span class="small_text">min</span>`;
+            }
             results += "<tr>";
-            results += `<td style="width: 140px">${time_show_format(stop_eta_data[k][0])}</td>`;
-           // results += `<td style="width: 100px">${time_data}</td>`;
+            results += `<td style="width: 140px">${time_show_format(eta_time)}</td>`;
+            results += `<td style="width: 100px">${time_data}</td>`;
             results += `<td style="width: 80px"><span class='medium_text'>${stop_eta_data[k][2]}</span></td>`;
             results += "</tr>";
           }
@@ -95,6 +108,9 @@
       }
       function time_show_format(t) {
         return new Date(t).toTimeString().slice(0, 8);
+      }
+      function time_difference_format(t) {
+        return Math.round((new Date(t) - new Date())/6000)/10;
       }
     </script>
   </body>
