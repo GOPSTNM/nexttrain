@@ -80,10 +80,13 @@
           }
           stop_eta_data = eta_data[dir][i];
           for (let k = 0; k < stop_eta_data.length; k++) {
-            results += stop_eta_data[k][1];
+            results += time_show_format(stop_eta_data[k][1]);
           }
         }
         document.getElementById("results").innerHTML = results;
+      }
+      function time_show_format(t) {
+        return t.toTimeString().slice(0, 8);
       }
     </script>
   </body>
