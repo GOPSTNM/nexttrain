@@ -85,16 +85,14 @@
           for (let k = 0; k < stop_eta_data.length; k++) {
             let eta_time = stop_eta_data[k][0];
             let eta_time_mins = time_difference_format(eta_time);
-            if (k == 0) {
+            if (k == 0 || k == stop_eta_data.length - 1) {
               time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
-            } else if (k == stop_eta_data.length - 1) {
-              time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
-            } else if (arrive < 0.25) {
+            } else if (eta_time_mins < 0) {
               time_data = "<span class='bold_text'>Departing</span>";
-            } else if (arrive < 0.5) {
+            } else if (eta_time_mins < 0.5) {
               time_data = "<span class='bold_text'>Arriving</span>";
             } else {
-              time_data = `<span class="bold_text">${arrive}</span> <span class="small_text">min</span>`;
+              time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
             }
             results += "<tr>";
             results += `<td style="width: 140px">${time_show_format(eta_time)}</td>`;
