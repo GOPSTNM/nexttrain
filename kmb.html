@@ -47,16 +47,17 @@
           console.log(error);
         }
       }
-      function to_display(received_data, stop_data) {
+      async function to_display(received_data, stop_data) {
         console.log(received_data);
         let results = "";
         let stop_names = [];
         for (const i of stop_data["data"]) {
-          stop_names[Number(i["seq"])] = i["stop"];
+          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`);
+          const received_data = await responses.json();
+          stop_names[Number(i["seq"])] = received_data["name_tc"];
         }
         console.log(stop_names);
         for (const i of received_data["data"]) {
-          console.log(i);
         }
         document.getElementById("results").innerHTML = results;
       }
