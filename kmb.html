@@ -75,6 +75,7 @@
         for (let i = 0; i < stop_names.length; i++) {
           results += `<p>${stop_names[i]}</p>`;
           stop_eta_data = eta_data[dir][i];
+          console.log(stop_eta_data.length);
           for (const q of stop_eta_data) {
             results += q[0];
           }
