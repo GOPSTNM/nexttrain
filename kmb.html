@@ -41,7 +41,7 @@
           const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${fd[1]}`);
           const stop_responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${fd[0]}/${fd[1]}`);
           const received_data = await responses.json();
-          const stop_received_data = await responses.json();
+          const stop_received_data = await stop_responses.json();
           to_display(received_data, stop_received_data);
         } catch (error) {
           console.log(error);
