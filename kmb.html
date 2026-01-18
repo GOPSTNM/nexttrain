@@ -61,8 +61,14 @@
           stop_names[seq] = name;
         });
         console.log(stop_names);
+        let eta_data = [];
         for (const i of received_data["data"]) {
+          if (!eta_data[Number(i["seq"])-1]) {
+            eta_data[Number(i["seq"])-1] = [];
+          }
+          eta_data[Number(i["seq"])-1].push(i["eta"]);
         }
+        console.log(eta_data);
         document.getElementById("results").innerHTML = results;
       }
     </script>
