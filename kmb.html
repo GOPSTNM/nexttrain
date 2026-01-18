@@ -84,7 +84,9 @@
           stop_eta_data = eta_data[dir][i];
           for (let k = 0; k < stop_eta_data.length; k++) {
             results += "<tr>";
-            results += time_show_format(stop_eta_data[k][0]);
+            results += `<td style="width: 140px">${time_show_format(stop_eta_data[k][0])}</td>`;
+           // results += `<td style="width: 100px">${time_data}</td>`;
+            results += `<td>${stop_eta_data[k][2]}</td>`;
             results += "</tr>";
           }
           results += "</table>";
