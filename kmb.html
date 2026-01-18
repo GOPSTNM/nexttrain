@@ -36,7 +36,9 @@
       }
       async function update() {
         try {
-          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${service_type}`);
+          let ser_type = document.getElementById("rte_options_select").value.split(";")[1];
+          let route = document.getElementById("rte_input").value.toUpperCase();
+          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${ser_type}`);
           const received_data = await responses.json();
           to_display(received_data);
         } catch (error) {
