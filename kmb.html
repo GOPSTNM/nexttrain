@@ -69,7 +69,9 @@
           if (!eta_data[i["dir"]][Number(i["seq"])-1]) {
             eta_data[i["dir"]][Number(i["seq"])-1] = [];
           }
-          eta_data[i["dir"]][Number(i["seq"])-1].push([i["eta"], i["dest_tc"], i["rmk_tc"]]);
+          if (i["eta"]) {
+            eta_data[i["dir"]][Number(i["seq"])-1].push([i["eta"], i["dest_tc"], i["rmk_tc"]]);
+          }
         }
         console.log(eta_data);
         for (let i = 0; i < stop_names.length; i++) {
