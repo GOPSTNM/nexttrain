@@ -52,6 +52,7 @@
         let results = "";
         let stop_names = [];
         for (const i of stop_data["data"]) {
+          console.log(`https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`);
           const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`);
           const received_data = await responses.json();
           stop_names[Number(i["seq"])] = received_data["name_tc"];
