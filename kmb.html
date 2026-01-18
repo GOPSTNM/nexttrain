@@ -80,7 +80,7 @@
           }
           stop_eta_data = eta_data[dir][i];
           for (let k = 0; k < stop_eta_data.length; k++) {
-            results += time_show_format(stop_eta_data[k][1]);
+            results += time_show_format(stop_eta_data[k][0]);
           }
         }
         document.getElementById("results").innerHTML = results;
