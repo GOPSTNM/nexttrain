@@ -116,7 +116,11 @@
         return Math.round((new Date(t) - new Date())/6000)/10;
       }
       function expand(elem) {
-        elem.nextElementSibling.style.display = "block";
+        if (elem.nextElementSibling.style.display == "none") {
+          elem.nextElementSibling.style.display = "block";
+        } else {
+          elem.nextElementSibling.style.display = "none";
+        }
       }
     </script>
   </body>
