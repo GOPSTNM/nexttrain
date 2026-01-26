@@ -15,13 +15,21 @@
       let route_data;
       setup_data();
       function setup_data() {
-        fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
-        .then(response => {
-          return response.json();
-        })
-        .then(data => {
-          route_data = data;
-        });
+        route_data = localStorage.getItem("eta_kmb_rte_data");
+        if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
+          console.log("Fetch new stop data");
+          console.log(new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")));
+          fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
+            .then(response => response.json())
+            .then(data => {
+              localStorage.setItem("eta_kmb_rte_data", JSON.stringify(data));
+              localStorage.setItem("eta_kmb_rte_data_upd", new Date().toString());
+              route_data = data;
+            });
+        } else {
+          console.log("Saved route data");
+          route_data = JSON.parse(route_data);
+        }
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
