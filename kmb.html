@@ -28,6 +28,7 @@
             });
         } else {
           console.log("Saved route data");
+          console.log(new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")));
           route_data = JSON.parse(route_data);
         }
       }
