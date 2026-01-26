@@ -17,7 +17,11 @@
       function setup_data() {
         route_data = localStorage.getItem("eta_kmb_rte_data");
         if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
-          console.log(`Fetch new data ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins ago`);
+          if (localStorage.getItem("eta_kmb_rte_data_upd")) {
+            console.log(`Fetch new route data as saved data invalid after ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins`);
+          } else {
+            console.log("Fetch new route data as no saved data");
+          }
           fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
             .then(response => response.json())
             .then(data => {
