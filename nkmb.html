@@ -100,7 +100,7 @@
             let eta_time_mins = time_difference_format(eta_time);
             if (i == 0 || i == stop_names.length - 1) {
               time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
-            } else if (eta_time_mins < 2) {
+            } else if (eta_time_mins < -0.5) {
               time_data = "<span class='bold_text'>Departed</span>";
             } else if (eta_time_mins < 0) {
               time_data = "<span class='bold_text'>Departing</span>";
