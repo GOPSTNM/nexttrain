@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMB Arrival Time</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>KMB Arrival Time</h1>
+    <p>Please input route</p>
+    <input type="text" onkeyup="rte_input_change();" id="rte_input" placeholder="Enter Route">
+    <select id="rte_options_select"></select>
+    <input type="button" onclick="update();" value="Update">
+    <div id="results"></div>
+    <script>
+      let route_data;
+      setup_data();
+      function setup_data() {
+        route_data = localStorage.getItem("eta_kmb_rte_data");
+        if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
+          if (localStorage.getItem("eta_kmb_rte_data_upd")) {
+            console.log(`Fetch new route data as saved data invalid after ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins`);
+          } else {
+            console.log("Fetch new route data as no saved data");
+          }
+          fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
+            .then(response => response.json())
+            .then(data => {
+              localStorage.setItem("eta_kmb_rte_data", JSON.stringify(data));
+              localStorage.setItem("eta_kmb_rte_data_upd", new Date().toString());
+              route_data = data;
+            });
+        } else {
+          console.log(`Saved route data updated ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins ago`);
+          route_data = JSON.parse(route_data);
+        }
+      }
+      function rte_input_change() {
+        let rte_input = document.getElementById("rte_input").value;
+        let rte_options = [];
+        let rte_options_select = document.getElementById("rte_options_select");
+        rte_options_select.innerHTML = "";
+        for (const rte_data of route_data["data"]) {
+          if (rte_data["route"] == rte_input.toUpperCase()) {
+            rte_options_select.append(new Option(`${rte_data["orig_tc"]}往${rte_data["dest_tc"]}(${rte_data["service_type"]})`, `${rte_data["bound"]};${rte_data["service_type"]}`));
+          }
+        }
+      }
+      async function update() {
+        try {
+          let fd = document.getElementById("rte_options_select").value.split(";");
+          let route = document.getElementById("rte_input").value.toUpperCase();
+          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${fd[1]}`);
+          const stop_responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${fd[0] == "I" ? "inbound" : "outbound"}/${fd[1]}`);
+          const received_data = await responses.json();
+          const stop_received_data = await stop_responses.json();
+          to_display(received_data, stop_received_data, fd[0]);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      async function to_display(received_data, stop_data, dir) {
+        console.log(received_data);
+        let results = "";
+        let stop_names = [];
+        const fetchPromises = stop_data["data"].map(async (i) => {
+          const response = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`);
+          const received_data = await response.json();
+          return { seq: Number(i["seq"]-1), name: received_data["data"]["name_tc"] };
+        });
+        const stop_name_results = await Promise.all(fetchPromises);
+        stop_name_results.forEach(({ seq, name }) => {
+          stop_names[seq] = name;
+        });
+        console.log(stop_names);
+        let eta_data = {
+          "I": [],
+          "O": []
+        };
+        for (const i of received_data["data"]) {
+          if (!eta_data[i["dir"]][Number(i["seq"])-1]) {
+            eta_data[i["dir"]][Number(i["seq"])-1] = [];
+          }
+          if (i["eta"]) {
+            eta_data[i["dir"]][Number(i["seq"])-1].push([i["eta"], i["dest_tc"], i["rmk_tc"]]);
+          }
+        }
+        console.log(eta_data);
+        for (let i = 0; i < stop_names.length; i++) {
+          results += "<div onclick='expand(this);'>";
+          results += `<p>${stop_names[i]}</p>`;
+          results += "</div>";
+          results += "<div style='display: none;'>";
+          if (!eta_data[dir][i] || eta_data[dir][i].length == 0) {
+            results += "No data at this stop";
+          }
+          results += "<table>";
+          stop_eta_data = eta_data[dir][i];
+          for (let k = 0; k < stop_eta_data.length; k++) {
+            let eta_time = stop_eta_data[k][0];
+            let eta_time_mins = time_difference_format(eta_time);
+            if (i == 0 || i == stop_names.length - 1) {
+              time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
+            } else if (eta_time_mins < 2) {
+              time_data = "<span class='bold_text'>Departed</span>";
+            } else if (eta_time_mins < 0) {
+              time_data = "<span class='bold_text'>Departing</span>";
+            } else if (eta_time_mins < 0.5) {
+              time_data = "<span class='bold_text'>Arriving</span>";
+            } else {
+              time_data = `<span class="bold_text">${eta_time_mins}</span> <span class="small_text">min</span>`;
+            }
+            results += "<tr>";
+            results += `<td style="width: 140px">${time_show_format(eta_time)}</td>`;
+            results += `<td style="width: 100px">${time_data}</td>`;
+            results += `<td style="width: 80px"><span class='medium_text'>${stop_eta_data[k][2]}</span></td>`;
+            results += "</tr>";
+          }
+          results += "</table>";
+          results += "</div>";
+        }
+        document.getElementById("results").innerHTML = results;
+      }
+      function time_show_format(t) {
+        return new Date(t).toTimeString().slice(0, 8);
+      }
+      function time_difference_format(t) {
+        return Math.round((new Date(t) - new Date())/6000)/10;
+      }
+      function expand(elem) {
+        if (elem.nextElementSibling.style.display == "none") {
+          elem.nextElementSibling.style.display = "block";
+        } else {
+          elem.nextElementSibling.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
