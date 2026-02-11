@@ -133,6 +133,26 @@
           elem.nextElementSibling.style.display = "none";
         }
       }
+      function local_storage_item(label, url) {
+        route_data = localStorage.getItem("eta_kmb_rte_data");
+        if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
+          if (localStorage.getItem("eta_kmb_rte_data_upd")) {
+            console.log(`Fetch new route data as saved data invalid after ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins`);
+          } else {
+            console.log("Fetch new route data as no saved data");
+          }
+          fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
+            .then(response => response.json())
+            .then(data => {
+              localStorage.setItem("eta_kmb_rte_data", JSON.stringify(data));
+              localStorage.setItem("eta_kmb_rte_data_upd", new Date().toString());
+              route_data = data;
+            });
+        } else {
+          console.log(`Saved route data updated ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins ago`);
+          route_data = JSON.parse(route_data);
+        }
+      }
     </script>
   </body>
 </html>
