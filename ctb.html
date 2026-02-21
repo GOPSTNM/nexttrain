@@ -45,7 +45,8 @@
             const received_data = await response.json();
             return received_data["data"];
           });
-          console.log(etas);
+          const etas_results = await Promise.all(etas);
+          console.log(etas_results);
           to_display(etas, stop_received_data, fd);
         } catch (error) {
           console.log(error);
