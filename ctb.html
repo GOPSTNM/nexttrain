@@ -45,6 +45,7 @@
             const received_data = await response.json();
             return received_data["data"];
           });
+          console.log(etas);
           to_display(etas, stop_received_data, fd);
         } catch (error) {
           console.log(error);
