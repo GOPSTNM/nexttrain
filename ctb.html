@@ -30,7 +30,8 @@
         rte_options_select.innerHTML = "";
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input.toUpperCase()) {
-            rte_options_select.append(new Option(`${rte_data["orig_tc"]}往${rte_data["dest_tc"]}(${rte_data["service_type"]})`, `${rte_data["bound"]};${rte_data["service_type"]}`));
+            rte_options_select.append(new Option(`${rte_data["orig_tc"]}往${rte_data["dest_tc"]}`, "I"));
+            rte_options_select.append(new Option(`${rte_data["dest_tc"]}往${rte_data["orig_tc"]}`, "O"));
           }
         }
       }
