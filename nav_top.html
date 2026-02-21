@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Nav — Left Popped Menu</title>
+  <style>
+    :root{
+      --bg:#222;
+      --accent:#0ea5a4;
+      --panel:#111;
+      --text:#fff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:#f5f5f5;
+      color:var(--text);
+      min-height:100vh;
+    }
+
+    /* Top navbar */
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:0.6rem 1rem;
+      background:var(--bg);
+      color:var(--text);
+      position:relative;
+      z-index:10;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:0.6rem;
+      cursor:pointer;
+      user-select:none;
+    }
+    .brand .logo{
+      width:36px;
+      height:36px;
+      background:var(--accent);
+      border-radius:6px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#062121;
+    }
+    .brand .title{font-weight:600}
+
+    .tabs{
+      display:flex;
+      gap:0.75rem;
+      align-items:center;
+    }
+    .tab{
+      padding:0.5rem 0.9rem;
+      border-radius:6px;
+      background:transparent;
+      color:var(--text);
+      text-decoration:none;
+      font-weight:500;
+    }
+    .tab:hover{ background:rgba(255,255,255,0.05) }
+
+    /* hamburger only shown on small screens */
+    .hamburger{
+      display:none;
+      background:transparent;
+      border:0;
+      color:var(--text);
+      font-size:1.45rem;
+      cursor:pointer;
+    }
+
+    /* Left full-height menu (overlay) */
+    .overlay{
+      --w:320px;
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:40;
+    }
+    .overlay .backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+      opacity:0;
+      transition:opacity 220ms ease;
+      pointer-events:none;
+    }
+    .panel{
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:var(--w);
+      max-width:85vw;
+      transform:translateX(-100%);
+      background:var(--panel);
+      padding:1.5rem 1rem;
+      box-shadow: 6px 0 18px rgba(0,0,0,0.4);
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      transition:transform 260ms ease;
+      pointer-events:auto;
+    }
+    .panel .close{
+      margin-left:auto;
+      background:transparent;
+      border:0;
+      color:var(--text);
+      font-size:1rem;
+      cursor:pointer;
+      padding:0.25rem 0.4rem;
+    }
+    .panel .menu-links{
+      display:flex;
+      flex-direction:column;
+      gap:0.6rem;
+      margin-top:0.6rem;
+    }
+    .panel a{
+      padding:0.9rem 0.8rem;
+      border-radius:8px;
+      color:var(--text);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .panel a:hover{ background:rgba(255,255,255,0.03) }
+
+    /* active state when open */
+    .overlay.open{
+      pointer-events:auto;
+    }
+    .overlay.open .backdrop{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .overlay.open .panel{
+      transform:translateX(0);
+    }
+
+    /* Responsive: hide tabs and show hamburger on narrow */
+    @media (max-width:900px){
+      .tabs{ display:none; }
+      .hamburger{ display:inline-block; }
+    }
+
+    /* For demonstration content below navbar */
+    main{
+      padding:1.25rem;
+      color:#111;
+      background:#fff;
+      min-height:calc(100vh - 64px);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar" role="banner">
+    <div class="brand" id="brand">
+      <div class="logo" aria-hidden="true">L</div>
+      <div class="title">MySite</div>
+    </div>
+
+    <nav class="tabs" aria-label="Primary">
+      <a class="tab" href="#home">Home</a>
+      <a class="tab" href="#services">Services</a>
+      <a class="tab" href="#about">About</a>
+      <a class="tab" href="#blog">Blog</a>
+      <a class="tab" href="#contact">Contact</a>
+    </nav>
+
+    <button class="hamburger" id="hambtn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </header>
+
+  <!-- overlay + left panel -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="backdrop" id="backdrop" tabindex="-1"></div>
+    <aside class="panel" role="dialog" aria-modal="true" aria-label="Main menu" id="panel">
+      <button class="close" id="closeBtn" aria-label="Close menu">✕</button>
+
+      <nav class="menu-links" aria-label="Mobile primary">
+        <a href="#home" data-link>Home</a>
+        <a href="#services" data-link>Services</a>
+        <a href="#about" data-link>About</a>
+        <a href="#blog" data-link>Blog</a>
+        <a href="#contact" data-link>Contact</a>
+      </nav>
+    </aside>
+  </div>
+
+  <main>
+    <h1>Page content</h1>
+    <p>Resize the window below ~900px to see the left-popped menu behavior.</p>
+  </main>
+
+  <script>
+    (function(){
+      const overlay = document.getElementById('overlay');
+      const panel = document.getElementById('panel');
+      const backdrop = document.getElementById('backdrop');
+      const hambtn = document.getElementById('hambtn');
+      const brand = document.getElementById('brand');
+      const closeBtn = document.getElementById('closeBtn');
+
+      function openMenu(){
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden','false');
+        hambtn.setAttribute('aria-expanded','true');
+        // trap focus in panel (basic)
+        closeBtn.focus();
+        document.addEventListener('keydown', onKey);
+      }
+      function closeMenu(){
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden','true');
+        hambtn.setAttribute('aria-expanded','false');
+        hambtn.focus();
+        document.removeEventListener('keydown', onKey);
+      }
+
+      function onKey(e){
+        if(e.key === 'Escape') closeMenu();
+      }
+
+      // open via hamburger or brand click
+      hambtn.addEventListener('click', (e)=>{
+        const isOpen = overlay.classList.contains('open');
+        if(isOpen) closeMenu(); else openMenu();
+      });
+      brand.addEventListener('click', (e)=>{
+        // Only open on small screens; otherwise could navigate
+        if(window.matchMedia('(max-width:900px)').matches){
+          openMenu();
+        } else {
+          // large screen behavior: optionally navigate home
+          // location.href = '/';
+        }
+      });
+
+      // close via close button, clicking backdrop, or clicking a link
+      closeBtn.addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', (e)=>{
+        // if user clicks outside the panel (but inside overlay), close
+        if(!panel.contains(e.target) && !brand.contains(e.target) && overlay.classList.contains('open')){
+          closeMenu();
+        }
+      });
+
+      // close when any menu link is clicked (mobile)
+      document.querySelectorAll('[data-link]').forEach(a=>{
+        a.addEventListener('click', closeMenu);
+      });
+
+      // handle resizing: ensure state consistent
+      window.addEventListener('resize', ()=>{
+        // if larger screen, ensure overlay closed
+        if(!window.matchMedia('(max-width:900px)').matches){
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
