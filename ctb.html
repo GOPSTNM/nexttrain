@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Arrival Time</title>
+    <title>Citybus Arrival Time</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -29,19 +29,18 @@
         rte_options_select.innerHTML = "";
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input.toUpperCase()) {
-            rte_options_select.append(new Option(`${rte_data["orig_tc"]}往${rte_data["dest_tc"]}`, "I"));
-            rte_options_select.append(new Option(`${rte_data["dest_tc"]}往${rte_data["orig_tc"]}`, "O"));
+            rte_options_select.append(new Option(`${rte_data["orig_tc"]}往${rte_data["dest_tc"]}`, "O"));
+            rte_options_select.append(new Option(`${rte_data["dest_tc"]}往${rte_data["orig_tc"]}`, "I"));
           }
         }
       }
       async function update() {
         try {
-          let fd = document.getElementById("rte_options_select").value.split(";");
+          let fd = document.getElementById("rte_options_select").value;
           let route = document.getElementById("rte_input").value.toUpperCase();
-          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${fd[1]}`);
-          const stop_responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${fd[0] == "I" ? "inbound" : "outbound"}/${fd[1]}`);
-          const received_data = await responses.json();
+          const stop_responses = await fetch(`https://rt.data.gov.hk/v2/transport/citybus/route-stop/ctb/${route}/${fd == "I" ? "inbound" : "outbound"}`);
           const stop_received_data = await stop_responses.json();
+          alert(JSON.stringify(stop_received_data));
           to_display(received_data, stop_received_data, fd[0]);
         } catch (error) {
           console.log(error);
