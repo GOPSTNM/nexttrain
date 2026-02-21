@@ -76,6 +76,9 @@
           results += "<table>";
           stop_eta_data = eta_data[i];
           for (let k = 0; k < stop_eta_data.length; k++) {
+            if (stop_eta_data[k]["dir"] != document.getElementById("rte_options_select").value) {
+              return;
+            }
             let eta_time = stop_eta_data[k]["eta"];
             let eta_time_mins = time_difference_format(eta_time);
             if (i == 0 || i == stop_names.length - 1) {
