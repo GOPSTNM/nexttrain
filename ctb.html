@@ -67,7 +67,7 @@
           "I": [],
           "O": []
         };
-        for (const i of received_data["data"]) {
+        for (const i of etas["data"]) {
           if (!eta_data[i["dir"]][Number(i["seq"])-1]) {
             eta_data[i["dir"]][Number(i["seq"])-1] = [];
           }
