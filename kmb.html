@@ -81,7 +81,7 @@
             eta_data[i["dir"]][Number(i["seq"])-1] = [];
           }
           if (i["eta"]) {
-            eta_data[i["dir"]][Number(i["seq"])-1].push([i["eta"], i["dest_tc"], i["rmk_tc"]]);
+            eta_data[i["dir"]][Number(i["seq"])-1].push([i["eta"], i["dest_tc"], i["rmk_tc"], i["service_type"]]);
           }
         }
         console.log(eta_data);
@@ -112,7 +112,7 @@
             results += "<tr>";
             results += `<td style="width: 140px">${time_show_format(eta_time)}</td>`;
             results += `<td style="width: 100px">${time_data}</td>`;
-            results += `<td style="width: 80px"><span class='medium_text'>${stop_eta_data[k][2]}</span></td>`;
+            results += `<td style="width: 80px"><span class='medium_text'>${stop_eta_data[k][3]}${stop_eta_data[k][2]}</span></td>`;
             results += "</tr>";
           }
           results += "</table>";
