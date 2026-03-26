@@ -133,7 +133,9 @@
           elem.nextElementSibling.style.display = "none";
         }
       }
-      function local_storage_item(label, url) {
+      async function local_storage_item(label, url, validity_period, return_text, ask_fetch) {
+        let return_data = localStorage.getItem(label);
+        
         route_data = localStorage.getItem("eta_kmb_rte_data");
         if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
           if (localStorage.getItem("eta_kmb_rte_data_upd")) {
