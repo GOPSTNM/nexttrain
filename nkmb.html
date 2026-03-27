@@ -12,28 +12,7 @@
     <input type="button" onclick="update();" value="Update">
     <div id="results"></div>
     <script>
-      let route_data;
-      setup_data();
-      function setup_data() {
-        route_data = localStorage.getItem("eta_kmb_rte_data");
-        if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
-          if (localStorage.getItem("eta_kmb_rte_data_upd")) {
-            console.log(`Fetch new route data as saved data invalid after ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins`);
-          } else {
-            console.log("Fetch new route data as no saved data");
-          }
-          fetch("https://data.etabus.gov.hk/v1/transport/kmb/route/")
-            .then(response => response.json())
-            .then(data => {
-              localStorage.setItem("eta_kmb_rte_data", JSON.stringify(data));
-              localStorage.setItem("eta_kmb_rte_data_upd", new Date().toString());
-              route_data = data;
-            });
-        } else {
-          console.log(`Saved route data updated ${Math.round((new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd")))/60000)} mins ago`);
-          route_data = JSON.parse(route_data);
-        }
-      }
+      const route_data = local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 60000, true)
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
         let rte_options = [];
@@ -139,7 +118,7 @@
         if (localStorage.getItem("kmb_data_dictionary")) {
           data_dictionary = JSON.parse(localStorage.getItem("kmb_data_dictionary"));
         }
-        if (data_dictionary[label] && localStorage.getItem(label) && (Date.now() - data_dictionary[label]) < (validity_period * 86400000)) {
+        if (data_dictionary[label] && localStorage.getItem(label) && (Date.now() - data_dictionary[label]) < (validity_period * 1)) {
           return_data = JSON.parse(localStorage.getItem(label));
         } else {
           if (!localStorage.getItem(label) || ask_fetch == false || confirm("Update bus route data") == true) {
