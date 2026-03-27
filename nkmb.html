@@ -143,7 +143,7 @@
           return_data = JSON.parse(localStorage.getItem(label));
         } else {
           if (!localStorage.getItem(label) || ask_fetch == false || confirm("Update bus route data") == true) {
-            return_data = await fetch(url).json();
+            return_data = await (await fetch(url)).json();
             localStorage.setItem(label, JSON.stringify(return_data));
             data_dictionary[label] = Date.now();
             localStorage.setItem("kmb_data_dictionary", JSON.stringify(data_dictionary))
