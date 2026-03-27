@@ -139,14 +139,14 @@
         if (localStorage.getItem("kmb_data_dictionary")) {
           data_dictionary = JSON.parse(localStorage.getItem("kmb_data_dictionary"));
         }
-        if (data_dictionary[label] && localStorage.getItem(label) && (new Date() - data_dictionary[label]) < (validity_period * 86400000 - 10)) {
+        if (data_dictionary[label] && localStorage.getItem(label) && (Date.now() - data_dictionary[label]) < (validity_period * 86400000 - 10)) {
           return_data = JSON.parse(localStorage.getItem(label));
         } else {
           if (ask_fetch == false || confirm("Update bus route data") == true) {
             const fetch_response = await fetch(url);
-            return_data = fetch_response;
+            return_data = fetch_response.json();
             localStorage.setItem(label, JSON.stringify(return_data));
-            data_dictionary[label] = new Date().toLocaleString("en-GB");
+            data_dictionary[label] = Date.now();
             localStorage.setItem("kmb_data_dictionary", JSON.stringify(data_dictionary))
           } else {
             return_data = JSON.parse(localStorage.getItem(label));
