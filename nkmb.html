@@ -134,9 +134,18 @@
         }
       }
       async function local_storage_item(label, url, validity_period, return_text, ask_fetch) {
-        const data_dictionary = localStorage.getItem("kmb_data_dictionary");
-        let return_data = localStorage.getItem(label);
+        let data_dictionary = {};
+        let return_data;
+        if (localStorage.getItem("kmb_data_dictionary")) {
+          data_dictionary = JSON.parse(localStorage.getItem("kmb_data_dictionary"));
+        }
+        if (data_dictionary[label] && localStorage.getItem(label) && (new Date() - data_dictionary[label]) < validity_period) {
+          return_data = JSON.parse(localStorage.getItem(label));
+        } else {
+        }
+
         
+        let return_data = localStorage.getItem(label);
         route_data = localStorage.getItem("eta_kmb_rte_data");
         if (route_data === null || (new Date() - new Date(localStorage.getItem("eta_kmb_rte_data_upd"))) > 300000) {
           if (localStorage.getItem("eta_kmb_rte_data_upd")) {
