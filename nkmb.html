@@ -12,7 +12,7 @@
     <input type="button" onclick="update();" value="Update">
     <div id="results"></div>
     <script>
-      const route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 60000, true)
+      const route_data = local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 60000, true)
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
         let rte_options = [];
