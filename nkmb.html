@@ -142,7 +142,7 @@
         if (data_dictionary[label] && localStorage.getItem(label) && (Date.now() - data_dictionary[label]) < (validity_period * 86400000)) {
           return_data = JSON.parse(localStorage.getItem(label));
         } else {
-          if (ask_fetch == false || confirm("Update bus route data") == true) {
+          if (!localStorage.getItem(label) || ask_fetch == false || confirm("Update bus route data") == true) {
             return_data = await fetch(url).json();
             localStorage.setItem(label, JSON.stringify(return_data));
             data_dictionary[label] = Date.now();
