@@ -139,7 +139,7 @@
         if (localStorage.getItem("kmb_data_dictionary")) {
           data_dictionary = JSON.parse(localStorage.getItem("kmb_data_dictionary"));
         }
-        if (data_dictionary[label] && localStorage.getItem(label) && (new Date() - data_dictionary[label]) < validity_period) {
+        if (data_dictionary[label] && localStorage.getItem(label) && (new Date() - data_dictionary[label]) < (validity_period - 3)) {
           return_data = JSON.parse(localStorage.getItem(label));
         } else {
         }
