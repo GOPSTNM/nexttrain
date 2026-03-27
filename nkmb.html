@@ -141,7 +141,8 @@
         }
         if (data_dictionary[label] && localStorage.getItem(label) && (new Date() - data_dictionary[label]) < (validity_period - 3)) {
           return_data = JSON.parse(localStorage.getItem(label));
-        } else {
+        } else if (data_dictionary[label] && localStorage.getItem(label) && (new Date() - data_dictionary[label]) < validity_period) {
+          return_data = JSON.parse(localStorage.getItem(label));
         }
 
         
