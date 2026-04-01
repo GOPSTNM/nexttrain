@@ -27,7 +27,7 @@
           if (rte_data["route"] == rte_input.toUpperCase()) {
             let rte_str = `${proper_stop_name(rte_data["orig_en"])} to ${proper_stop_name(rte_data["dest_en"])}`
             if (rte_data["service_type"] != 1) {
-              rte_str += ` [Special Dep ${rte_data["service_type"]}]`
+              rte_str += ` [Spec Dep ${rte_data["service_type"]}]`
             }
             rte_options_select.append(new Option(rte_str, `${rte_data["bound"]}${rte_data["service_type"]}`));
           }
