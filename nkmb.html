@@ -21,13 +21,19 @@
         let rte_input = document.getElementById("rte_input").value;
         let rte_options = [];
         let rte_options_select = document.getElementById("rte_options_select");
-        rte_input = rte_input.toUpperCase();
+        document.getElementById("rte_input").value = rte_input.toUpperCase();
         rte_options_select.innerHTML = "";
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input) {
-            rte_options_select.append(new Option(`${rte_data["orig_en"]} to ${rte_data["dest_en"]}(${rte_data["service_type"]})`, `${rte_data["bound"]}${rte_data["service_type"]}`));
+            let rte_str = `${rte_data["orig_en"]} to ${rte_data["dest_en"]}(${rte_data["service_type"]})`
+            rte_options_select.append(new Option(rte_str, `${rte_data["bound"]}${rte_data["service_type"]}`));
           }
         }
+      }
+      function proper_stop_name(name) {
+        let titleCase = name.replace(/\w\S*/g, (name) => {
+          return name.charAt(0).toUpperCase() + name.substr(1).toLowerCase();
+        });
       }
       async function update() {
         try {
