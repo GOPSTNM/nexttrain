@@ -45,13 +45,13 @@
       }
       async function update() {
         try {
-          let fd = [document.getElementById("rte_options_select").value[0],document.getElementById("rte_options_select").value[1]];
-          let route = document.getElementById("rte_input").value.toUpperCase();
-          const responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${fd[1]}`);
-          const stop_responses = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${fd[0] == "I" ? "inbound" : "outbound"}/${fd[1]}`);
-          const received_data = await responses.json();
-          const stop_received_data = await stop_responses.json();
-          to_display(received_data, stop_received_data, fd[0]);
+          const rte_options_select = document.getElementById("rte_options_select");
+          const bound = rte_options_select.value[0];
+          const service_type = rte_options_select.value[1];
+          const route = document.getElementById("rte_input").value.toUpperCase();
+          const eta_data = await(await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${service_type}`)).json();
+          const stop_data = await(await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${bound == "I" ? "inbound" : "outbound"}/${service_type}`)).json();
+          to_display(eta_data, stop_data, bound);
         } catch (error) {
           console.log(error);
         }
