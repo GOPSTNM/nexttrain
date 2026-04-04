@@ -13,6 +13,7 @@
     <div id="results"></div>
     <script>
       let route_data;
+      let eta_data;
       setup();
       async function setup() {
         route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 60000, true);
