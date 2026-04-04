@@ -15,7 +15,7 @@
       let route_data;
       setup();
       async function setup() {
-        route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 60000, true);
+        route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 7, true);
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
@@ -50,7 +50,7 @@
           const route = document.getElementById("rte_input").value.toUpperCase();
           const eta_data = await (await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${service_type}`)).json();
           const stop_data_url = `https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${bound == "I" ? "inbound" : "outbound"}/${service_type}`;
-          const stop_data = await local_storage_item(`kmb_rte_stop_list/${route}/${bound}/${service_type}`, stop_data_url, 60000);
+          const stop_data = await local_storage_item(`kmb_rte_stop_list/${route}/${bound}/${service_type}`, stop_data_url, 7);
           to_display(eta_data, stop_data, bound);
         } catch (error) {
           console.log(error);
@@ -137,7 +137,7 @@
         if (localStorage.getItem("kmb_data_dictionary")) {
           data_dictionary = JSON.parse(localStorage.getItem("kmb_data_dictionary"));
         }
-        if (data_dictionary[label] && localStorage.getItem(label) && (Date.now() - data_dictionary[label]) < (validity_period * 1)) {
+        if (data_dictionary[label] && localStorage.getItem(label) && (Date.now() - data_dictionary[label]) < (validity_period * 86400000)) {
           return_data = JSON.parse(localStorage.getItem(label));
         } else {
           return_data = await (await fetch(url)).json();
