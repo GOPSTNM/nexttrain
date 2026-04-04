@@ -13,7 +13,6 @@
     <div id="results"></div>
     <script>
       let route_data;
-      let eta_data;
       setup();
       async function setup() {
         route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 60000, true);
@@ -50,7 +49,8 @@
           const service_type = rte_options_select.value[1];
           const route = document.getElementById("rte_input").value.toUpperCase();
           const eta_data = await(await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-eta/${route}/${service_type}`)).json();
-          const stop_data = await(await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${bound == "I" ? "inbound" : "outbound"}/${service_type}`)).json();
+          const stop_data_url = await(await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${bound == "I" ? "inbound" : "outbound"}/${service_type}`)).json();
+          const stop_data = local_storage_item(`kmb_rte_stop_list/${route}/${bound}/${service_type}`, stop_data_url, 60000);
           to_display(eta_data, stop_data, bound);
         } catch (error) {
           console.log(error);
