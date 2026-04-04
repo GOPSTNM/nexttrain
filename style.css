@@ -39,7 +39,6 @@ input[type=text], select {
   height: 45px;
   width: 300px;
   background-color: #FFFFFF;
-  color: #000000;
   font-size: 20px;
   border: 2px solid #FF8C00;
   border-radius: 8px;
@@ -49,7 +48,7 @@ input[type=text], select {
   outline: none;
   padding: 8px;
 }
-option:disabled, select:invalid {
+select:invalid {
   color: #8C8C8C;
 }
 input[type=text]:focus, select:focus {
