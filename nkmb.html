@@ -23,13 +23,15 @@
         let rte_options_select = document.getElementById("rte_options_select");
         document.getElementById("rte_input").value = rte_input.toUpperCase();
         rte_options_select.innerHTML = "<option value='' disabled>Select Direction</option>";
+        let rte_first = true;
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input.toUpperCase()) {
             let rte_str = `${proper_stop_name(rte_data["orig_en"])[0]} to ${proper_stop_name(rte_data["dest_en"])[0]}`
             if (rte_data["service_type"] != 1) {
               rte_str += ` [Spec Dep ${rte_data["service_type"]}]`
             }
-            rte_options_select.append(new Option(rte_str, `${rte_data["bound"]}${rte_data["service_type"]}`, true, true));
+            rte_options_select.append(new Option(rte_str, `${rte_data["bound"]}${rte_data["service_type"]}`, false, rte_first));
+            rte_first = false;
           }
         }
       }
