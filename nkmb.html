@@ -57,6 +57,7 @@
         }
       }
       async function to_display(eta_data, stop_data, bound) {
+        [received_data, stop_data, dir] = [eta_data, stop_data, bound];
         let results = "";
         let stop_names = [];
         const fetchPromises = stop_data["data"].map(async (i) => {
