@@ -22,7 +22,7 @@
         let rte_options = [];
         let rte_options_select = document.getElementById("rte_options_select");
         document.getElementById("rte_input").value = rte_input.toUpperCase();
-        rte_options_select.innerHTML = "<option value='' disabled>Select Direction</option>";
+        rte_options_select.innerHTML = new Option("Select Direction", "", false, false);
         for (const rte_data of route_data["data"]) {
           if (rte_data["route"] == rte_input.toUpperCase()) {
             let rte_str = `${proper_stop_name(rte_data["orig_en"])} to ${proper_stop_name(rte_data["dest_en"])}`
