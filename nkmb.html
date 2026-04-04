@@ -30,7 +30,7 @@
             if (rte_data["service_type"] != 1) {
               rte_str += ` [Spec Dep ${rte_data["service_type"]}]`
             }
-            rte_options_select.append(new Option(rte_str, `${rte_data["bound"]}${rte_data["service_type"]}`));
+            rte_options_select.append(new Option(rte_str, `${rte_data["bound"]}${rte_data["service_type"]}`, true));
           }
         }
       }
