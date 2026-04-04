@@ -49,7 +49,7 @@ input[type=text], select {
   outline: none;
   padding: 8px;
 }
-option:disabled {
+option:disabled, select:invalid {
   color: #8C8C8C;
 }
 input[type=text]:focus, select:focus {
