@@ -62,16 +62,9 @@
         for (const i of stop_data["data"]) {
           let i_stop_data = await local_storage_item(`kmb_stop/${i["stop"]}`, `https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`, 7);
           stop_names[Number(i["seq"]) - 1] = [i["stop"], i_stop_data["data"]["name_en"], i_stop_data["data"]["name_tc"], i_stop_data["data"]["lat"], i_stop_data["data"]["long"]];
-        }
-        console.log(eta_data);
-        document.getElementById("results").innerHTML = results;
-        
-        
-        let teta_data = {
-          "I": [],
-          "O": []
-        };
-        for (const i of received_data["data"]) {
+        }   
+        let eta_list = {};
+        for (const i of eta_data["data"]) {
           if (!eta_data[i["dir"]][Number(i["seq"])-1]) {
             eta_data[i["dir"]][Number(i["seq"])-1] = [];
           }
