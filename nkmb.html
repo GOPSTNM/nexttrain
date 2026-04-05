@@ -78,8 +78,7 @@
           results += "</div>";
           results += "<div style='display: none;'>";
           results += "<table>";
-          stop_eta_data = eta_data[i];
-          console.log(stop_eta_data);
+          stop_eta_data = eta_list[i];
           for (let k = 0; k < stop_eta_data.length; k++) {
             let eta_time = stop_eta_data[k][0];
             let eta_time_mins = time_difference_format(eta_time);
