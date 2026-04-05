@@ -72,7 +72,6 @@
             eta_list[Number(i["seq"])-1].push([i["eta"], i["rmk_en"], i["rmk_tc"]]);
           }
         }
-        console.log(eta_list);
         for (let i = 0; i < stop_names.length; i++) {
           results += "<div onclick='expand(this);'>";
           results += `<p>${stop_names[i][1]}</p>`;
@@ -80,6 +79,7 @@
           results += "<div style='display: none;'>";
           results += "<table>";
           stop_eta_data = eta_data[i];
+          console.log(stop_eta_data);
           for (let k = 0; k < stop_eta_data.length; k++) {
             let eta_time = stop_eta_data[k][0];
             let eta_time_mins = time_difference_format(eta_time);
