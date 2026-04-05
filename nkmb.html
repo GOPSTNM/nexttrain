@@ -61,7 +61,7 @@
         let stop_names = [];
         for (const i of stop_data["data"]) {
           let i_stop_data = await local_storage_item(`kmb_stop/${i["stop"]}`, `https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`, 7);
-          stop_names[Number(i["seq"]) - 1] = [i["stop"], i_stop_data["name_tc"]]
+          stop_names[Number(i["seq"]) - 1] = [i["stop"], i_stop_data["data"]["name_tc"]]
         }
         console.log(stop_names);
         
