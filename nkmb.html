@@ -36,11 +36,21 @@
         }
       }
       function proper_stop_name(name) {
-        let title = name;
-        let titleCase = title.replace(/\w\S*/g, (txt) => {
-          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
-        return [titleCase];
+      const regex = /\s\(([A-Z]{2}\d{3}[A-Z]?)\)$/i;
+      const match = name.match(regex);
+    
+      // Remove the code from the name before Title Casing
+      let cleanName = name.replace(regex, "").trim();
+    
+      let titleCase = cleanName.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    
+      // Return [Title, Code] or [Title, null]
+      return [
+        titleCase, 
+        match ? match[1] : null
+      ];
       }
       async function update() {
         try {
