@@ -83,8 +83,11 @@
       async function to_display(eta_list, stop_data, bound, stop_names) {
         let results = "";
         for (let i = 0; i < stop_names.length; i++) {
+          results += `<div id='${i}>'`;
+          
           results += "<div onclick='expand(this);'>";
-          results += `<p>${stop_names[i][1]}</p>`;
+          results += `<p>${stop_names[i][1][0]}</p>`;
+          esults += `<p>${stop_names[i][2]}</p>`;
           results += "</div>";
           if (eta_list[i]) {
             results += "<div style='display: none;'>";
@@ -111,6 +114,7 @@
               results += "</tr>";
             }
             results += "</table>";
+            results += "</div>";
             results += "</div>";
           }
         }
