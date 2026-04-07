@@ -80,17 +80,6 @@ input[type=text]:focus, select:focus {
 .no_margin {
   margin: 0px;
 }
-.stop_circ {
-  height: 18px;
-  width: 18px;
-  border-radius: 100%;
-  border: 2.5px solid #000000;
-  display: inline-block;
-  margin: 5px 15px 5px 5px;
-  vertical-align: middle;
-  background-color: #FFE100;
-  flex-shrink: 0;
-}
 table {
   border: none;
   margin: 20px 0px;
@@ -103,19 +92,25 @@ tr {
   height: 30px;
   line-height: 20px;
 }
-.inline_circle_text {
-  margin: 0px;
-  display: inline-block;
-}
-.inline_circle {
-  height: 20px;
-  width: 20px;
+.circle_y {
+  height: 18px;
+  width: 18px;
   border-radius: 100%;
+  border: 2.5px solid #000000;
   display: inline-block;
-  font-size: 15px;
-  text-align: center;
+  margin: 5px;
   vertical-align: middle;
-  margin: auto 5px;
+  background-color: #FFE100;
+}
+.circle_g {
+  height: 18px;
+  width: 18px;
+  border-radius: 100%;
+  border: 2.5px solid #8C8C8C;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: middle;
+  background-color: #FFFFFF;
 }
 .checkbox_container {
   display: block;
