@@ -101,7 +101,6 @@ tr {
   border-radius: 100%;
   border: 2.5px solid #000000;
   display: inline-block;
-  margin: 0px 5px;
   vertical-align: baseline;
   background-color: #FFE100;
 }
@@ -111,7 +110,6 @@ tr {
   border-radius: 100%;
   border: 2.5px solid #8C8C8C;
   display: inline-block;
-  margin: 0px 5px;
   vertical-align: baseline;
   background-color: #FFFFFF;
 }
