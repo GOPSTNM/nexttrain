@@ -38,25 +38,11 @@
       function proper_stop_name(name) {
       const regex = /\s\(([A-Z]{2}\d{3}[A-Z]?)\)$/i;
       const match = name.match(regex);
-    
-      // Remove the code from the name before Title Casing
       let cleanName = name.replace(regex, "").trim();
-    
       let titleCase = cleanName.replace(/\w\S*/g, (txt) => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
-    
-      // Return [Title, Code] or [Title, null]
-      return [
-        titleCase, 
-        match ? match[1] : null
-      ];
-      }
-      function separate_stop_id(name) {
-        const regex = /\s\(([A-Z]{2}\d{3}[A-Z]?)\)$/i;
-        const match = name.match(regex);
-        const stop_name = name.replace(regex, "").trim();
-        return [stop_name, match ? match[1] : null];
+      return [titleCase, match ? match[1] : null];
       }
       async function update() {
         try {
@@ -70,7 +56,7 @@
           let stop_names = [];
           for (const i of stop_data["data"]) {
             let i_stop_data = await local_storage_item(`kmb_stop/${i["stop"]}`, `https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`, 7);
-            stop_names[Number(i["seq"]) - 1] = [i["stop"], proper_stop_name(i_stop_data["data"]["name_en"]), separate_stop_id(i_stop_data["data"]["name_tc"])[0], i_stop_data["data"]["lat"], i_stop_data["data"]["long"]];
+            stop_names[Number(i["seq"]) - 1] = [i["stop"], proper_stop_name(i_stop_data["data"]["name_en"]), proper_stop_name(i_stop_data["data"]["name_tc"]), i_stop_data["data"]["lat"], i_stop_data["data"]["long"]];
           }
           let eta_list = {};
           for (const i of eta_data["data"]) {
@@ -93,7 +79,7 @@
           results += "<div onclick='expand(this);'>";
           results += "<div style='display: inline-block;' class='stop_circ'></div>";
           results += `<p style='display: inline-block;'>${stop_names[i][1][0]}</p>`;
-          results += `<p style='display: inline-block;'>${stop_names[i][2]}</p>`;
+          results += `<p style='display: inline-block;'>${stop_names[i][2][0]}</p>`;
           results += "</div>";
           if (eta_list[i]) {
             results += "<div style='display: none;'>";
