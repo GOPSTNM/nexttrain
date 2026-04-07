@@ -15,6 +15,7 @@ p {
   color: #191970;
 }
 p.stop_text {
+  margin: 0px;
   padding: 5px, 15px;
 }
 input[type=button] {
