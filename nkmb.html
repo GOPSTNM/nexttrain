@@ -54,10 +54,17 @@
           const stop_data_url = `https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${bound == "I" ? "inbound" : "outbound"}/${service_type}`;
           const stop_data = await local_storage_item(`kmb_rte_stop_list/${route}/${bound}/${service_type}`, stop_data_url, 7);
           let stop_names = [];
-          for (const i of stop_data["data"]) {
+          const stop_promises = stop_data["data"].map(async (i) => {
             let i_stop_data = await local_storage_item(`kmb_stop/${i["stop"]}`, `https://data.etabus.gov.hk/v1/transport/kmb/stop/${i["stop"]}`, 7);
-            stop_names[Number(i["seq"]) - 1] = [i["stop"], proper_stop_name(i_stop_data["data"]["name_en"]), proper_stop_name(i_stop_data["data"]["name_tc"]), i_stop_data["data"]["lat"], i_stop_data["data"]["long"]];
-          }
+            return {
+              seq: Number(i["seq"]) - 1,
+              data: [i["stop"], proper_stop_name(i_stop_data["data"]["name_en"]), proper_stop_name(i_stop_data["data"]["name_tc"]), i_stop_data["data"]["lat"], i_stop_data["data"]["long"]]
+            };
+          });
+          const results = await Promise.all(stop_promises);
+          results.forEach(res => {
+            stop_names[res.seq] = res.data;
+          });
           let eta_list = {};
           for (const i of eta_data["data"]) {
             if (i["dir"] == bound && i["eta"]) {
