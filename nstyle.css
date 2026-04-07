@@ -103,7 +103,7 @@ tr {
   border: 2.5px solid #000000;
   display: inline-block;
   margin: 5px;
-  vertical-align: middle;
+  vertical-align: baseline;
   background-color: #FFE100;
 }
 .circle_g {
@@ -113,7 +113,7 @@ tr {
   border: 2.5px solid #8C8C8C;
   display: inline-block;
   margin: 5px;
-  vertical-align: middle;
+  vertical-align: baseline;
   background-color: #FFFFFF;
 }
 .checkbox_container {
