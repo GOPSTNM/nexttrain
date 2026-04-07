@@ -15,7 +15,7 @@ p {
   color: #191970;
 }
 p.stop_text {
-  margin: 2px 4px;
+  margin: 0px 4px;
 }
 input[type=button] {
   display: inline-block;
