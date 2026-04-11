@@ -127,10 +127,10 @@
       }
       function stop_click(id) {
         let elem = document.getElementById(`${id}_table`).style.display;
-        if (elem.nextElementSibling.style.display == "none") {
-          elem.nextElementSibling.style.display = "block";
+        if (elem.style.display == "none") {
+          elem.style.display = "block";
         } else {
-          elem.nextElementSibling.style.display = "none";
+          elem.style.display = "none";
         }
       }
       async function local_storage_item(label, url, validity_period) {
