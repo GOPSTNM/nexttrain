@@ -82,11 +82,12 @@
       async function to_display(eta_list, stop_data, bound, stop_names) {
         let results = "";
         for (let i = 0; i < stop_names.length; i++) {
-          results += `<div id='${i}' style='display: flex; align-items: center; margin: auto;'>`;
+          results += `<div id='${i}' style='display: flex; align-items: center; margin: auto; onclick="stop_click(${i});"'>`;
           results += "<div class='circle_y' style='flex-shrink: 0; margin-right: 10px;'></div>";
           results += "<div>";
           results += `<p class='stop_text' style='display: inline; margin-right: 5px;'>${stop_names[i][1][0]}<span class='description_text'>${stop_names[i][1][1]}</span></p>`;
           results += `<p class='stop_text' style='display: inline-block;'>${stop_names[i][2][0]}</p>`;
+          results += "</div>";
           results += "</div>";
           if (eta_list[i]) {
             results += `<div id='${i_table}' style='display: none;'>`;
@@ -115,7 +116,6 @@
             results += "</table>";
             results += "</div>";
           }
-          results += "</div>";
         }
         document.getElementById("results").innerHTML = results;
       }
@@ -124,6 +124,9 @@
       }
       function time_difference_format(t) {
         return Math.round((new Date(t) - new Date())/6000)/10;
+      }
+      function stop_click(id) {
+        document.getElementById(id + "_table").style.display = "block";
       }
       async function local_storage_item(label, url, validity_period) {
         let data_dictionary = {};
