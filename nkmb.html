@@ -89,7 +89,7 @@
           results += `<p class='stop_text' style='display: inline-block;'>${stop_names[i][2][0]}</p>`;
           results += "</div>";
           if (eta_list[i]) {
-            results += "<div style='display: none;'>";
+            results += `<div id='${i_table}' style='display: none;'>`;
             results += "<table>";
             stop_eta_data = eta_list[i];
             for (let k = 0; k < stop_eta_data.length; k++) {
