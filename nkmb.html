@@ -126,7 +126,12 @@
         return Math.round((new Date(t) - new Date())/6000)/10;
       }
       function stop_click(id) {
-        document.getElementById(`${id}_table`).style.display = "block";
+        let elem = document.getElementById(`${id}_table`).style.display;
+        if (elem.nextElementSibling.style.display == "none") {
+          elem.nextElementSibling.style.display = "block";
+        } else {
+          elem.nextElementSibling.style.display = "none";
+        }
       }
       async function local_storage_item(label, url, validity_period) {
         let data_dictionary = {};
