@@ -74,7 +74,7 @@
               eta_list[Number(i["seq"])-1].push([i["eta"], i["rmk_en"], i["rmk_tc"]]);
             }
           }
-          to_display(eta_data, stop_data, bound, stop_names);
+          to_display(eta_list, stop_data, bound, stop_names);
         } catch (error) {
           console.log(error);
         }
