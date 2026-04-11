@@ -89,9 +89,8 @@
           results += `<p class='stop_text' style='display: inline-block;'>${stop_names[i][2][0]}</p>`;
           results += "</div>";
           results += "</div>";
-          console.log(eta_list);
           if (eta_list[i]) {
-            results += `<div id='${i}_table' style='display: none;'>`;
+            results += `<div id='${i}_table' style='display: block;'>`;
             results += "<table>";
             stop_eta_data = eta_list[i];
             for (let k = 0; k < stop_eta_data.length; k++) {
