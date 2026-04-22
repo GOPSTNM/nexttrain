@@ -7,7 +7,7 @@
   <body>
     <h1>KMB Arrival Time</h1>
     <p>Please input route</p>
-    <input type="text" onchange="rte_input_change();" id="rte_input" autocapitalize="characters" placeholder="Enter Route">
+    <input type="text" onkeyup="rte_input_change();" id="rte_input" autocapitalize="characters" placeholder="Enter Route">
     <select required id="rte_options_select"><option value="" disabled>Select Direction</option></select>
     <input type="button" onclick="update();" value="Update">
     <div id="results"></div>
@@ -17,6 +17,7 @@
       async function setup() {
         route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 7, true);
         document.getElementById("rte_input").value = new URLSearchParams(window.location.search).get('rte');
+        rte_input_change();
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
