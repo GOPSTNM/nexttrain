@@ -19,7 +19,7 @@
         document.getElementById("rte_input").value = new URLSearchParams(window.location.search).get('rte');
         rte_input_change();
         document.getElementById("rte_options_select").value = new URLSearchParams(window.location.search).get('dir');
-        update();
+        await update();
         document.getElementById(`${new URLSearchParams(window.location.search).get('seq')}_table`).style.display = "block";
       }
       function rte_input_change() {
