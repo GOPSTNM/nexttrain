@@ -20,6 +20,7 @@
         rte_input_change();
         document.getElementById("rte_options_select").value = new URLSearchParams(window.location.search).get('dir');
         update();
+        document.getElementById(`${new URLSearchParams(window.location.search).get('seq')}_table`).style.display = "block";
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
