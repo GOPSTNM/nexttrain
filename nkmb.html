@@ -19,6 +19,7 @@
         document.getElementById("rte_input").value = new URLSearchParams(window.location.search).get('rte');
         rte_input_change();
         document.getElementById("rte_options_select").value = new URLSearchParams(window.location.search).get('dir');
+        update();
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
