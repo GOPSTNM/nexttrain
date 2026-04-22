@@ -42,7 +42,7 @@
       let titleCase = cleanName.replace(/\w\S*/g, (txt) => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
-      return [titleCase, match ? match[1] : null];
+      return [titleCase, match ? match[1] : ""];
       }
       async function update() {
         try {
