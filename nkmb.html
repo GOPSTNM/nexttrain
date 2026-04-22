@@ -15,7 +15,7 @@
       let route_data;
       setup();
       async function setup() {
-        await route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 7, true);
+        route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 7, true);
         document.getElementById("rte_input").value = new URLSearchParams(window.location.search).get('rte');
       }
       function rte_input_change() {
