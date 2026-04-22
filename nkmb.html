@@ -18,6 +18,7 @@
         route_data = await local_storage_item("kmb_rte_data", "https://data.etabus.gov.hk/v1/transport/kmb/route/", 7, true);
         document.getElementById("rte_input").value = new URLSearchParams(window.location.search).get('rte');
         rte_input_change();
+        document.getElementById("rte_options_select").value = new URLSearchParams(window.location.search).get('dir');
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
