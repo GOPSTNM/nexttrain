@@ -116,7 +116,7 @@
       function time_difference_format(t) {
         return Math.round((new Date(t) - new Date())/6000)/10;
       }
-      function stop_click(id) {
+      function stop_click(i) {
         let results = "";
         if (eta_list[i]) {
             results += `<div id='${i}_table' style='display: none;'>`;
