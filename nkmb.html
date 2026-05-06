@@ -26,9 +26,6 @@
         }
         document.getElementById("rte_options_select").value = url_params.get("d");
         await update();
-        if (url_params.has("s")) {
-          document.getElementById(`${url_params.get("s")}_table`).style.display = "block";
-        }
       }
       function rte_input_change() {
         let rte_input = document.getElementById("rte_input").value;
@@ -93,6 +90,7 @@
         }
       }
       async function to_display(eta_list, stop_data, bound, stop_names) {
+        globalThis.eta_list = eta_list;
         let results = "";
         for (let i = 0; i < stop_names.length; i++) {
           results += `<div id='${i}' style='display: flex; align-items: center; margin: auto;'>`;
@@ -106,7 +104,20 @@
           results += `<p class='stop_text' style='display: inline-block;'>${stop_names[i][2][0]}</p>`;
           results += "</div>";
           results += "</div>";
-          if (eta_list[i]) {
+        }
+        document.getElementById("results").innerHTML = results;
+      }
+      function stop_eta_update(stop_id) {
+        alert(stop_id);
+      }
+      function time_show_format(t) {
+        return new Date(t).toTimeString().slice(0, 8);
+      }
+      function time_difference_format(t) {
+        return Math.round((new Date(t) - new Date())/6000)/10;
+      }
+      function stop_click(id) {
+        if (eta_list[i]) {
             results += `<div id='${i}_table' style='display: none;'>`;
             results += "<table>";
             stop_eta_data = eta_list[i];
@@ -133,25 +144,7 @@
             results += "</table>";
             results += "</div>";
           }
-        }
-        document.getElementById("results").innerHTML = results;
-      }
-      function stop_eta_update(stop_id) {
-        alert(stop_id);
-      }
-      function time_show_format(t) {
-        return new Date(t).toTimeString().slice(0, 8);
-      }
-      function time_difference_format(t) {
-        return Math.round((new Date(t) - new Date())/6000)/10;
-      }
-      function stop_click(id) {
-        let elem = document.getElementById(`${id}_table`);
-        if (elem.style.display == "none") {
-          elem.style.display = "block";
-        } else {
-          elem.style.display = "none";
-        }
+        document.getElementById(i).after(parser.parseFromString(results));
       }
       async function local_storage_item(label, url, validity_period) {
         let data_dictionary = {};
