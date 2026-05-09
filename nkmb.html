@@ -147,7 +147,9 @@
             results += "</table>";
             results += "</div>";
           }
-        document.getElementById(i).insertAdjacentHTML("afterend", results);
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(results, "text/html");
+        document.getElementById(i).after(...doc.body.children);
       }
       async function local_storage_item(label, url, validity_period) {
         let data_dictionary = {};
