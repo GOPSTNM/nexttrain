@@ -91,6 +91,7 @@
       }
       async function to_display(eta_list, stop_data, bound, stop_names) {
         globalThis.eta_list = eta_list;
+        globalThis.stop_names = stop_names;
         let results = "";
         for (let i = 0; i < stop_names.length; i++) {
           results += `<div id='${i}' style='display: flex; align-items: center; margin: auto;'>`;
