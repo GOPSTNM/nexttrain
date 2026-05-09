@@ -118,6 +118,10 @@
         return Math.round((new Date(t) - new Date())/6000)/10;
       }
       function stop_click(i) {
+        if (document.getElementById(`${i}_table`)) {
+          document.getElementById(`${i}_table`).remove();
+          return;
+        }
         let results = "";
         if (eta_list[i]) {
             results += `<div id='${i}_table' style=''>`;
