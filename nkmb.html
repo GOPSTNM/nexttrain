@@ -87,7 +87,8 @@
           to_display(eta_list, stop_data, bound, stop_names);
         } catch (error) {
           console.log(error);
-          localstorage.clear();
+          localStorage.clear();
+          location.reload();
         }
       }
       async function to_display(eta_list, stop_data, bound, stop_names) {
